@@ -2,3332 +2,4230 @@
 <html lang="fa" dir="rtl">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>فرمول‌نامه فیزیک ⚡</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap"
-  rel="stylesheet"
->
-
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    displayMath: [['\\[','\\]']]
-  },
-  svg: {
-    fontCache: 'global'
-  }
-};
-</script>
-
-<script
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-
-<style>
-
-/* =====================================================
-   THEME
-===================================================== */
-
-:root {
-  --bg:#040811;
-  --panel:#091322;
-  --panel2:#0d1929;
-  --border:#1b3048;
-  --text:#f5f9ff;
-  --muted:#8798ad;
-
-  --blue:#00c8ff;
-  --blue2:#007cf0;
-
-  --green:#29e69a;
-  --yellow:#ffd166;
-  --red:#ff667d;
-
-  --pink:#ff4fa3;
-  --pink2:#ff8acb;
-  --pinkGlow:rgba(255,79,163,.18);
-
-  --shadow:0 20px 60px rgba(0,0,0,.35);
-}
-
-/* =====================================================
-   GIRL THEME
-===================================================== */
-
-body.girl-theme {
-
-  --bg:#10050d;
-  --panel:#1b0b18;
-  --panel2:#241025;
-  --border:#542341;
-
-  --text:#fff5fb;
-  --muted:#c79bb6;
-
-  --blue:#ff6fba;
-  --blue2:#ff2f91;
-
-  --pink:#ff4fa3;
-  --pink2:#ff9bd4;
-
-  background:
-    radial-gradient(
-      circle at 90% 0%,
-      #55183e 0,
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 0% 100%,
-      #3c1232 0,
-      transparent 28%
-    ),
-    var(--bg);
-}
-
-/* =====================================================
-   GLOBAL
-===================================================== */
-
-* {
-  box-sizing:border-box;
-}
-
-html {
-  scroll-behavior:smooth;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>فرمول‌نامه فیزیک ⚡</title>
+
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="فرمول‌نامه کامل فیزیک پایه‌های دهم، یازدهم و دوازدهم رشته‌های ریاضی و تجربی">
+
+  <!-- Vazirmatn -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+  <style>
+    /* =========================================================
+       ROOT
+    ========================================================= */
+
+    :root {
+      --bg: #050914;
+      --bg-2: #08111f;
+      --panel: rgba(11, 20, 37, 0.72);
+      --panel-strong: rgba(13, 24, 44, 0.91);
+      --panel-light: rgba(255, 255, 255, 0.055);
+
+      --text: #f7f9ff;
+      --muted: #9aa8c0;
+      --muted-2: #6f7e98;
+
+      --cyan: #25d9ff;
+      --blue: #5577ff;
+      --violet: #9d5cff;
+      --pink: #ff4fa3;
+      --rose: #ff6b81;
+      --amber: #ffc857;
+      --green: #35e0a1;
+
+      --border: rgba(255, 255, 255, 0.09);
+      --border-bright: rgba(255, 255, 255, 0.16);
+
+      --shadow:
+        0 25px 80px rgba(0, 0, 0, 0.45);
+
+      --radius-xl: 30px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 13px;
+
+      --transition:
+        280ms cubic-bezier(.2,.8,.2,1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family: "Vazirmatn", sans-serif;
+      font-weight: 400;
+      line-height: 1.8;
+
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 8% 10%,
+          rgba(37, 217, 255, .13),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 88% 12%,
+          rgba(157, 92, 255, .16),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 50% 100%,
+          rgba(255, 79, 163, .08),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #040711 0%,
+          #07101e 45%,
+          #060914 100%
+        );
+
+      font-feature-settings:
+        "kern" 1,
+        "liga" 1;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+
+      background:
+        linear-gradient(
+          115deg,
+          transparent 0%,
+          rgba(37,217,255,.025) 35%,
+          rgba(157,92,255,.035) 60%,
+          transparent 100%
+        );
+
+      opacity: .9;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      left: -220px;
+      bottom: -250px;
+
+      border-radius: 50%;
+
+      background: rgba(37, 217, 255, .07);
+      filter: blur(80px);
+
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    ::selection {
+      color: #fff;
+      background: rgba(157, 92, 255, .55);
+    }
+
+    button,
+    input,
+    select {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       SCROLLBAR
+    ========================================================= */
+
+    ::-webkit-scrollbar {
+      width: 9px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #050914;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 20px;
+      background:
+        linear-gradient(
+          180deg,
+          var(--cyan),
+          var(--violet)
+        );
+    }
+
+    /* =========================================================
+       BACKGROUND ORBS
+    ========================================================= */
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(2px);
+      opacity: .35;
+      animation: floatOrb 12s ease-in-out infinite;
+    }
+
+    .orb.one {
+      width: 180px;
+      height: 180px;
+      top: 12%;
+      right: 5%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(37,217,255,.25),
+          transparent 70%
+        );
+    }
+
+    .orb.two {
+      width: 230px;
+      height: 230px;
+      top: 52%;
+      left: 4%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(157,92,255,.22),
+          transparent 70%
+        );
+
+      animation-delay: -4s;
+    }
+
+    .orb.three {
+      width: 160px;
+      height: 160px;
+      bottom: 8%;
+      right: 22%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(255,79,163,.18),
+          transparent 70%
+        );
+
+      animation-delay: -7s;
+    }
+
+    @keyframes floatOrb {
+      0%,100% {
+        transform: translate3d(0,0,0);
+      }
+
+      50% {
+        transform: translate3d(0,-25px,0);
+      }
+    }
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    .hidden {
+      display: none !important;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .glass {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.075),
+          rgba(255,255,255,.025)
+        );
+
+      border: 1px solid var(--border);
+
+      box-shadow:
+        0 24px 80px rgba(0,0,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.04);
+
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    /* =========================================================
+       LOGIN
+    ========================================================= */
+
+    #loginScreen {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 24px;
+
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(37,217,255,.14),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(157,92,255,.16),
+          transparent 35%
+        ),
+        rgba(3, 6, 14, .82);
+
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .login-box {
+      position: relative;
+
+      width: min(500px, 100%);
+      padding: 34px;
+
+      border-radius: var(--radius-xl);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(17,31,55,.93),
+          rgba(7,13,27,.95)
+        );
+
+      border: 1px solid rgba(255,255,255,.12);
+
+      box-shadow:
+        0 40px 120px rgba(0,0,0,.58),
+        0 0 80px rgba(37,217,255,.07);
+
+      overflow: hidden;
+    }
+
+    .login-box::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      top: -130px;
+      right: -90px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(37,217,255,.28),
+          transparent 70%
+        );
+
+      filter: blur(10px);
+    }
+
+    .login-box::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      bottom: -120px;
+      left: -80px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(157,92,255,.25),
+          transparent 70%
+        );
+    }
+
+    .login-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .logo {
+      width: 74px;
+      height: 74px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 24px;
+
+      font-size: 34px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--cyan),
+          var(--blue) 45%,
+          var(--violet)
+        );
+
+      box-shadow:
+        0 12px 45px rgba(37,217,255,.25),
+        0 10px 40px rgba(157,92,255,.18);
+
+      transform: rotate(-4deg);
+    }
+
+    .login-title {
+      text-align: center;
+
+      font-size: 29px;
+      font-weight: 900;
+      line-height: 1.5;
+      letter-spacing: -.5px;
+
+      background:
+        linear-gradient(
+          100deg,
+          #fff,
+          #8deeff 38%,
+          #bd9aff 75%,
+          #fff
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .login-sub {
+      margin-top: 5px;
+
+      color: var(--muted);
+
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    /* =========================================================
+       STEPS
+    ========================================================= */
+
+    .steps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 26px 0 24px;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .step-circle {
+      width: 34px;
+      height: 34px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border);
+
+      transition: var(--transition);
+    }
+
+    .step.active .step-circle {
+      color: #fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--cyan),
+          var(--violet)
+        );
+
+      border-color: transparent;
+
+      box-shadow:
+        0 0 24px rgba(37,217,255,.25);
+    }
+
+    .step-line {
+      width: 65px;
+      height: 2px;
+      margin: 0 9px;
+
+      background: rgba(255,255,255,.08);
+    }
+
+    .step.active + .step-line {
+      background:
+        linear-gradient(
+          90deg,
+          var(--cyan),
+          var(--violet)
+        );
+    }
+
+    /* =========================================================
+       VPN
+    ========================================================= */
+
+    .vpn-warning {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+
+      margin-bottom: 20px;
+      padding: 13px 15px;
+
+      border-radius: 15px;
+
+      color: #ffe8a3;
+      font-size: 12px;
+      line-height: 1.8;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,200,87,.10),
+          rgba(255,145,0,.035)
+        );
+
+      border: 1px solid rgba(255,200,87,.18);
+    }
+
+    .vpn-warning span {
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    /* =========================================================
+       FORM
+    ========================================================= */
+
+    .form-step {
+      animation: formIn .35s ease both;
+    }
+
+    @keyframes formIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: #dbe5f7;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+      top: 50%;
+      right: 14px;
+
+      transform: translateY(-50%);
+
+      color: #7183a3;
+      font-size: 17px;
+
+      pointer-events: none;
+    }
+
+    input,
+    select {
+      width: 100%;
+      height: 52px;
+
+      padding: 0 44px 0 15px;
+
+      border-radius: 15px;
+
+      color: #fff;
+      background: rgba(255,255,255,.045);
+
+      border: 1px solid rgba(255,255,255,.09);
+
+      outline: none;
+
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.7;
+
+      transition: var(--transition);
+    }
+
+    input::placeholder {
+      color: #667691;
+      font-weight: 400;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: rgba(37,217,255,.55);
+
+      background: rgba(37,217,255,.045);
+
+      box-shadow:
+        0 0 0 4px rgba(37,217,255,.08),
+        0 0 25px rgba(37,217,255,.06);
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+
+      background-image:
+        linear-gradient(45deg, transparent 50%, #8ea0bc 50%),
+        linear-gradient(135deg, #8ea0bc 50%, transparent 50%);
+
+      background-position:
+        calc(100% - 18px) 22px,
+        calc(100% - 13px) 22px;
+
+      background-size: 5px 5px;
+      background-repeat: no-repeat;
+    }
+
+    select option {
+      color: #fff;
+      background: #0b1425;
+    }
+
+    .gender-label {
+      margin-bottom: 9px;
+
+      color: #dbe5f7;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .gender-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .gender-option {
+      position: relative;
+    }
+
+    .gender-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .gender-card {
+      min-height: 60px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      border-radius: 15px;
+
+      color: #b9c5d9;
+
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.08);
+
+      transition: var(--transition);
+    }
+
+    .gender-card span:first-child {
+      font-size: 20px;
+    }
+
+    .gender-option input:checked + .gender-card {
+      color: #fff;
+
+      border-color: rgba(37,217,255,.55);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(37,217,255,.13),
+          rgba(157,92,255,.12)
+        );
+
+      box-shadow:
+        0 8px 30px rgba(37,217,255,.09);
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .main-btn,
+    .secondary-btn {
+      height: 54px;
+
+      border-radius: 16px;
+
+      border: none;
+
+      font-size: 14px;
+      font-weight: 800;
+
+      transition: var(--transition);
+    }
+
+    .main-btn {
+      flex: 1;
+
+      color: #fff;
+
+      background:
+        linear-gradient(
+          110deg,
+          #19c8ee,
+          #536fff 48%,
+          #a451ed
+        );
+
+      box-shadow:
+        0 14px 35px rgba(82,111,255,.22);
+    }
+
+    .main-btn:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 18px 45px rgba(82,111,255,.32);
+    }
+
+    .secondary-btn {
+      padding: 0 20px;
+
+      color: #ccd6e7;
+
+      background: rgba(255,255,255,.05);
+
+      border: 1px solid rgba(255,255,255,.09);
+    }
+
+    .secondary-btn:hover {
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.16);
+    }
+
+    .status {
+      min-height: 24px;
+
+      margin-top: 13px;
+
+      color: var(--muted);
+
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       APP
+    ========================================================= */
+
+    #app {
+      min-height: 100vh;
+    }
+
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      border-bottom: 1px solid rgba(255,255,255,.07);
+
+      background:
+        rgba(5,9,20,.72);
+
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+
+    .header-inner {
+      min-height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .brand-logo {
+      width: 43px;
+      height: 43px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 14px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--cyan),
+          var(--blue),
+          var(--violet)
+        );
+
+      box-shadow:
+        0 7px 25px rgba(37,217,255,.18);
+    }
+
+    .brand-text {
+      font-size: 16px;
+    }
+
+    .brand-text small {
+      display: block;
+
+      margin-top: -2px;
+
+      color: var(--muted);
+
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .header-user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .user-pill {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      min-height: 42px;
+      padding: 6px 12px;
+
+      border-radius: 14px;
+
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.07);
+    }
+
+    .user-avatar {
+      width: 30px;
+      height: 30px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 10px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(37,217,255,.25),
+          rgba(157,92,255,.25)
+        );
+    }
+
+    .user-name {
+      max-width: 150px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .small-btn {
+      height: 42px;
+      padding: 0 14px;
+
+      border-radius: 13px;
+
+      color: #c7d2e6;
+
+      background: rgba(255,255,255,.04);
+
+      border: 1px solid rgba(255,255,255,.08);
+
+      font-size: 11px;
+      font-weight: 600;
+
+      transition: var(--transition);
+    }
+
+    .small-btn:hover {
+      color: #fff;
+      background: rgba(255,255,255,.08);
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+
+      margin-top: 34px;
+      padding: 42px;
+
+      overflow: hidden;
+
+      border-radius: var(--radius-xl);
+
+      background:
+        linear-gradient(
+          125deg,
+          rgba(16,32,56,.85),
+          rgba(13,20,42,.72) 50%,
+          rgba(38,20,59,.72)
+        );
+
+      border: 1px solid rgba(255,255,255,.10);
+
+      box-shadow: var(--shadow);
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      width: 400px;
+      height: 400px;
+
+      top: -260px;
+      right: -120px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(37,217,255,.22),
+          transparent 68%
+        );
+
+      filter: blur(8px);
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+      width: 350px;
+      height: 350px;
+
+      bottom: -270px;
+      left: -120px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(157,92,255,.18),
+          transparent 68%
+        );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 40px;
+    }
+
+    .hero-copy {
+      max-width: 670px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      margin-bottom: 12px;
+      padding: 6px 11px;
+
+      border-radius: 999px;
+
+      color: #b9f5ff;
+
+      background: rgba(37,217,255,.07);
+
+      border: 1px solid rgba(37,217,255,.16);
+
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      box-shadow:
+        0 0 12px rgba(53,224,161,.8);
+    }
+
+    .hero h1 {
+      margin-bottom: 9px;
+
+      font-size: clamp(30px, 5vw, 48px);
+      font-weight: 900;
+
+      line-height: 1.35;
+      letter-spacing: -.7px;
+
+      background:
+        linear-gradient(
+          100deg,
+          #ffffff 10%,
+          #7deaff 38%,
+          #ad8aff 72%,
+          #ff83bc 100%
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 620px;
+
+      color: #9eacc3;
+
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.95;
+    }
+
+    .hero-stats {
+      min-width: 310px;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .stat {
+      min-height: 88px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding: 15px;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.07),
+          rgba(255,255,255,.025)
+        );
+
+      border: 1px solid rgba(255,255,255,.08);
+
+      font-weight: 600;
+    }
+
+    .stat-number {
+      display: block;
+
+      margin-bottom: 1px;
+
+      font-size: 23px;
+      font-weight: 900;
+
+      background:
+        linear-gradient(
+          90deg,
+          #fff,
+          var(--cyan)
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .stat-label {
+      color: #7f8da6;
+      font-size: 10px;
+    }
+
+    /* =========================================================
+       CONTROLS
+    ========================================================= */
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      gap: 12px;
+
+      margin-top: 22px;
+    }
+
+    .control-box {
+      position: relative;
+    }
+
+    .control-box input,
+    .control-box select {
+      height: 56px;
+
+      border-radius: 17px;
+
+      background:
+        rgba(9,17,31,.75);
+    }
+
+    /* =========================================================
+       SECTION HEADER
+    ========================================================= */
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin: 34px 0 16px;
+
+      gap: 15px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .section-title::before {
+      content: "";
+
+      width: 4px;
+      height: 25px;
+
+      border-radius: 10px;
+
+      background:
+        linear-gradient(
+          180deg,
+          var(--cyan),
+          var(--violet)
+        );
+
+      box-shadow:
+        0 0 16px rgba(37,217,255,.35);
+    }
+
+    .results-count {
+      color: var(--muted-2);
+      font-size: 11px;
+    }
+
+    /* =========================================================
+       CHAPTERS
+    ========================================================= */
+
+    .chapters {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .chapter-card {
+      position: relative;
+
+      min-height: 145px;
+
+      padding: 22px;
+
+      overflow: hidden;
+
+      border-radius: 21px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.065),
+          rgba(255,255,255,.025)
+        );
+
+      border: 1px solid rgba(255,255,255,.085);
+
+      cursor: pointer;
+
+      transition: var(--transition);
+    }
+
+    .chapter-card::before {
+      content: "";
+
+      position: absolute;
+      width: 140px;
+      height: 140px;
+
+      top: -70px;
+      left: -45px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          var(--accent, var(--cyan)),
+          transparent 70%
+        );
+
+      opacity: .11;
+      filter: blur(4px);
+
+      transition: var(--transition);
+    }
+
+    .chapter-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        color-mix(
+          in srgb,
+          var(--accent, var(--cyan)) 35%,
+          transparent
+        );
+
+      box-shadow:
+        0 20px 55px rgba(0,0,0,.25),
+        0 0 35px
+        color-mix(
+          in srgb,
+          var(--accent, var(--cyan)) 8%,
+          transparent
+        );
+    }
+
+    .chapter-card:hover::before {
+      transform: scale(1.3);
+      opacity: .17;
+    }
+
+    .chapter-top {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 15px;
+    }
+
+    .chapter-num {
+      width: 38px;
+      height: 38px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 12px;
+
+      color: var(--accent, var(--cyan));
+
+      background:
+        color-mix(
+          in srgb,
+          var(--accent, var(--cyan)) 11%,
+          transparent
+        );
+
+      border: 1px solid
+        color-mix(
+          in srgb,
+          var(--accent, var(--cyan)) 20%,
+          transparent
+        );
+
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .chapter-arrow {
+      color: #61708a;
+      transition: var(--transition);
+    }
+
+    .chapter-card:hover .chapter-arrow {
+      color: var(--accent, var(--cyan));
+      transform: translateX(-4px);
+    }
+
+    .chapter-card h3 {
+      position: relative;
+      z-index: 2;
+
+      margin-bottom: 4px;
+
+      color: #f2f6ff;
+
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .chapter-card p {
+      position: relative;
+      z-index: 2;
+
+      color: #7786a0;
 
-body {
-  margin:0;
-  min-height:100vh;
+      font-size: 11px;
+      line-height: 1.8;
+    }
 
-  font-family:"Vazirmatn",sans-serif;
+    /* =========================================================
+       FORMULA CARDS
+    ========================================================= */
 
-  color:var(--text);
+    .formula-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
 
-  background:
-    radial-gradient(
-      circle at 90% 0%,
-      #103353 0,
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 0% 100%,
-      #06353e 0,
-      transparent 28%
-    ),
-    var(--bg);
+      padding-bottom: 40px;
+    }
 
-  transition:
-    background .5s ease,
-    color .3s ease;
-}
+    .card {
+      position: relative;
 
-button,
-input,
-select {
-  font-family:inherit;
-}
+      padding: 20px;
+
+      overflow: hidden;
 
-button {
-  -webkit-tap-highlight-color:transparent;
-}
+      border-radius: 21px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(15,28,48,.82),
+          rgba(8,15,29,.76)
+        );
 
-.hidden {
-  display:none!important;
-}
+      border: 1px solid rgba(255,255,255,.08);
 
-/* =====================================================
-   LOGIN
-===================================================== */
+      box-shadow:
+        0 15px 45px rgba(0,0,0,.18);
 
-.onboarding {
+      transition: var(--transition);
+    }
 
-  position:fixed;
-  inset:0;
+    .card::before {
+      content: "";
 
-  z-index:1000;
+      position: absolute;
 
-  display:grid;
-  place-items:center;
+      width: 130px;
+      height: 130px;
 
-  padding:18px;
+      top: -75px;
+      right: -50px;
 
-  overflow:auto;
+      border-radius: 50%;
 
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      #102c48 0,
-      transparent 45%
-    ),
-    #02050b;
-}
+      background:
+        radial-gradient(
+          circle,
+          var(--accent, var(--cyan)),
+          transparent 70%
+        );
 
-.girl-theme .onboarding {
+      opacity: .08;
+      filter: blur(5px);
+    }
 
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      #571b40 0,
-      transparent 45%
-    ),
-    #090207;
-}
+    .card:hover {
+      transform: translateY(-4px);
 
-/* =====================================================
-   LOGIN BOX
-===================================================== */
+      border-color:
+        color-mix(
+          in srgb,
+          var(--accent, var(--cyan)) 22%,
+          transparent
+        );
 
-.login-box {
+      box-shadow:
+        0 24px 60px rgba(0,0,0,.26);
+    }
 
-  width:min(520px,100%);
+    .card-head {
+      position: relative;
+      z-index: 2;
 
-  padding:30px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
 
-  border:1px solid #20354d;
-  border-radius:28px;
+      gap: 14px;
 
-  background:rgba(8,17,30,.94);
+      margin-bottom: 16px;
+    }
 
-  box-shadow:
-    0 0 80px rgba(0,200,255,.08),
-    var(--shadow);
+    .formula-title {
+      color: #eaf0fc;
 
-  backdrop-filter:blur(20px);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.7;
+    }
 
-  animation:
-    loginAppear .55s ease;
-}
+    .chapter-badge {
+      flex-shrink: 0;
 
-.girl-theme .login-box {
+      padding: 5px 9px;
 
-  border-color:#613052;
+      border-radius: 999px;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(31,10,27,.96),
-      rgba(16,5,14,.96)
-    );
+      color: var(--accent, var(--cyan));
 
-  box-shadow:
-    0 0 80px rgba(255,79,163,.13),
-    var(--shadow);
-}
+      background:
+        color-mix(
+          in srgb,
+          var(--accent, var(--cyan)) 8%,
+          transparent
+        );
 
-@keyframes loginAppear {
+      border: 1px solid
+        color-mix(
+          in srgb,
+          var(--accent, var(--cyan)) 17%,
+          transparent
+        );
 
-  from {
-    opacity:0;
-    transform:translateY(20px) scale(.97);
-  }
+      font-size: 9px;
+      font-weight: 700;
+    }
 
-  to {
-    opacity:1;
-    transform:none;
-  }
+    .equation {
+      position: relative;
+      z-index: 2;
 
-}
+      min-height: 70px;
 
-/* =====================================================
-   LOGO
-===================================================== */
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-.logo {
+      padding: 15px;
 
-  width:78px;
-  height:78px;
+      overflow-x: auto;
 
-  margin:0 auto 14px;
+      border-radius: 15px;
 
-  display:grid;
-  place-items:center;
+      background:
+        rgba(0,0,0,.19);
 
-  border-radius:24px;
+      border: 1px solid rgba(255,255,255,.055);
 
-  font-size:42px;
+      color: #fff;
 
-  background:
-    linear-gradient(
-      135deg,
-      #006de0,
-      #00c8ff
-    );
+      font-family:
+        "Cambria Math",
+        "STIX Two Math",
+        "Latin Modern Math",
+        serif;
 
-  box-shadow:
-    0 0 35px rgba(0,200,255,.25);
+      font-size: 22px;
+      line-height: 1.8;
 
-  transition:.4s;
-}
+      scrollbar-width: thin;
+    }
 
-.girl-theme .logo {
+    .equation mjx-container {
+      max-width: 100%;
+    }
 
-  background:
-    linear-gradient(
-      135deg,
-      #ff2f91,
-      #ff8acb
-    );
+    .card-footer {
+      position: relative;
+      z-index: 2;
 
-  box-shadow:
-    0 0 35px rgba(255,79,163,.35);
-}
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-/* =====================================================
-   LOGIN TEXT
-===================================================== */
+      margin-top: 13px;
+    }
 
-.login-title {
+    .formula-label {
+      color: #697893;
+      font-size: 10px;
+      font-weight: 600;
+    }
 
-  margin:0;
+    .card-actions {
+      display: flex;
+      gap: 7px;
+    }
 
-  text-align:center;
+    .icon-btn {
+      width: 34px;
+      height: 34px;
 
-  font-size:27px;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-.login-sub {
+      border-radius: 10px;
 
-  margin:8px 0 24px;
+      color: #7787a3;
 
-  text-align:center;
+      background: rgba(255,255,255,.04);
 
-  color:var(--muted);
-}
+      border: 1px solid rgba(255,255,255,.07);
 
-/* =====================================================
-   STEP INDICATOR
-===================================================== */
+      font-size: 14px;
 
-.steps {
+      transition: var(--transition);
+    }
 
-  display:flex;
+    .icon-btn:hover {
+      color: #fff;
 
-  justify-content:center;
+      background: rgba(255,255,255,.08);
 
-  align-items:center;
+      transform: translateY(-2px);
+    }
 
-  gap:10px;
+    .icon-btn.favorite.active {
+      color: var(--pink);
 
-  margin:0 0 22px;
-}
+      background:
+        rgba(255,79,163,.09);
 
-.step {
+      border-color:
+        rgba(255,79,163,.18);
+    }
 
-  width:34px;
-  height:34px;
+    /* =========================================================
+       EMPTY
+    ========================================================= */
 
-  display:grid;
-  place-items:center;
+    .empty {
+      padding: 60px 20px;
 
-  border:1px solid var(--border);
+      text-align: center;
 
-  border-radius:50%;
+      color: var(--muted);
 
-  color:var(--muted);
+      border-radius: 22px;
 
-  background:#07111f;
+      background: rgba(255,255,255,.025);
 
-  font-size:13px;
+      border: 1px dashed rgba(255,255,255,.10);
+    }
 
-  font-weight:800;
+    .empty-icon {
+      margin-bottom: 10px;
+      font-size: 38px;
+      opacity: .7;
+    }
 
-  transition:.3s;
-}
+    .empty h3 {
+      margin-bottom: 4px;
+      color: #dfe6f4;
+      font-size: 16px;
+    }
 
-.step.active {
+    .empty p {
+      font-size: 12px;
+      color: var(--muted-2);
+    }
 
-  color:white;
+    /* =========================================================
+       MODAL
+    ========================================================= */
 
-  border-color:var(--blue);
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--blue2),
-      var(--blue)
-    );
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  box-shadow:
-    0 0 20px rgba(0,200,255,.25);
-}
+      padding: 20px;
 
-.girl-theme .step.active {
+      background:
+        rgba(2,5,12,.76);
 
-  background:
-    linear-gradient(
-      135deg,
-      #ff2f91,
-      #ff8acb
-    );
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
 
-  box-shadow:
-    0 0 20px rgba(255,79,163,.3);
-}
+    .modal-box {
+      width: min(760px, 100%);
+      max-height: min(82vh, 800px);
 
-.step-line {
+      overflow-y: auto;
 
-  width:45px;
-  height:2px;
+      padding: 27px;
 
-  background:var(--border);
+      border-radius: 27px;
 
-  border-radius:5px;
-}
+      background:
+        linear-gradient(
+          145deg,
+          rgba(17,30,53,.97),
+          rgba(7,13,26,.98)
+        );
 
-/* =====================================================
-   VPN
-===================================================== */
+      border: 1px solid rgba(255,255,255,.11);
 
-.vpn {
+      box-shadow:
+        0 40px 120px rgba(0,0,0,.58);
 
-  margin-bottom:18px;
+      animation: modalIn .28s ease both;
+    }
 
-  padding:13px;
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px) scale(.98);
+      }
 
-  border:1px solid #806000;
-  border-radius:14px;
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
 
-  color:#ffd66d;
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-  background:rgba(128,96,0,.12);
+      gap: 20px;
 
-  text-align:center;
+      margin-bottom: 20px;
+    }
 
-  font-size:13px;
-}
+    .modal-title {
+      font-size: 20px;
+      font-weight: 900;
 
-/* =====================================================
-   FIELDS
-===================================================== */
+      background:
+        linear-gradient(
+          90deg,
+          #fff,
+          #82eaff,
+          #bd8cff
+        );
 
-.field {
-  margin:13px 0;
-}
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-.field label {
+    .modal-close {
+      width: 40px;
+      height: 40px;
 
-  display:block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  margin-bottom:7px;
+      flex-shrink: 0;
 
-  color:#b7c7d9;
+      border-radius: 12px;
 
-  font-size:14px;
-}
+      color: #a5b3ca;
 
-input,
-select {
+      background: rgba(255,255,255,.05);
 
-  width:100%;
+      border: 1px solid rgba(255,255,255,.08);
 
-  min-height:48px;
+      font-size: 20px;
 
-  padding:12px 14px;
+      transition: var(--transition);
+    }
 
-  border:1px solid #263b54;
+    .modal-close:hover {
+      color: #fff;
+      background: rgba(255,255,255,.09);
+    }
 
-  border-radius:13px;
+    .modal-list {
+      display: grid;
+      gap: 10px;
+    }
 
-  outline:none;
+    .modal-item {
+      padding: 16px;
 
-  color:white;
+      border-radius: 16px;
 
-  background:#060d18;
+      background:
+        rgba(255,255,255,.035);
 
-  transition:.2s;
-}
+      border: 1px solid rgba(255,255,255,.065);
+    }
 
-.girl-theme input,
-.girl-theme select {
+    .modal-item-title {
+      margin-bottom: 9px;
 
-  border-color:#59304a;
+      color: #cbd7e9;
 
-  background:#120710;
-}
+      font-size: 12px;
+      font-weight: 700;
+    }
 
-input:focus,
-select:focus {
+    .modal-equation {
+      min-height: 55px;
 
-  border-color:var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  box-shadow:
-    0 0 0 3px
-    rgba(0,200,255,.08);
-}
+      overflow-x: auto;
 
-.girl-theme input:focus,
-.girl-theme select:focus {
+      color: #fff;
 
-  box-shadow:
-    0 0 0 3px
-    rgba(255,79,163,.10);
-}
+      font-size: 21px;
+    }
 
-/* =====================================================
-   GENDER
-===================================================== */
+    /* =========================================================
+       TOAST
+    ========================================================= */
 
-.gender-grid {
+    #toast {
+      position: fixed;
+      left: 50%;
+      bottom: 25px;
 
-  display:grid;
+      z-index: 3000;
 
-  grid-template-columns:1fr 1fr;
+      transform: translateX(-50%) translateY(25px);
 
-  gap:10px;
-}
+      min-width: min(360px, calc(100% - 30px));
 
-.gender-option {
+      padding: 13px 17px;
 
-  position:relative;
-}
+      text-align: center;
 
-.gender-option input {
+      border-radius: 15px;
 
-  position:absolute;
+      color: #eef6ff;
 
-  opacity:0;
+      background:
+        rgba(13,23,41,.94);
 
-  pointer-events:none;
-}
+      border: 1px solid rgba(255,255,255,.11);
 
-.gender-label {
+      box-shadow:
+        0 18px 55px rgba(0,0,0,.38);
 
-  min-height:58px;
+      backdrop-filter: blur(18px);
 
-  display:flex;
+      opacity: 0;
+      pointer-events: none;
 
-  align-items:center;
+      transition: var(--transition);
 
-  justify-content:center;
+      font-size: 12px;
+    }
 
-  gap:8px;
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
 
-  border:1px solid #263b54;
+    /* =========================================================
+       FOOTER
+    ========================================================= */
 
-  border-radius:14px;
+    .site-footer {
+      padding: 15px 0 35px;
 
-  color:#aebed0;
+      color: #56657d;
 
-  background:#060d18;
+      text-align: center;
 
-  cursor:pointer;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 2;
+    }
 
-  transition:.25s;
+    .site-footer span {
+      color: #a6b4c9;
+      font-weight: 800;
+    }
 
-  font-weight:700;
-}
+    /* =========================================================
+       GIRL THEME
+    ========================================================= */
 
-.gender-label:hover {
+    body.girl-theme {
+      --cyan: #ff7dbb;
+      --blue: #a86cff;
+      --violet: #d94cff;
+      --pink: #ff4f9f;
 
-  border-color:var(--blue);
-}
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(255,105,180,.15),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 88% 12%,
+          rgba(174,91,255,.18),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 50% 100%,
+          rgba(255,193,91,.08),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #0c0610 0%,
+          #17091d 45%,
+          #0d0713 100%
+        );
+    }
 
-.gender-option input:checked + .gender-label {
+    body.girl-theme .login-box {
+      box-shadow:
+        0 40px 120px rgba(0,0,0,.58),
+        0 0 90px rgba(255,79,163,.08);
+    }
 
-  color:white;
+    body.girl-theme .main-btn {
+      background:
+        linear-gradient(
+          110deg,
+          #ff70b7,
+          #a760ff 52%,
+          #ff5c9f
+        );
+    }
 
-  border-color:var(--blue);
+    body.girl-theme .gender-option input:checked + .gender-card {
+      border-color: rgba(255,105,180,.48);
 
-  background:
-    rgba(0,200,255,.10);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,105,180,.13),
+          rgba(174,91,255,.13)
+        );
+    }
 
-  box-shadow:
-    0 0 20px rgba(0,200,255,.08);
-}
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
 
-/* =====================================================
-   BUTTONS
-===================================================== */
+    @media (max-width: 900px) {
+      .hero-content {
+        flex-direction: column;
+        align-items: stretch;
+      }
 
-.main-btn {
+      .hero-stats {
+        min-width: 0;
+      }
 
-  width:100%;
+      .chapters {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-  min-height:50px;
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 22px, 1200px);
+      }
 
-  margin-top:9px;
+      .hero {
+        padding: 27px 20px;
+        margin-top: 20px;
+      }
 
-  border:0;
+      .hero h1 {
+        font-size: 30px;
+      }
 
-  border-radius:14px;
+      .controls {
+        grid-template-columns: 1fr;
+      }
 
-  color:white;
+      .formula-grid {
+        grid-template-columns: 1fr;
+      }
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--blue2),
-      var(--blue)
-    );
+      .chapters {
+        grid-template-columns: 1fr;
+      }
 
-  font-size:15px;
+      .header-inner {
+        min-height: 68px;
+      }
 
-  font-weight:800;
+      .brand-text small {
+        display: none;
+      }
 
-  cursor:pointer;
+      .user-pill {
+        display: none;
+      }
+    }
 
-  box-shadow:
-    0 8px 25px
-    rgba(0,150,255,.18);
+    @media (max-width: 550px) {
+      .login-box {
+        padding: 25px 18px;
+        border-radius: 24px;
+      }
 
-  transition:.25s;
-}
+      .login-title {
+        font-size: 24px;
+      }
 
-.main-btn:hover {
+      .step-line {
+        width: 40px;
+      }
 
-  transform:translateY(-2px);
-}
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-.main-btn:disabled {
+      .stat {
+        min-height: 76px;
+        padding: 12px;
+      }
 
-  opacity:.55;
+      .stat-number {
+        font-size: 19px;
+      }
 
-  cursor:not-allowed;
+      .section-header {
+        margin-top: 25px;
+      }
 
-  transform:none;
-}
+      .equation {
+        font-size: 20px;
+      }
 
-.secondary-btn {
+      .modal-box {
+        padding: 20px 15px;
+        border-radius: 22px;
+      }
+    }
 
-  width:100%;
+    @media (max-width: 390px) {
+      .actions {
+        flex-direction: column-reverse;
+      }
 
-  min-height:48px;
+      .secondary-btn {
+        width: 100%;
+      }
 
-  margin-top:9px;
+      .hero-stats {
+        gap: 7px;
+      }
 
-  border:1px solid var(--border);
+      .gender-card {
+        font-size: 12px;
+      }
+    }
 
-  border-radius:14px;
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
 
-  color:#c9d6e5;
-
-  background:#091321;
-
-  cursor:pointer;
-
-  font-weight:700;
-}
-
-.status {
-
-  min-height:22px;
-
-  margin-top:12px;
-
-  text-align:center;
-
-  font-size:13px;
-}
-
-/* =====================================================
-   APP
-===================================================== */
-
-.app {
-  display:none;
-}
-
-header {
-
-  position:sticky;
-
-  top:0;
-
-  z-index:100;
-
-  border-bottom:
-    1px solid rgba(30,48,72,.8);
-
-  background:
-    rgba(4,8,17,.82);
-
-  backdrop-filter:blur(18px);
-}
-
-.girl-theme header {
-
-  border-bottom-color:#4b213b;
-
-  background:
-    rgba(16,5,13,.84);
-}
-
-.header-inner {
-
-  max-width:1150px;
-
-  margin:auto;
-
-  padding:13px 18px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:15px;
-}
-
-.brand {
-
-  display:flex;
-
-  align-items:center;
-
-  gap:9px;
-
-  font-weight:800;
-}
-
-.brand-icon {
-  font-size:24px;
-}
-
-.user-area {
-
-  display:flex;
-
-  align-items:center;
-
-  gap:10px;
-}
-
-.user-name {
-
-  color:var(--blue);
-
-  font-size:13px;
-}
-
-.small-btn {
-
-  border:1px solid var(--border);
-
-  border-radius:10px;
-
-  padding:8px 11px;
-
-  color:#c9d6e5;
-
-  background:#0b1524;
-
-  cursor:pointer;
-
-  transition:.2s;
-}
-
-.small-btn:hover {
-
-  border-color:var(--blue);
-
-  color:white;
-}
-
-/* =====================================================
-   MAIN
-===================================================== */
-
-main {
-
-  max-width:1150px;
-
-  margin:auto;
-
-  padding:25px 18px 40px;
-}
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero {
-
-  position:relative;
-
-  overflow:hidden;
-
-  padding:32px 20px;
-
-  margin-bottom:20px;
-
-  border:1px solid var(--border);
-
-  border-radius:24px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(0,124,240,.12),
-      rgba(0,200,255,.03)
-    ),
-    var(--panel);
-}
-
-.girl-theme .hero {
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255,47,145,.13),
-      rgba(255,138,203,.03)
-    ),
-    var(--panel);
-}
-
-.hero:after {
-
-  content:"";
-
-  position:absolute;
-
-  width:180px;
-  height:180px;
-
-  left:-70px;
-  top:-80px;
-
-  border-radius:50%;
-
-  background:
-    rgba(0,200,255,.08);
-
-  filter:blur(10px);
-}
-
-.girl-theme .hero:after {
-
-  background:
-    rgba(255,79,163,.10);
-}
-
-.hero h1 {
-
-  position:relative;
-
-  z-index:1;
-
-  margin:0 0 8px;
-
-  font-size:
-    clamp(28px,6vw,46px);
-}
-
-.hero p {
-
-  position:relative;
-
-  z-index:1;
-
-  margin:0;
-
-  color:var(--muted);
-}
-
-.stats {
-
-  position:relative;
-
-  z-index:1;
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:9px;
-
-  margin-top:18px;
-}
-
-.stat {
-
-  padding:8px 12px;
-
-  border:1px solid var(--border);
-
-  border-radius:10px;
-
-  color:#cbd8e7;
-
-  background:#07111f;
-
-  font-size:12px;
-}
-
-/* =====================================================
-   CONTROLS
-===================================================== */
-
-.controls {
-
-  display:grid;
-
-  grid-template-columns:1fr 230px;
-
-  gap:10px;
-
-  margin-bottom:16px;
-}
-
-.search-wrap {
-  position:relative;
-}
-
-.search-wrap span {
-
-  position:absolute;
-
-  top:50%;
-  right:14px;
-
-  transform:translateY(-50%);
-
-  pointer-events:none;
-}
-
-.search-wrap input {
-
-  padding-right:43px;
-}
-
-/* =====================================================
-   GRID
-===================================================== */
-
-.grid {
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(
-      auto-fit,
-      minmax(250px,1fr)
-    );
-
-  gap:14px;
-}
-
-.card {
-
-  position:relative;
-
-  overflow:hidden;
-
-  min-height:185px;
-
-  padding:20px;
-
-  border:1px solid var(--border);
-
-  border-radius:19px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #0a1524,
-      #08111d
-    );
-
-  cursor:pointer;
-
-  transition:.2s;
-}
-
-.girl-theme .card {
-
-  background:
-    linear-gradient(
-      145deg,
-      #21101e,
-      #120912
-    );
-}
-
-.card:hover {
-
-  transform:translateY(-4px);
-
-  border-color:var(--blue);
-
-  box-shadow:
-    0 15px 35px
-    rgba(0,180,255,.08);
-}
-
-.girl-theme .card:hover {
-
-  box-shadow:
-    0 15px 35px
-    rgba(255,79,163,.10);
-}
-
-.card-top {
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-}
-
-.chapter-num {
-
-  color:var(--blue);
-
-  font-size:12px;
-
-  font-weight:700;
-}
-
-.star {
-
-  border:0;
-
-  background:none;
-
-  color:#516277;
-
-  font-size:22px;
-
-  cursor:pointer;
-}
-
-.star.active {
-
-  color:var(--yellow);
-}
-
-.card h3 {
-
-  margin:13px 0 7px;
-
-  font-size:19px;
-}
-
-.card p {
-
-  min-height:48px;
-
-  margin:0;
-
-  color:var(--muted);
-
-  font-size:13px;
-
-  line-height:1.9;
-}
-
-.card-footer {
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  margin-top:17px;
-
-  color:var(--blue);
-
-  font-size:12px;
-}
-
-.empty {
-
-  padding:45px 20px;
-
-  border:1px dashed #29405a;
-
-  border-radius:18px;
-
-  color:var(--muted);
-
-  text-align:center;
-}
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.site-footer {
-
-  padding:28px 18px 35px;
-
-  text-align:center;
-
-  color:var(--muted);
-
-  font-size:13px;
-}
-
-.site-footer span {
-
-  color:var(--blue);
-
-  font-weight:700;
-}
-
-/* =====================================================
-   MODAL
-===================================================== */
-
-.modal {
-
-  position:fixed;
-
-  inset:0;
-
-  z-index:500;
-
-  display:none;
-
-  padding:18px;
-
-  overflow:auto;
-
-  background:
-    rgba(0,0,0,.78);
-
-  backdrop-filter:blur(8px);
-}
-
-.modal-box {
-
-  width:min(850px,100%);
-
-  margin:20px auto;
-
-  padding:22px;
-
-  border:1px solid #263b55;
-
-  border-radius:22px;
-
-  background:#08111e;
-
-  box-shadow:var(--shadow);
-}
-
-.girl-theme .modal-box {
-
-  border-color:#54233f;
-
-  background:#120812;
-}
-
-.modal-head {
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:10px;
-
-  margin-bottom:15px;
-}
-
-.modal-head h2 {
-
-  margin:0;
-
-  font-size:20px;
-}
-
-.close {
-
-  width:40px;
-  height:40px;
-
-  border:0;
-
-  border-radius:10px;
-
-  color:white;
-
-  background:#152235;
-
-  font-size:22px;
-
-  cursor:pointer;
-}
-
-.formula {
-
-  margin:11px 0;
-
-  padding:16px;
-
-  border:1px solid #1c334d;
-
-  border-radius:15px;
-
-  background:#0c1827;
-}
-
-.girl-theme .formula {
-
-  border-color:#472239;
-
-  background:#1a0c18;
-}
-
-.formula-title {
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:10px;
-
-  color:var(--blue);
-
-  font-weight:700;
-}
-
-.copy-btn {
-
-  padding:7px 10px;
-
-  border:1px solid #263d57;
-
-  border-radius:8px;
-
-  color:#b9c8d9;
-
-  background:#091321;
-
-  cursor:pointer;
-
-  font-size:11px;
-}
-
-.equation {
-
-  padding:12px 4px 5px;
-
-  direction:ltr;
-
-  text-align:center;
-
-  overflow-x:auto;
-
-  font-size:21px;
-}
-
-/* =====================================================
-   TOAST
-===================================================== */
-
-.toast {
-
-  position:fixed;
-
-  right:18px;
-
-  bottom:18px;
-
-  z-index:1000;
-
-  max-width:330px;
-
-  padding:12px 15px;
-
-  border:1px solid #24415e;
-
-  border-radius:12px;
-
-  background:#0a1726;
-
-  color:white;
-
-  box-shadow:var(--shadow);
-
-  transform:translateY(120px);
-
-  opacity:0;
-
-  transition:.25s;
-}
-
-.toast.show {
-
-  transform:translateY(0);
-
-  opacity:1;
-}
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:650px) {
-
-  .login-box {
-    padding:22px;
-  }
-
-  .controls {
-    grid-template-columns:1fr;
-  }
-
-  .header-inner {
-    padding:12px;
-  }
-
-  .user-name {
-    display:none;
-  }
-
-  main {
-    padding:18px 12px 20px;
-  }
-
-  .hero {
-    padding:25px 17px;
-  }
-
-  .grid {
-    grid-template-columns:1fr;
-  }
-
-  .gender-grid {
-    grid-template-columns:1fr 1fr;
-  }
-
-}
-
-/* =====================================================
-   STEP PAGES
-===================================================== */
-
-.step-page {
-  display:none;
-}
-
-.step-page.active {
-  display:block;
-}
-
-</style>
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+  <!-- Ambient background -->
+  <div class="ambient">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+  </div>
 
-<!-- =====================================================
-     LOGIN
-===================================================== -->
+  <!-- =======================================================
+       LOGIN
+  ======================================================== -->
 
-<section
-  class="onboarding"
-  id="onboarding"
->
+  <section id="loginScreen">
 
-  <div class="login-box">
+    <div class="login-box">
 
-    <div class="logo" id="loginLogo">
-      ⚡
-    </div>
+      <div class="login-content">
 
-    <h1 class="login-title">
-      فرمول‌نامه فیزیک
-    </h1>
+        <div class="logo-wrap">
+          <div class="logo">⚡</div>
+        </div>
 
-    <p class="login-sub">
-      فرمول‌های فیزیک دبیرستان، مرتب و سریع
-    </p>
+        <h1 class="login-title">
+          فرمول‌نامه فیزیک
+        </h1>
 
+        <p class="login-sub">
+          فرمول‌های مهم فیزیک را سریع، مرتب و حرفه‌ای مرور کن.
+        </p>
 
-    <!-- مراحل -->
+        <div class="steps">
+          <div class="step active" id="stepIndicator1">
+            <div class="step-circle">۱</div>
+          </div>
 
-    <div class="steps">
+          <div class="step-line"></div>
 
-      <div
-        class="step active"
-        id="stepIndicator1"
-      >
-        ۱
-      </div>
+          <div class="step" id="stepIndicator2">
+            <div class="step-circle">۲</div>
+          </div>
+        </div>
 
-      <div class="step-line"></div>
+        <div class="vpn-warning">
+          <span>⚠️</span>
+          <div>
+            برای ثبت اطلاعات و ورود بهتر است اتصال اینترنت پایدار باشد.
+          </div>
+        </div>
 
-      <div
-        class="step"
-        id="stepIndicator2"
-      >
-        ۲
-      </div>
-
-    </div>
-
-
-    <!-- VPN -->
-
-    <div class="vpn">
-      🔐 لطفاً فیلترشکن یا VPN خود را روشن کنید.
-    </div>
-
-
-    <!-- =================================================
-         STEP 1
-    ================================================= -->
-
-    <div
-      class="step-page active"
-      id="step1"
-    >
-
-      <div class="field">
-
-        <label>
-          نام و نام خانوادگی
-        </label>
-
-        <input
-          id="fullName"
-          type="text"
-          placeholder="مثلاً علی احمدی"
-          autocomplete="name"
+        <!-- STEP 1 -->
+        <div
+          class="form-step"
+          id="step1"
         >
 
-      </div>
+          <div class="field">
 
-
-      <div class="field">
-
-        <label>
-          شماره موبایل
-        </label>
-
-        <input
-          id="phone"
-          type="tel"
-          inputmode="numeric"
-          placeholder="09xxxxxxxxx"
-          autocomplete="tel"
-        >
-
-      </div>
-
-
-      <div class="field">
-
-        <label>
-          جنسیت
-        </label>
-
-        <div class="gender-grid">
-
-          <div class="gender-option">
-
-            <input
-              type="radio"
-              name="gender"
-              id="genderBoy"
-              value="پسر"
-              onchange="previewTheme('پسر')"
-            >
-
-            <label
-              class="gender-label"
-              for="genderBoy"
-            >
-              💙 پسر
+            <label for="fullName">
+              نام و نام خانوادگی
             </label>
+
+            <div class="input-wrap">
+
+              <span class="input-icon">👤</span>
+
+              <input
+                id="fullName"
+                type="text"
+                autocomplete="name"
+                placeholder="مثلاً علی رضایی"
+                maxlength="100"
+              >
+
+            </div>
 
           </div>
 
+          <div class="field">
 
-          <div class="gender-option">
-
-            <input
-              type="radio"
-              name="gender"
-              id="genderGirl"
-              value="دختر"
-              onchange="previewTheme('دختر')"
-            >
-
-            <label
-              class="gender-label"
-              for="genderGirl"
-            >
-              💗 دختر
+            <label for="phone">
+              شماره موبایل
             </label>
+
+            <div class="input-wrap">
+
+              <span class="input-icon">📱</span>
+
+              <input
+                id="phone"
+                type="tel"
+                inputmode="numeric"
+                autocomplete="tel"
+                placeholder="09123456789"
+                maxlength="11"
+              >
+
+            </div>
+
+          </div>
+
+          <div class="field">
+
+            <div class="gender-label">
+              جنسیت
+            </div>
+
+            <div class="gender-grid">
+
+              <label class="gender-option">
+
+                <input
+                  type="radio"
+                  name="gender"
+                  value="پسر"
+                >
+
+                <div class="gender-card">
+                  <span>👦🏻</span>
+                  <span>پسر</span>
+                </div>
+
+              </label>
+
+              <label class="gender-option">
+
+                <input
+                  type="radio"
+                  name="gender"
+                  value="دختر"
+                >
+
+                <div class="gender-card">
+                  <span>👧🏻</span>
+                  <span>دختر</span>
+                </div>
+
+              </label>
+
+            </div>
+
+          </div>
+
+          <div class="actions">
+
+            <button
+              class="main-btn"
+              type="button"
+              onclick="goToStep2()"
+            >
+              ادامه
+              <span>←</span>
+            </button>
 
           </div>
 
         </div>
 
-      </div>
+        <!-- STEP 2 -->
+        <div
+          class="form-step hidden"
+          id="step2"
+        >
 
+          <div class="field">
 
-      <button
-        class="main-btn"
-        onclick="nextStep()"
-      >
-        ادامه ←
-      </button>
+            <label for="grade">
+              پایه تحصیلی
+            </label>
 
-    </div>
+            <div class="input-wrap">
 
+              <span class="input-icon">🎓</span>
 
-    <!-- =================================================
-         STEP 2
-    ================================================= -->
+              <select id="grade">
 
-    <div
-      class="step-page"
-      id="step2"
-    >
+                <option value="">
+                  انتخاب پایه
+                </option>
 
-      <div class="field">
+                <option value="دهم">
+                  دهم
+                </option>
 
-        <label>
-          پایه تحصیلی
-        </label>
+                <option value="یازدهم">
+                  یازدهم
+                </option>
 
-        <select id="grade">
+                <option value="دوازدهم">
+                  دوازدهم
+                </option>
 
-          <option value="">
-            انتخاب پایه
-          </option>
+              </select>
 
-          <option value="دهم">
-            دهم
-          </option>
+            </div>
 
-          <option value="یازدهم">
-            یازدهم
-          </option>
+          </div>
 
-          <option value="دوازدهم">
-            دوازدهم
-          </option>
+          <div class="field">
 
-        </select>
+            <label for="major">
+              رشته تحصیلی
+            </label>
 
-      </div>
+            <div class="input-wrap">
 
+              <span class="input-icon">📚</span>
 
-      <div class="field">
+              <select id="major">
 
-        <label>
-          رشته
-        </label>
+                <option value="">
+                  انتخاب رشته
+                </option>
 
-        <select id="major">
+                <option value="ریاضی">
+                  ریاضی
+                </option>
 
-          <option value="">
-            انتخاب رشته
-          </option>
+                <option value="تجربی">
+                  تجربی
+                </option>
 
-          <option value="ریاضی">
-            ریاضی
-          </option>
+              </select>
 
-          <option value="تجربی">
-            تجربی
-          </option>
+            </div>
 
-        </select>
+          </div>
 
-      </div>
+          <div class="actions">
 
+            <button
+              class="secondary-btn"
+              type="button"
+              onclick="goToStep1()"
+            >
+              → بازگشت
+            </button>
 
-      <button
-        class="main-btn"
-        id="enter"
-        onclick="saveUser()"
-      >
-        ورود به فرمول‌نامه ⚡
-      </button>
+            <button
+              class="main-btn"
+              type="button"
+              onclick="saveUser()"
+            >
+              ورود به فرمول‌نامه ⚡
+            </button>
 
+          </div>
 
-      <button
-        class="secondary-btn"
-        onclick="previousStep()"
-      >
-        → برگشت
-      </button>
+          <div
+            class="status"
+            id="loginStatus"
+          ></div>
 
-    </div>
+        </div>
 
-
-    <div
-      class="status"
-      id="status"
-    ></div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     APP
-===================================================== -->
-
-<div
-  class="app"
-  id="app"
->
-
-<header>
-
-  <div class="header-inner">
-
-    <div class="brand">
-
-      <span class="brand-icon">
-        ⚡
-      </span>
-
-      <span>
-        فرمول‌نامه فیزیک
-      </span>
-
-    </div>
-
-
-    <div class="user-area">
-
-      <span
-        class="user-name"
-        id="user"
-      ></span>
-
-      <button
-        class="small-btn"
-        onclick="resetUser()"
-      >
-        خروج
-      </button>
-
-    </div>
-
-  </div>
-
-</header>
-
-
-<main>
-
-  <section class="hero">
-
-    <h1>
-      فرمول‌های فیزیک
-    </h1>
-
-    <p id="info"></p>
-
-
-    <div class="stats">
-
-      <div class="stat">
-        📚
-        <span id="chapterCount">0</span>
-        فصل
-      </div>
-
-      <div class="stat">
-        📐
-        <span id="formulaCount">0</span>
-        فرمول
-      </div>
-
-      <div class="stat">
-        ⭐
-        <span id="favoriteCount">0</span>
-        علاقه‌مندی
       </div>
 
     </div>
 
   </section>
 
+  <!-- =======================================================
+       APP
+  ======================================================== -->
 
-  <div class="controls">
+  <main
+    id="app"
+    class="hidden"
+  >
 
-    <div class="search-wrap">
+    <!-- HEADER -->
+    <header class="app-header">
 
-      <span>
-        🔎
-      </span>
+      <div class="container header-inner">
 
-      <input
-        id="search"
-        oninput="render()"
-        placeholder="جستجوی فصل، عنوان یا فرمول..."
-      >
+        <div class="brand">
 
-    </div>
+          <div class="brand-logo">
+            ⚡
+          </div>
 
+          <div class="brand-text">
+            فرمول‌نامه فیزیک
 
-    <select
-      id="filter"
-      onchange="render()"
-    ></select>
+            <small>
+              مرور سریع فرمول‌ها
+            </small>
+          </div>
 
-  </div>
+        </div>
 
+        <div class="header-user">
 
-  <div
-    class="grid"
-    id="chapters"
-  ></div>
+          <div class="user-pill">
 
-</main>
+            <div class="user-avatar">
+              👤
+            </div>
 
+            <span
+              class="user-name"
+              id="userName"
+            >
+              کاربر
+            </span>
 
-<footer class="site-footer">
+          </div>
 
-  ساخته شده با ❤️ برای یادگیری بهتر فیزیک
-
-  <br>
-
-  <span>
-    Mahdi Darbandy
-  </span>
-
-</footer>
-
-</div>
-
-
-<!-- =====================================================
-     MODAL
-===================================================== -->
-
-<div
-  class="modal"
-  id="modal"
->
-
-  <div class="modal-box">
-
-    <div class="modal-head">
-
-      <h2 id="mt"></h2>
-
-      <button
-        class="close"
-        onclick="closeModal()"
-      >
-        ×
-      </button>
-
-    </div>
-
-
-    <div id="formulas"></div>
-
-  </div>
-
-</div>
-
-
-<div
-  class="toast"
-  id="toast"
-></div>
-
-
-<script>
-
-/* =====================================================
-   BACKEND
-===================================================== */
-
-const API_URL =
-  "https://drentezari-github-io.onrender.com";
-
-
-/* =====================================================
-   DATA
-===================================================== */
-
-const DATA = {
-
-  "دهم": {
-
-    "ریاضی": [
-
-      [
-        "فیزیک و اندازه‌گیری",
-        "چگالی و اندازه‌گیری",
-        [
-          ["چگالی","\\[\\rho=\\frac{m}{V}\\]"],
-          ["جرم","\\[m=\\rho V\\]"],
-          ["حجم","\\[V=\\frac{m}{\\rho}\\]"]
-        ]
-      ],
-
-      [
-        "ویژگی‌های فیزیکی مواد",
-        "فشار و شاره‌ها",
-        [
-          ["فشار","\\[P=\\frac{F}{A}\\]"],
-          ["فشار هیدروستاتیک","\\[P=\\rho gh\\]"],
-          ["فشار کل","\\[P=P_0+\\rho gh\\]"],
-          ["اختلاف فشار","\\[\\Delta P=\\rho g\\Delta h\\]"],
-          ["شناوری","\\[F_b=\\rho_{fluid}gV_{displaced}\\]"],
-          ["وزن ظاهری","\\[W_{app}=W-F_b\\]"],
-          ["دبی حجمی","\\[Q=\\frac{V}{\\Delta t}=Av\\]"],
-          ["معادله پیوستگی","\\[A_1v_1=A_2v_2\\]"],
-          ["فشار پیمانه‌ای","\\[P_g=P-P_0\\]"],
-          ["تبدیل بار","\\[1\\,bar=10^5\\,Pa\\]"]
-        ]
-      ],
-
-      [
-        "کار، انرژی و توان",
-        "کار، انرژی و توان",
-        [
-          ["کار","\\[W=Fd\\cos\\theta\\]"],
-          ["قضیه کار و انرژی","\\[W_{net}=\\Delta K\\]"],
-          ["انرژی جنبشی","\\[K=\\frac12mv^2\\]"],
-          ["انرژی پتانسیل گرانشی","\\[U=mgh\\]"],
-          ["انرژی مکانیکی","\\[E_m=K+U\\]"],
-          ["کار گرانش","\\[W_g=-\\Delta U\\]"],
-          ["توان متوسط","\\[P=\\frac{W}{t}\\]"],
-          ["بازده","\\[\\eta=\\frac{E_{useful}}{E_{input}}\\times100\\%\\]"]
-        ]
-      ],
-
-      [
-        "دما و گرما",
-        "دما، انبساط و گرما",
-        [
-          ["تبدیل سلسیوس به کلوین","\\[T=\\theta+273.15\\]"],
-          ["تبدیل سلسیوس به فارنهایت","\\[F=\\frac95\\theta+32\\]"],
-          ["تبدیل فارنهایت به سلسیوس","\\[\\theta=\\frac59(F-32)\\]"],
-          ["انبساط طولی","\\[\\Delta L=\\alpha L_0\\Delta\\theta\\]"],
-          ["انبساط سطحی","\\[\\Delta A=\\beta A_0\\Delta\\theta\\]"],
-          ["انبساط حجمی","\\[\\Delta V=\\gamma V_0\\Delta\\theta\\]"],
-          ["گرمای محسوس","\\[Q=mc\\Delta\\theta\\]"],
-          ["گرمای نهان","\\[Q=mL\\]"],
-          ["تعادل گرمایی","\\[\\sum Q=0\\]"],
-          ["توان گرمایی","\\[P=\\frac{Q}{\\Delta t}\\]"]
-        ]
-      ],
-
-      [
-        "ترمودینامیک",
-        "قوانین گازها و ترمودینامیک",
-        [
-          ["معادله گاز کامل","\\[PV=nRT\\]"],
-          ["قانون ترکیبی گازها","\\[\\frac{P_1V_1}{T_1}=\\frac{P_2V_2}{T_2}\\]"],
-          ["قانون اول ترمودینامیک","\\[\\Delta U=Q-W\\]"],
-          ["بازده موتور گرمایی","\\[\\eta=\\frac{W}{Q_H}\\times100\\%\\]"]
-        ]
-      ]
-
-    ],
-
-    "تجربی": [
-
-      [
-        "فیزیک و اندازه‌گیری",
-        "چگالی",
-        [
-          ["چگالی","\\[\\rho=\\frac{m}{V}\\]"],
-          ["جرم","\\[m=\\rho V\\]"],
-          ["حجم","\\[V=\\frac{m}{\\rho}\\]"]
-        ]
-      ],
-
-      [
-        "ویژگی‌های فیزیکی مواد",
-        "فشار و شاره‌ها",
-        [
-          ["فشار","\\[P=\\frac{F}{A}\\]"],
-          ["فشار مایع","\\[P=\\rho gh\\]"],
-          ["فشار کل","\\[P=P_0+\\rho gh\\]"],
-          ["اختلاف فشار","\\[\\Delta P=\\rho g\\Delta h\\]"],
-          ["شناوری","\\[F_b=\\rho_{fluid}gV_{displaced}\\]"],
-          ["وزن ظاهری","\\[W_{app}=W-F_b\\]"],
-          ["دبی","\\[Q=Av\\]"],
-          ["پیوستگی","\\[A_1v_1=A_2v_2\\]"]
-        ]
-      ],
-
-      [
-        "کار و انرژی",
-        "کار، انرژی و توان",
-        [
-          ["کار","\\[W=Fd\\cos\\theta\\]"],
-          ["انرژی جنبشی","\\[K=\\frac12mv^2\\]"],
-          ["انرژی پتانسیل","\\[U=mgh\\]"],
-          ["قضیه کار و انرژی","\\[W_{net}=\\Delta K\\]"],
-          ["توان","\\[P=\\frac{W}{t}\\]"]
-        ]
-      ],
-
-      [
-        "دما و گرما",
-        "گرما و تغییر دما",
-        [
-          ["گرمای محسوس","\\[Q=mc\\Delta\\theta\\]"],
-          ["گرمای نهان","\\[Q=mL\\]"],
-          ["تعادل گرمایی","\\[\\sum Q=0\\]"],
-          ["توان گرمایی","\\[P=\\frac{Q}{\\Delta t}\\]"],
-          ["کلوین","\\[T=\\theta+273.15\\]"]
-        ]
-      ]
-
-    ]
-
-  },
-
-
-  "یازدهم": {
-
-    "ریاضی": [
-
-      [
-        "الکتریسیته ساکن",
-        "بار، نیرو و میدان الکتریکی",
-        [
-          ["بار الکتریکی","\\[q=\\pm ne\\]"],
-          ["قانون کولن","\\[F=k\\frac{|q_1q_2|}{r^2}\\]"],
-          ["ثابت کولن","\\[k=\\frac{1}{4\\pi\\varepsilon_0}\\]"],
-          ["میدان الکتریکی","\\[E=\\frac{F}{q_0}\\]"],
-          ["میدان بار نقطه‌ای","\\[E=k\\frac{|q|}{r^2}\\]"],
-          ["نیروی الکتریکی","\\[\\vec F=q\\vec E\\]"],
-          ["کار میدان","\\[W_E=qEd\\cos\\theta\\]"],
-          ["تغییر انرژی پتانسیل","\\[\\Delta U=-W_E\\]"],
-          ["اختلاف پتانسیل","\\[\\Delta V=\\frac{\\Delta U}{q}\\]"],
-          ["میدان یکنواخت","\\[|\\Delta V|=Ed\\]"],
-          ["چگالی سطحی بار","\\[\\sigma=\\frac{Q}{A}\\]"]
-        ]
-      ],
-
-      [
-        "خازن",
-        "ظرفیت و انرژی خازن",
-        [
-          ["ظرفیت خازن","\\[C=\\frac{Q}{V}\\]"],
-          ["خازن تخت","\\[C=\\varepsilon\\frac{A}{d}\\]"],
-          ["خازن با دی‌الکتریک","\\[C=\\kappa C_0\\]"],
-          ["انرژی خازن","\\[U=\\frac12QV=\\frac12CV^2=\\frac{Q^2}{2C}\\]"],
-          ["میدان خازن","\\[E=\\frac{V}{d}\\]"]
-        ]
-      ],
-
-      [
-        "جریان الکتریکی",
-        "جریان، مقاومت و توان",
-        [
-          ["شدت جریان","\\[I=\\frac{\\Delta q}{\\Delta t}\\]"],
-          ["بار عبوری","\\[q=It\\]"],
-          ["قانون اهم","\\[V=IR\\]"],
-          ["مقاومت رسانا","\\[R=\\rho\\frac{L}{A}\\]"],
-          ["توان الکتریکی","\\[P=VI=I^2R=\\frac{V^2}{R}\\]"],
-          ["انرژی الکتریکی","\\[W=Pt=VIt\\]"],
-          ["ولتاژ پایانه مولد","\\[V=\\varepsilon-Ir\\]"],
-          ["جریان مدار","\\[I=\\frac{\\varepsilon}{R+r}\\]"],
-          ["توان خروجی مولد","\\[P_{out}=VI=\\varepsilon I-rI^2\\]"],
-          ["مقاومت سری","\\[R_{eq}=R_1+R_2+\\cdots\\]"],
-          ["مقاومت موازی","\\[\\frac1{R_{eq}}=\\frac1{R_1}+\\frac1{R_2}+\\cdots\\]"]
-        ]
-      ],
-
-      [
-        "مغناطیس و القای الکترومغناطیسی",
-        "نیروی مغناطیسی، شار و القا",
-        [
-          ["نیروی مغناطیسی بار","\\[F=qvB\\sin\\theta\\]"],
-          ["نیروی وارد بر سیم","\\[F=BIL\\sin\\theta\\]"],
-          ["میدان سیم‌پیچ","\\[B=\\frac{\\mu_0NI}{2R}\\]"],
-          ["میدان سیم‌لوله","\\[B=\\mu_0nI\\]"],
-          ["شار مغناطیسی","\\[\\Phi=BA\\cos\\theta\\]"],
-          ["قانون فاراده","\\[\\varepsilon=-N\\frac{\\Delta\\Phi}{\\Delta t}\\]"],
-          ["انرژی سلف","\\[U=\\frac12LI^2\\]"],
-          ["ترانسفورماتور ایده‌آل","\\[\\frac{V_1}{V_2}=\\frac{N_1}{N_2}\\]"]
-        ]
-      ]
-
-    ],
-
-    "تجربی": [
-
-      [
-        "الکتریسیته ساکن",
-        "بار و میدان الکتریکی",
-        [
-          ["بار الکتریکی","\\[q=\\pm ne\\]"],
-          ["قانون کولن","\\[F=k\\frac{|q_1q_2|}{r^2}\\]"],
-          ["ثابت کولن","\\[k=\\frac1{4\\pi\\varepsilon_0}\\]"],
-          ["میدان الکتریکی","\\[E=\\frac{F}{q}\\]"],
-          ["میدان بار نقطه‌ای","\\[E=k\\frac{|q|}{r^2}\\]"],
-          ["نیروی الکتریکی","\\[F=qE\\]"],
-          ["اختلاف پتانسیل","\\[\\Delta V=\\frac{\\Delta U}{q}\\]"],
-          ["ظرفیت خازن","\\[C=\\frac{Q}{V}\\]"],
-          ["انرژی خازن","\\[U=\\frac12CV^2\\]"]
-        ]
-      ],
-
-      [
-        "جریان الکتریکی",
-        "مدار و مقاومت",
-        [
-          ["شدت جریان","\\[I=\\frac{\\Delta q}{\\Delta t}\\]"],
-          ["قانون اهم","\\[V=IR\\]"],
-          ["مقاومت","\\[R=\\rho\\frac{L}{A}\\]"],
-          ["توان","\\[P=VI=I^2R=\\frac{V^2}{R}\\]"],
-          ["ولتاژ مولد واقعی","\\[V=\\varepsilon-Ir\\]"],
-          ["جریان مدار","\\[I=\\frac{\\varepsilon}{R+r}\\]"],
-          ["مقاومت سری","\\[R_{eq}=R_1+R_2+\\cdots\\]"],
-          ["مقاومت موازی","\\[\\frac1{R_{eq}}=\\frac1{R_1}+\\frac1{R_2}+\\cdots\\]"]
-        ]
-      ],
-
-      [
-        "مغناطیس و القا",
-        "مغناطیس و القای الکترومغناطیسی",
-        [
-          ["نیروی مغناطیسی بار","\\[F=qvB\\sin\\theta\\]"],
-          ["نیروی مغناطیسی سیم","\\[F=BIL\\sin\\theta\\]"],
-          ["شار مغناطیسی","\\[\\Phi=BA\\cos\\theta\\]"],
-          ["قانون فاراده","\\[\\varepsilon=-N\\frac{\\Delta\\Phi}{\\Delta t}\\]"],
-          ["انرژی سلف","\\[U=\\frac12LI^2\\]"]
-        ]
-      ]
-
-    ]
-
-  },
-
-
-  "دوازدهم": {
-
-    "ریاضی": [
-
-      [
-        "حرکت بر خط راست",
-        "سرعت، شتاب و حرکت با شتاب ثابت",
-        [
-          ["سرعت متوسط","\\[v_{avg}=\\frac{\\Delta x}{\\Delta t}\\]"],
-          ["تندی متوسط","\\[v_{avg}=\\frac{\\Delta s}{\\Delta t}\\]"],
-          ["شتاب متوسط","\\[a_{avg}=\\frac{\\Delta v}{\\Delta t}\\]"],
-          ["حرکت یکنواخت","\\[x=x_0+vt\\]"],
-          ["سرعت با شتاب ثابت","\\[v=v_0+at\\]"],
-          ["جابجایی","\\[\\Delta x=v_0t+\\frac12at^2\\]"],
-          ["رابطه سرعت و جابجایی","\\[v^2=v_0^2+2a\\Delta x\\]"]
-        ]
-      ],
-
-      [
-        "دینامیک",
-        "نیرو و قوانین نیوتن",
-        [
-          ["قانون دوم نیوتن","\\[\\sum\\vec F=m\\vec a\\]"],
-          ["وزن","\\[W=mg\\]"],
-          ["قانون سوم نیوتن","\\[\\vec F_{AB}=-\\vec F_{BA}\\]"],
-          ["قانون هوک","\\[F_s=-kx\\]"],
-          ["اصطکاک جنبشی","\\[f_k=\\mu_kN\\]"],
-          ["حداکثر اصطکاک ایستایی","\\[f_{s,max}=\\mu_sN\\]"],
-          ["گرانش عمومی","\\[F=G\\frac{m_1m_2}{r^2}\\]"],
-          ["شتاب گرانشی","\\[g=\\frac{GM}{r^2}\\]"]
-        ]
-      ],
-
-      [
-        "حرکت دایره‌ای",
-        "حرکت دورانی و مرکزگرا",
-        [
-          ["سرعت زاویه‌ای","\\[\\omega=\\frac{v}{r}\\]"],
-          ["دوره حرکت","\\[T=\\frac{2\\pi r}{v}\\]"],
-          ["شتاب مرکزگرا","\\[a_c=\\frac{v^2}{r}=\\omega^2r\\]"],
-          ["نیروی مرکزگرا","\\[F_c=\\frac{mv^2}{r}=m\\omega^2r\\]"]
-        ]
-      ],
-
-      [
-        "نوسان",
-        "نوسان ساده، فنر و آونگ",
-        [
-          ["دوره و بسامد","\\[T=\\frac1f\\]"],
-          ["فرکانس زاویه‌ای","\\[\\omega=2\\pi f=\\frac{2\\pi}{T}\\]"],
-          ["معادله نوسان","\\[x=A\\cos(\\omega t+\\varphi)\\]"],
-          ["بیشینه سرعت","\\[v_{max}=A\\omega\\]"],
-          ["بیشینه شتاب","\\[a_{max}=A\\omega^2\\]"],
-          ["دوره فنر","\\[T=2\\pi\\sqrt{\\frac{m}{k}}\\]"],
-          ["دوره آونگ ساده","\\[T=2\\pi\\sqrt{\\frac{L}{g}}\\]"],
-          ["انرژی نوسانگر","\\[E=\\frac12kA^2\\]"]
-        ]
-      ],
-
-      [
-        "موج و صوت",
-        "موج، صوت و شدت صدا",
-        [
-          ["سرعت موج","\\[v=f\\lambda\\]"],
-          ["سرعت موج در طناب","\\[v=\\sqrt{\\frac{F_T}{\\mu}}\\]"],
-          ["جرم واحد طول","\\[\\mu=\\frac{m}{L}\\]"],
-          ["شدت صوت","\\[I=\\frac{P}{A}\\]"],
-          ["تراز شدت صوت","\\[\\beta=10\\log_{10}\\left(\\frac{I}{I_0}\\right)\\]"],
-          ["اختلاف تراز شدت","\\[\\Delta\\beta=10\\log_{10}\\left(\\frac{I_2}{I_1}\\right)\\]"]
-        ]
-      ],
-
-      [
-        "شکست نور",
-        "ضریب شکست و قانون اسنل",
-        [
-          ["قانون اسنل","\\[n_1\\sin\\theta_1=n_2\\sin\\theta_2\\]"],
-          ["ضریب شکست","\\[n=\\frac{c}{v}\\]"],
-          ["رابطه سرعت نور","\\[\\frac{v_2}{v_1}=\\frac{n_1}{n_2}\\]"]
-        ]
-      ],
-
-      [
-        "فیزیک اتمی",
-        "فوتون و مدل اتمی",
-        [
-          ["انرژی فوتون","\\[E=hf=\\frac{hc}{\\lambda}\\]"],
-          ["اثر فوتوالکتریک","\\[hf=\\phi+K_{max}\\]"],
-          ["انرژی جنبشی بیشینه","\\[K_{max}=hf-\\phi\\]"],
-          ["فرکانس آستانه","\\[f_0=\\frac{\\phi}{h}\\]"],
-          ["رابطه دوبروی","\\[\\lambda=\\frac{h}{p}\\]"],
-          ["شعاع مدار بور","\\[r_n=n^2a_0\\]"],
-          ["انرژی تراز هیدروژن","\\[E_n=-\\frac{13.6\\,eV}{n^2}\\]"],
-          ["رابطه ریدبرگ","\\[\\frac1\\lambda=R\\left(\\frac1{n_f^2}-\\frac1{n_i^2}\\right)\\]"]
-        ]
-      ],
-
-      [
-        "فیزیک هسته‌ای",
-        "واپاشی و نیمه‌عمر",
-        [
-          ["هم‌ارزی جرم و انرژی","\\[E=mc^2\\]"],
-          ["قانون نیمه‌عمر","\\[N=N_0\\left(\\frac12\\right)^{t/T_{1/2}}\\]"],
-          ["قانون واپاشی","\\[N=N_0e^{-\\lambda t}\\]"],
-          ["ثابت واپاشی","\\[\\lambda=\\frac{\\ln2}{T_{1/2}}\\]"],
-          ["فعالیت پرتوزایی","\\[A=\\lambda N\\]"]
-        ]
-      ]
-
-    ],
-
-
-    "تجربی": [
-
-      [
-        "حرکت بر خط راست",
-        "سرعت و شتاب",
-        [
-          ["سرعت متوسط","\\[v_{avg}=\\frac{\\Delta x}{\\Delta t}\\]"],
-          ["تندی متوسط","\\[v_{avg}=\\frac{\\Delta s}{\\Delta t}\\]"],
-          ["شتاب متوسط","\\[a_{avg}=\\frac{\\Delta v}{\\Delta t}\\]"],
-          ["حرکت یکنواخت","\\[x=x_0+vt\\]"],
-          ["سرعت با شتاب ثابت","\\[v=v_0+at\\]"],
-          ["جابجایی","\\[\\Delta x=v_0t+\\frac12at^2\\]"],
-          ["رابطه سرعت و مکان","\\[v^2=v_0^2+2a\\Delta x\\]"]
-        ]
-      ],
-
-      [
-        "دینامیک",
-        "نیرو و قوانین نیوتن",
-        [
-          ["قانون دوم نیوتن","\\[\\sum F=ma\\]"],
-          ["وزن","\\[W=mg\\]"],
-          ["قانون هوک","\\[F_s=-kx\\]"],
-          ["اصطکاک جنبشی","\\[f_k=\\mu_kN\\]"],
-          ["اصطکاک ایستایی","\\[f_s\\leq\\mu_sN\\]"],
-          ["گرانش عمومی","\\[F=G\\frac{m_1m_2}{r^2}\\]"]
-        ]
-      ],
-
-      [
-        "نوسان و موج",
-        "نوسان ساده و موج",
-        [
-          ["معادله نوسان","\\[x=A\\cos(\\omega t+\\varphi)\\]"],
-          ["بیشینه سرعت","\\[v_{max}=A\\omega\\]"],
-          ["بیشینه شتاب","\\[a_{max}=A\\omega^2\\]"],
-          ["دوره فنر","\\[T=2\\pi\\sqrt{\\frac{m}{k}}\\]"],
-          ["طول موج","\\[\\lambda=vT=\\frac{v}{f}\\]"],
-          ["سرعت موج در طناب","\\[v=\\sqrt{\\frac{F_T}{\\mu}}\\]"]
-        ]
-      ],
-
-      [
-        "صوت",
-        "شدت و تراز صوت",
-        [
-          ["شدت صوت","\\[I=\\frac{P}{A}\\]"],
-          ["تراز شدت صوت","\\[\\beta=10\\log_{10}\\left(\\frac{I}{I_0}\\right)\\]"],
-          ["اختلاف تراز","\\[\\Delta\\beta=10\\log_{10}\\left(\\frac{I_2}{I_1}\\right)\\]"]
-        ]
-      ],
-
-      [
-        "شکست نور",
-        "ضریب شکست و قانون اسنل",
-        [
-          ["قانون اسنل","\\[n_1\\sin\\theta_1=n_2\\sin\\theta_2\\]"],
-          ["ضریب شکست","\\[n=\\frac{c}{v}\\]"],
-          ["رابطه سرعت نور","\\[\\frac{v_2}{v_1}=\\frac{n_1}{n_2}\\]"]
-        ]
-      ]
-
-    ]
-
-  }
-
-};
-
-
-/* =====================================================
-   USER
-===================================================== */
-
-function getUser() {
-
-  try {
-
-    return JSON.parse(
-      localStorage.getItem("physicsUser")
-    );
-
-  } catch {
-
-    return null;
-
-  }
-
-}
-
-
-/* =====================================================
-   THEME
-===================================================== */
-
-function applyTheme(gender) {
-
-  document.body.classList.remove(
-    "girl-theme"
-  );
-
-  if (gender === "دختر") {
-
-    document.body.classList.add(
-      "girl-theme"
-    );
-
-  }
-
-}
-
-
-function previewTheme(gender) {
-
-  applyTheme(gender);
-
-}
-
-
-/* =====================================================
-   STATUS
-===================================================== */
-
-function setStatus(text,color) {
-
-  const status =
-    document.getElementById("status");
-
-  status.textContent = text;
-
-  status.style.color = color;
-
-}
-
-
-/* =====================================================
-   TOAST
-===================================================== */
-
-function showToast(message) {
-
-  const toast =
-    document.getElementById("toast");
-
-  toast.textContent = message;
-
-  toast.classList.add("show");
-
-  setTimeout(() => {
-
-    toast.classList.remove("show");
-
-  },2200);
-
-}
-
-
-/* =====================================================
-   FAVORITES
-===================================================== */
-
-function getFavorites() {
-
-  try {
-
-    return JSON.parse(
-      localStorage.getItem(
-        "physicsFavorites"
-      )
-    ) || [];
-
-  } catch {
-
-    return [];
-
-  }
-
-}
-
-
-function setFavorites(list) {
-
-  localStorage.setItem(
-    "physicsFavorites",
-    JSON.stringify(list)
-  );
-
-}
-
-
-function favoriteKey(
-  grade,
-  major,
-  index
-) {
-
-  return `${grade}|${major}|${index}`;
-
-}
-
-
-function isFavorite(
-  grade,
-  major,
-  index
-) {
-
-  return getFavorites().includes(
-    favoriteKey(
-      grade,
-      major,
-      index
-    )
-  );
-
-}
-
-
-/* =====================================================
-   STEP 1 → STEP 2
-===================================================== */
-
-function nextStep() {
-
-  const fullName =
-    document
-      .getElementById("fullName")
-      .value
-      .trim();
-
-  const phone =
-    document
-      .getElementById("phone")
-      .value
-      .trim();
-
-  const gender =
-    document.querySelector(
-      'input[name="gender"]:checked'
-    );
-
-
-  if (!fullName) {
-
-    setStatus(
-      "⚠️ نام و نام خانوادگی را وارد کن.",
-      "#ffd166"
-    );
-
-    return;
-
-  }
-
-
-  if (!phone) {
-
-    setStatus(
-      "⚠️ شماره موبایل را وارد کن.",
-      "#ffd166"
-    );
-
-    return;
-
-  }
-
-
-  if (!/^09\d{9}$/.test(phone)) {
-
-    setStatus(
-      "⚠️ شماره موبایل باید مثل 09123456789 باشد.",
-      "#ffd166"
-    );
-
-    return;
-
-  }
-
-
-  if (!gender) {
-
-    setStatus(
-      "⚠️ جنسیت را انتخاب کن.",
-      "#ffd166"
-    );
-
-    return;
-
-  }
-
-
-  setStatus(
-    "",
-    ""
-  );
-
-
-  document
-    .getElementById("step1")
-    .classList.remove("active");
-
-  document
-    .getElementById("step2")
-    .classList.add("active");
-
-
-  document
-    .getElementById("stepIndicator1")
-    .classList.remove("active");
-
-  document
-    .getElementById("stepIndicator2")
-    .classList.add("active");
-
-}
-
-
-/* =====================================================
-   STEP 2 → STEP 1
-===================================================== */
-
-function previousStep() {
-
-  document
-    .getElementById("step2")
-    .classList.remove("active");
-
-  document
-    .getElementById("step1")
-    .classList.add("active");
-
-
-  document
-    .getElementById("stepIndicator2")
-    .classList.remove("active");
-
-  document
-    .getElementById("stepIndicator1")
-    .classList.add("active");
-
-
-  setStatus(
-    "",
-    ""
-  );
-
-}
-
-
-/* =====================================================
-   SAVE USER
-===================================================== */
-
-async function saveUser() {
-
-  const genderElement =
-    document.querySelector(
-      'input[name="gender"]:checked'
-    );
-
-
-  const user = {
-
-    fullName:
-      document
-        .getElementById("fullName")
-        .value
-        .trim(),
-
-    phone:
-      document
-        .getElementById("phone")
-        .value
-        .trim(),
-
-    gender:
-      genderElement
-        ? genderElement.value
-        : "",
-
-    grade:
-      document
-        .getElementById("grade")
-        .value,
-
-    major:
-      document
-        .getElementById("major")
-        .value
-
-  };
-
-
-  if (
-    !user.fullName ||
-    !user.phone ||
-    !user.gender ||
-    !user.grade ||
-    !user.major
-  ) {
-
-    setStatus(
-      "⚠️ لطفاً همه اطلاعات را کامل کن.",
-      "#ffd166"
-    );
-
-    return;
-
-  }
-
-
-  const button =
-    document.getElementById("enter");
-
-
-  button.disabled = true;
-
-  button.textContent =
-    "در حال ورود...";
-
-
-  /*
-    فعلاً اطلاعات در مرورگر ذخیره می‌شود.
-  */
-
-  localStorage.setItem(
-    "physicsUser",
-    JSON.stringify(user)
-  );
-
-
-  applyTheme(
-    user.gender
-  );
-
-
-  try {
-
-    const response =
-      await fetch(
-        API_URL +
-        "/api/send-telegram",
-        {
-
-          method:"POST",
-
-          headers:{
-            "Content-Type":
-              "application/json"
-          },
-
-          body:
-            JSON.stringify(user)
-
-        }
-      );
-
-
-    if (!response.ok) {
-
-      throw new Error(
-        "Server error"
-      );
-
-    }
-
-
-    setStatus(
-      "✅ اطلاعات با موفقیت ثبت شد.",
-      "#29e69a"
-    );
-
-
-  } catch {
-
-    setStatus(
-      "⚠️ ارتباط با سرور برقرار نشد؛ ورود ادامه پیدا می‌کند.",
-      "#ffd166"
-    );
-
-  }
-
-
-  setTimeout(() => {
-
-    openApp(user);
-
-    button.disabled = false;
-
-    button.textContent =
-      "ورود به فرمول‌نامه ⚡";
-
-  },700);
-
-}
-
-
-/* =====================================================
-   OPEN APP
-===================================================== */
-
-function openApp(user) {
-
-  applyTheme(
-    user.gender
-  );
-
-
-  document
-    .getElementById("onboarding")
-    .style.display = "none";
-
-
-  document
-    .getElementById("app")
-    .style.display = "block";
-
-
-  document
-    .getElementById("user")
-    .textContent =
-      "سلام " +
-      user.fullName +
-      " 👋";
-
-
-  document
-    .getElementById("info")
-    .textContent =
-      `${user.grade} ${user.major}`;
-
-
-  render();
-
-}
-
-
-/* =====================================================
-   RENDER
-===================================================== */
-
-function render() {
-
-  const user =
-    getUser();
-
-
-  if (!user) return;
-
-
-  const data =
-    DATA[user.grade]?.[user.major] || [];
-
-
-  const search =
-    document
-      .getElementById("search")
-      .value
-      .trim()
-      .toLowerCase();
-
-
-  const filter =
-    document.getElementById(
-      "filter"
-    );
-
-
-  const oldValue =
-    filter.value;
-
-
-  filter.innerHTML =
-    `<option value="all">
-      همه فصل‌ها
-    </option>`;
-
-
-  data.forEach(
-    (chapter,index) => {
-
-      filter.innerHTML += `
-        <option value="${index}">
-          فصل ${index + 1}: ${chapter[0]}
-        </option>
-      `;
-
-    }
-  );
-
-
-  if (
-    [...filter.options].some(
-      option =>
-        option.value === oldValue
-    )
-  ) {
-
-    filter.value =
-      oldValue;
-
-  }
-
-
-  let list =
-    data.map(
-      (chapter,index) => ({
-        chapter,
-        index
-      })
-    );
-
-
-  if (
-    filter.value !== "all"
-  ) {
-
-    list =
-      list.filter(
-        item =>
-          String(item.index) ===
-          filter.value
-      );
-
-  }
-
-
-  if (search) {
-
-    list =
-      list.filter(
-        item => {
-
-          const chapter =
-            item.chapter;
-
-
-          const searchable =
-            [
-              chapter[0],
-              chapter[1],
-
-              ...chapter[2]
-                .map(
-                  formula =>
-                    formula[0]
-                )
-
-            ]
-            .join(" ")
-            .toLowerCase();
-
-
-          return searchable.includes(
-            search
-          );
-
-        }
-      );
-
-  }
-
-
-  const container =
-    document.getElementById(
-      "chapters"
-    );
-
-
-  if (!list.length) {
-
-    container.innerHTML = `
-      <div class="empty">
-        🔎 فرمولی مطابق جستجوی شما پیدا نشد.
-      </div>
-    `;
-
-    updateStats(data);
-
-    return;
-
-  }
-
-
-  container.innerHTML =
-    list.map(
-      item => {
-
-        const chapter =
-          item.chapter;
-
-
-        const favorite =
-          isFavorite(
-            user.grade,
-            user.major,
-            item.index
-          );
-
-
-        return `
-
-          <article
-            class="card"
-            onclick="openChapter(${item.index})"
+          <button
+            class="small-btn"
+            type="button"
+            onclick="logout()"
           >
+            خروج
+          </button>
 
-            <div class="card-top">
+        </div>
 
-              <div class="chapter-num">
-                فصل ${item.index + 1}
-              </div>
+      </div>
 
+    </header>
 
-              <button
-                class="star ${
-                  favorite
-                    ? "active"
-                    : ""
-                }"
-                onclick="
-                  toggleFavorite(
-                    event,
-                    ${item.index}
-                  )
-                "
-                aria-label="علاقه‌مندی"
+    <div class="container">
+
+      <!-- HERO -->
+      <section class="hero">
+
+        <div class="hero-content">
+
+          <div class="hero-copy">
+
+            <div class="eyebrow">
+              آماده برای مطالعه
+            </div>
+
+            <h1>
+              فرمول‌ها را هوشمندانه مرور کن
+            </h1>
+
+            <p>
+              فرمول‌های مهم فیزیک پایه‌های دهم، یازدهم و دوازدهم
+              را بر اساس رشته و فصل پیدا کن و در کمترین زمان مرور کن.
+            </p>
+
+          </div>
+
+          <div class="hero-stats">
+
+            <div class="stat">
+
+              <span
+                class="stat-number"
+                id="statChapters"
               >
-                ${
-                  favorite
-                    ? "★"
-                    : "☆"
-                }
-              </button>
+                ۰
+              </span>
+
+              <span class="stat-label">
+                فصل
+              </span>
 
             </div>
 
+            <div class="stat">
 
-            <h3>
-              ${chapter[0]}
-            </h3>
+              <span
+                class="stat-number"
+                id="statFormulas"
+              >
+                ۰
+              </span>
 
-
-            <p>
-              ${chapter[1]}
-            </p>
-
-
-            <div class="card-footer">
-
-              <span>
-                ${chapter[2].length}
+              <span class="stat-label">
                 فرمول
               </span>
 
-              <span>
-                مشاهده ←
+            </div>
+
+            <div class="stat">
+
+              <span
+                class="stat-number"
+                id="statGrade"
+              >
+                —
+              </span>
+
+              <span class="stat-label">
+                پایه
               </span>
 
             </div>
 
-          </article>
+            <div class="stat">
 
-        `;
+              <span
+                class="stat-number"
+                id="statMajor"
+              >
+                —
+              </span>
+
+              <span class="stat-label">
+                رشته
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- CONTROLS -->
+      <section class="controls">
+
+        <div class="control-box">
+
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="🔎 جستجوی نام فرمول یا فصل..."
+            autocomplete="off"
+          >
+
+        </div>
+
+        <div class="control-box">
+
+          <select id="chapterFilter">
+
+            <option value="all">
+              همه فصل‌ها
+            </option>
+
+          </select>
+
+        </div>
+
+      </section>
+
+      <!-- CHAPTERS -->
+      <div class="section-header">
+
+        <h2 class="section-title">
+          فصل‌ها
+        </h2>
+
+        <span
+          class="results-count"
+          id="chapterCount"
+        >
+          ۰ فصل
+        </span>
+
+      </div>
+
+      <section
+        class="chapters"
+        id="chapters"
+      ></section>
+
+      <!-- FORMULAS -->
+      <div class="section-header">
+
+        <h2 class="section-title">
+          فرمول‌ها
+        </h2>
+
+        <span
+          class="results-count"
+          id="formulaCount"
+        >
+          ۰ فرمول
+        </span>
+
+      </div>
+
+      <section
+        class="formula-grid"
+        id="formulaGrid"
+      ></section>
+
+      <footer class="site-footer">
+        ساخته شده با <span>⚡ فرمول‌نامه فیزیک</span>
+        برای مرور سریع و بهتر فیزیک
+      </footer>
+
+    </div>
+
+  </main>
+
+  <!-- =======================================================
+       MODAL
+  ======================================================== -->
+
+  <div
+    class="modal hidden"
+    id="formulaModal"
+  >
+
+    <div class="modal-box">
+
+      <div class="modal-head">
+
+        <h2
+          class="modal-title"
+          id="modalTitle"
+        >
+          فرمول‌ها
+        </h2>
+
+        <button
+          class="modal-close"
+          type="button"
+          onclick="closeModal()"
+          aria-label="بستن"
+        >
+          ×
+        </button>
+
+      </div>
+
+      <div
+        class="modal-list"
+        id="modalList"
+      ></div>
+
+    </div>
+
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast"></div>
+
+  <script>
+    /* =========================================================
+       CONFIG
+    ========================================================= */
+
+    const API_URL =
+      "https://drentezari-github-io.onrender.com";
+
+    const FAVORITES_KEY =
+      "physicsFavorites";
+
+    const USER_KEY =
+      "physicsUser";
+
+    /* =========================================================
+       DATA
+    ========================================================= */
+
+    const DATA = {
+
+      "دهم": {
+
+        "ریاضی": [
+
+          {
+            title: "فیزیک و اندازه‌گیری",
+            subtitle: "چگالی و اندازه‌گیری",
+
+            formulas: [
+              ["چگالی", "\\[\\rho=\\frac{m}{V}\\]"],
+              ["جرم", "\\[m=\\rho V\\]"],
+              ["حجم", "\\[V=\\frac{m}{\\rho}\\]"]
+            ]
+          },
+
+          {
+            title: "ویژگی‌های فیزیکی مواد",
+            subtitle: "فشار و شاره‌ها",
+
+            formulas: [
+              ["فشار", "\\[P=\\frac{F}{A}\\]"],
+              ["فشار هیدروستاتیک", "\\[P=\\rho gh\\]"],
+              ["فشار کل", "\\[P=P_0+\\rho gh\\]"],
+              ["اختلاف فشار", "\\[\\Delta P=\\rho g\\Delta h\\]"],
+              ["شناوری", "\\[F_b=\\rho_{fluid}gV_{displaced}\\]"],
+              ["وزن ظاهری", "\\[W_{app}=W-F_b\\]"],
+              ["دبی حجمی", "\\[Q=\\frac{V}{\\Delta t}=Av\\]"],
+              ["معادله پیوستگی", "\\[A_1v_1=A_2v_2\\]"],
+              ["فشار پیمانه‌ای", "\\[P_g=P-P_0\\]"],
+              ["تبدیل بار", "\\[1\\,bar=10^5\\,Pa\\]"]
+            ]
+          },
+
+          {
+            title: "کار، انرژی و توان",
+            subtitle: "کار، انرژی و توان",
+
+            formulas: [
+              ["کار", "\\[W=Fd\\cos\\theta\\]"],
+              ["قضیه کار و انرژی", "\\[W_{net}=\\Delta K\\]"],
+              ["انرژی جنبشی", "\\[K=\\frac12mv^2\\]"],
+              ["انرژی پتانسیل گرانشی", "\\[U=mgh\\]"],
+              ["انرژی مکانیکی", "\\[E_m=K+U\\]"],
+              ["کار گرانش", "\\[W_g=-\\Delta U\\]"],
+              ["توان متوسط", "\\[P=\\frac{W}{t}\\]"],
+              ["بازده", "\\[\\eta=\\frac{E_{useful}}{E_{input}}\\times100\\%\\]"]
+            ]
+          },
+
+          {
+            title: "دما و گرما",
+            subtitle: "دما، انبساط و گرما",
+
+            formulas: [
+              ["تبدیل کلوین", "\\[T=\\theta+273.15\\]"],
+              ["تبدیل فارنهایت", "\\[F=\\frac95\\theta+32\\]"],
+              ["تبدیل سلسیوس", "\\[\\theta=\\frac59(F-32)\\]"],
+              ["انبساط طولی", "\\[\\Delta L=\\alpha L_0\\Delta\\theta\\]"],
+              ["انبساط سطحی", "\\[\\Delta A=\\beta A_0\\Delta\\theta\\]"],
+              ["انبساط حجمی", "\\[\\Delta V=\\gamma V_0\\Delta\\theta\\]"],
+              ["گرمای محسوس", "\\[Q=mc\\Delta\\theta\\]"],
+              ["گرمای نهان", "\\[Q=mL\\]"],
+              ["تعادل گرمایی", "\\[\\sum Q=0\\]"],
+              ["توان گرمایی", "\\[P=\\frac{Q}{\\Delta t}\\]"]
+            ]
+          },
+
+          {
+            title: "ترمودینامیک",
+            subtitle: "قوانین گازها و ترمودینامیک",
+
+            formulas: [
+              ["معادله گاز کامل", "\\[PV=nRT\\]"],
+              ["قانون ترکیبی گازها", "\\[\\frac{P_1V_1}{T_1}=\\frac{P_2V_2}{T_2}\\]"],
+              ["قانون اول ترمودینامیک", "\\[\\Delta U=Q-W\\]"],
+              ["بازده ماشین گرمایی", "\\[\\eta=\\frac{W}{Q_H}\\times100\\%\\]"]
+            ]
+          }
+
+        ],
+
+        "تجربی": [
+
+          {
+            title: "فیزیک و اندازه‌گیری",
+            subtitle: "چگالی",
+
+            formulas: [
+              ["چگالی", "\\[\\rho=\\frac{m}{V}\\]"],
+              ["جرم", "\\[m=\\rho V\\]"],
+              ["حجم", "\\[V=\\frac{m}{\\rho}\\]"]
+            ]
+          },
+
+          {
+            title: "ویژگی‌های فیزیکی مواد",
+            subtitle: "فشار و شاره‌ها",
+
+            formulas: [
+              ["فشار", "\\[P=\\frac{F}{A}\\]"],
+              ["فشار هیدروستاتیک", "\\[P=\\rho gh\\]"],
+              ["فشار کل", "\\[P=P_0+\\rho gh\\]"],
+              ["اختلاف فشار", "\\[\\Delta P=\\rho g\\Delta h\\]"],
+              ["شناوری", "\\[F_b=\\rho_{fluid}gV_{displaced}\\]"],
+              ["وزن ظاهری", "\\[W_{app}=W-F_b\\]"],
+              ["دبی حجمی", "\\[Q=Av\\]"],
+              ["معادله پیوستگی", "\\[A_1v_1=A_2v_2\\]"]
+            ]
+          },
+
+          {
+            title: "کار و انرژی",
+            subtitle: "کار، انرژی و توان",
+
+            formulas: [
+              ["کار", "\\[W=Fd\\cos\\theta\\]"],
+              ["انرژی جنبشی", "\\[K=\\frac12mv^2\\]"],
+              ["انرژی پتانسیل", "\\[U=mgh\\]"],
+              ["قضیه کار و انرژی", "\\[W_{net}=\\Delta K\\]"],
+              ["توان", "\\[P=\\frac{W}{t}\\]"]
+            ]
+          },
+
+          {
+            title: "دما و گرما",
+            subtitle: "گرما و تغییر دما",
+
+            formulas: [
+              ["گرمای محسوس", "\\[Q=mc\\Delta\\theta\\]"],
+              ["گرمای نهان", "\\[Q=mL\\]"],
+              ["تعادل گرمایی", "\\[\\sum Q=0\\]"],
+              ["توان گرمایی", "\\[P=\\frac{Q}{\\Delta t}\\]"],
+              ["تبدیل کلوین", "\\[T=\\theta+273.15\\]"]
+            ]
+          }
+
+        ]
+
+      },
+
+      "یازدهم": {
+
+        "ریاضی": [
+
+          {
+            title: "الکتریسیته ساکن",
+            subtitle: "بار، نیرو و میدان الکتریکی",
+
+            formulas: [
+              ["کوانتیده بودن بار", "\\[q=\\pm ne\\]"],
+              ["قانون کولن", "\\[F=k\\frac{|q_1q_2|}{r^2}\\]"],
+              ["ثابت کولن", "\\[k=\\frac{1}{4\\pi\\varepsilon_0}\\]"],
+              ["میدان الکتریکی", "\\[E=\\frac{F}{q_0}\\]"],
+              ["میدان بار نقطه‌ای", "\\[E=k\\frac{|q|}{r^2}\\]"],
+              ["نیروی الکتریکی", "\\[\\vec F=q\\vec E\\]"],
+              ["کار میدان", "\\[W_E=qEd\\cos\\theta\\]"],
+              ["تغییر انرژی پتانسیل", "\\[\\Delta U=-W_E\\]"],
+              ["اختلاف پتانسیل", "\\[\\Delta V=\\frac{\\Delta U}{q}\\]"],
+              ["رابطه پتانسیل و میدان", "\\[|\\Delta V|=Ed\\]"],
+              ["چگالی سطحی بار", "\\[\\sigma=\\frac{Q}{A}\\]"]
+            ]
+          },
+
+          {
+            title: "خازن",
+            subtitle: "ظرفیت و انرژی خازن",
+
+            formulas: [
+              ["ظرفیت خازن", "\\[C=\\frac{Q}{V}\\]"],
+              ["خازن تخت", "\\[C=\\varepsilon\\frac{A}{d}\\]"],
+              ["دی‌الکتریک", "\\[C=\\kappa C_0\\]"],
+              ["انرژی خازن", "\\[U=\\frac12QV=\\frac12CV^2=\\frac{Q^2}{2C}\\]"],
+              ["میدان الکتریکی خازن", "\\[E=\\frac{V}{d}\\]"]
+            ]
+          },
+
+          {
+            title: "جریان الکتریکی",
+            subtitle: "جریان، مقاومت و توان",
+
+            formulas: [
+              ["شدت جریان", "\\[I=\\frac{\\Delta q}{\\Delta t}\\]"],
+              ["بار عبوری", "\\[q=It\\]"],
+              ["قانون اهم", "\\[V=IR\\]"],
+              ["مقاومت رسانا", "\\[R=\\rho\\frac{L}{A}\\]"],
+              ["توان الکتریکی", "\\[P=VI=I^2R=\\frac{V^2}{R}\\]"],
+              ["انرژی الکتریکی", "\\[W=Pt=VIt\\]"],
+              ["ولتاژ پایانه‌ای", "\\[V=\\varepsilon-Ir\\]"],
+              ["جریان مدار", "\\[I=\\frac{\\varepsilon}{R+r}\\]"],
+              ["توان خروجی", "\\[P_{out}=VI=\\varepsilon I-rI^2\\]"],
+              ["مقاومت سری", "\\[R_{eq}=R_1+R_2+\\cdots\\]"],
+              ["مقاومت موازی", "\\[\\frac1{R_{eq}}=\\frac1{R_1}+\\frac1{R_2}+\\cdots\\]"]
+            ]
+          },
+
+          {
+            title: "مغناطیس و القای الکترومغناطیسی",
+            subtitle: "نیروی مغناطیسی، شار و القا",
+
+            formulas: [
+              ["نیروی مغناطیسی بر بار", "\\[F=qvB\\sin\\theta\\]"],
+              ["نیروی مغناطیسی بر سیم", "\\[F=BIL\\sin\\theta\\]"],
+              ["میدان مرکز سیم‌پیچ", "\\[B=\\frac{\\mu_0NI}{2R}\\]"],
+              ["میدان داخل سلونوئید", "\\[B=\\mu_0nI\\]"],
+              ["شار مغناطیسی", "\\[\\Phi=BA\\cos\\theta\\]"],
+              ["قانون فاراده", "\\[\\varepsilon=-N\\frac{\\Delta\\Phi}{\\Delta t}\\]"],
+              ["انرژی سلف", "\\[U=\\frac12LI^2\\]"],
+              ["ترانسفورماتور", "\\[\\frac{V_1}{V_2}=\\frac{N_1}{N_2}\\]"]
+            ]
+          }
+
+        ],
+
+        "تجربی": [
+
+          {
+            title: "الکتریسیته ساکن",
+            subtitle: "بار و میدان الکتریکی",
+
+            formulas: [
+              ["کوانتیده بودن بار", "\\[q=\\pm ne\\]"],
+              ["قانون کولن", "\\[F=k\\frac{|q_1q_2|}{r^2}\\]"],
+              ["ثابت کولن", "\\[k=\\frac1{4\\pi\\varepsilon_0}\\]"],
+              ["میدان الکتریکی", "\\[E=\\frac{F}{q}\\]"],
+              ["میدان بار نقطه‌ای", "\\[E=k\\frac{|q|}{r^2}\\]"],
+              ["نیروی الکتریکی", "\\[F=qE\\]"],
+              ["اختلاف پتانسیل", "\\[\\Delta V=\\frac{\\Delta U}{q}\\]"],
+              ["ظرفیت خازن", "\\[C=\\frac{Q}{V}\\]"],
+              ["انرژی خازن", "\\[U=\\frac12CV^2\\]"]
+            ]
+          },
+
+          {
+            title: "جریان الکتریکی",
+            subtitle: "مدار و مقاومت",
+
+            formulas: [
+              ["شدت جریان", "\\[I=\\frac{\\Delta q}{\\Delta t}\\]"],
+              ["قانون اهم", "\\[V=IR\\]"],
+              ["مقاومت رسانا", "\\[R=\\rho\\frac{L}{A}\\]"],
+              ["توان الکتریکی", "\\[P=VI=I^2R=\\frac{V^2}{R}\\]"],
+              ["ولتاژ پایانه‌ای", "\\[V=\\varepsilon-Ir\\]"],
+              ["جریان مدار", "\\[I=\\frac{\\varepsilon}{R+r}\\]"],
+              ["مقاومت سری", "\\[R_{eq}=R_1+R_2+\\cdots\\]"],
+              ["مقاومت موازی", "\\[\\frac1{R_{eq}}=\\frac1{R_1}+\\frac1{R_2}+\\cdots\\]"]
+            ]
+          },
+
+          {
+            title: "مغناطیس و القا",
+            subtitle: "مغناطیس و القای الکترومغناطیسی",
+
+            formulas: [
+              ["نیروی مغناطیسی بر بار", "\\[F=qvB\\sin\\theta\\]"],
+              ["نیروی مغناطیسی بر سیم", "\\[F=BIL\\sin\\theta\\]"],
+              ["شار مغناطیسی", "\\[\\Phi=BA\\cos\\theta\\]"],
+              ["قانون فاراده", "\\[\\varepsilon=-N\\frac{\\Delta\\Phi}{\\Delta t}\\]"],
+              ["انرژی سلف", "\\[U=\\frac12LI^2\\]"]
+            ]
+          }
+
+        ]
+
+      },
+
+      "دوازدهم": {
+
+        "ریاضی": [
+
+          {
+            title: "حرکت بر خط راست",
+            subtitle: "سرعت، شتاب و حرکت با شتاب ثابت",
+
+            formulas: [
+              ["سرعت متوسط", "\\[v_{avg}=\\frac{\\Delta x}{\\Delta t}\\]"],
+              ["تندی متوسط", "\\[v_{avg}=\\frac{\\Delta s}{\\Delta t}\\]"],
+              ["شتاب متوسط", "\\[a_{avg}=\\frac{\\Delta v}{\\Delta t}\\]"],
+              ["حرکت یکنواخت", "\\[x=x_0+vt\\]"],
+              ["سرعت نهایی", "\\[v=v_0+at\\]"],
+              ["جابجایی", "\\[\\Delta x=v_0t+\\frac12at^2\\]"],
+              ["رابطه سرعت و جابجایی", "\\[v^2=v_0^2+2a\\Delta x\\]"]
+            ]
+          },
+
+          {
+            title: "دینامیک",
+            subtitle: "نیرو و قوانین نیوتن",
+
+            formulas: [
+              ["قانون دوم نیوتن", "\\[\\sum\\vec F=m\\vec a\\]"],
+              ["وزن", "\\[W=mg\\]"],
+              ["قانون سوم نیوتن", "\\[\\vec F_{AB}=-\\vec F_{BA}\\]"],
+              ["نیروی فنر", "\\[F_s=-kx\\]"],
+              ["اصطکاک جنبشی", "\\[f_k=\\mu_kN\\]"],
+              ["اصطکاک ایستایی بیشینه", "\\[f_{s,max}=\\mu_sN\\]"],
+              ["قانون گرانش", "\\[F=G\\frac{m_1m_2}{r^2}\\]"],
+              ["شتاب گرانش", "\\[g=\\frac{GM}{r^2}\\]"]
+            ]
+          },
+
+          {
+            title: "حرکت دایره‌ای",
+            subtitle: "حرکت دورانی و مرکزگرا",
+
+            formulas: [
+              ["سرعت زاویه‌ای", "\\[\\omega=\\frac{v}{r}\\]"],
+              ["دوره تناوب", "\\[T=\\frac{2\\pi r}{v}\\]"],
+              ["شتاب مرکزگرا", "\\[a_c=\\frac{v^2}{r}=\\omega^2r\\]"],
+              ["نیروی مرکزگرا", "\\[F_c=\\frac{mv^2}{r}=m\\omega^2r\\]"]
+            ]
+          },
+
+          {
+            title: "نوسان",
+            subtitle: "نوسان ساده، فنر و آونگ",
+
+            formulas: [
+              ["دوره و بسامد", "\\[T=\\frac1f\\]"],
+              ["فرکانس زاویه‌ای", "\\[\\omega=2\\pi f=\\frac{2\\pi}{T}\\]"],
+              ["معادله نوسان", "\\[x=A\\cos(\\omega t+\\varphi)\\]"],
+              ["بیشینه سرعت", "\\[v_{max}=A\\omega\\]"],
+              ["بیشینه شتاب", "\\[a_{max}=A\\omega^2\\]"],
+              ["دوره فنر", "\\[T=2\\pi\\sqrt{\\frac{m}{k}}\\]"],
+              ["دوره آونگ", "\\[T=2\\pi\\sqrt{\\frac{L}{g}}\\]"],
+              ["انرژی نوسانگر", "\\[E=\\frac12kA^2\\]"]
+            ]
+          },
+
+          {
+            title: "موج و صوت",
+            subtitle: "موج، صوت و شدت صدا",
+
+            formulas: [
+              ["رابطه موج", "\\[v=f\\lambda\\]"],
+              ["سرعت موج روی سیم", "\\[v=\\sqrt{\\frac{F_T}{\\mu}}\\]"],
+              ["چگالی خطی", "\\[\\mu=\\frac{m}{L}\\]"],
+              ["شدت صوت", "\\[I=\\frac{P}{A}\\]"],
+              ["تراز شدت صوت", "\\[\\beta=10\\log_{10}\\left(\\frac{I}{I_0}\\right)\\]"],
+              ["اختلاف تراز صوت", "\\[\\Delta\\beta=10\\log_{10}\\left(\\frac{I_2}{I_1}\\right)\\]"]
+            ]
+          },
+
+          {
+            title: "شکست نور",
+            subtitle: "ضریب شکست و قانون اسنل",
+
+            formulas: [
+              ["قانون اسنل", "\\[n_1\\sin\\theta_1=n_2\\sin\\theta_2\\]"],
+              ["ضریب شکست", "\\[n=\\frac{c}{v}\\]"],
+              ["رابطه سرعت و ضریب شکست", "\\[\\frac{v_2}{v_1}=\\frac{n_1}{n_2}\\]"]
+            ]
+          },
+
+          {
+            title: "فیزیک اتمی",
+            subtitle: "فوتون و مدل اتمی",
+
+            formulas: [
+              ["انرژی فوتون", "\\[E=hf=\\frac{hc}{\\lambda}\\]"],
+              ["اثر فوتوالکتریک", "\\[hf=\\phi+K_{max}\\]"],
+              ["انرژی جنبشی بیشینه", "\\[K_{max}=hf-\\phi\\]"],
+              ["فرکانس آستانه", "\\[f_0=\\frac{\\phi}{h}\\]"],
+              ["طول موج دوبروی", "\\[\\lambda=\\frac{h}{p}\\]"],
+              ["شعاع مدار بوهر", "\\[r_n=n^2a_0\\]"],
+              ["انرژی تراز اتم", "\\[E_n=-\\frac{13.6\\,eV}{n^2}\\]"],
+              ["فرمول ریدبرگ", "\\[\\frac1\\lambda=R\\left(\\frac1{n_f^2}-\\frac1{n_i^2}\\right)\\]"]
+            ]
+          },
+
+          {
+            title: "فیزیک هسته‌ای",
+            subtitle: "واپاشی و نیمه‌عمر",
+
+            formulas: [
+              ["هم‌ارزی جرم و انرژی", "\\[E=mc^2\\]"],
+              ["قانون نیمه‌عمر", "\\[N=N_0\\left(\\frac12\\right)^{t/T_{1/2}}\\]"],
+              ["قانون واپاشی", "\\[N=N_0e^{-\\lambda t}\\]"],
+              ["ثابت واپاشی", "\\[\\lambda=\\frac{\\ln2}{T_{1/2}}\\]"],
+              ["فعالیت", "\\[A=\\lambda N\\]"]
+            ]
+          }
+
+        ],
+
+        "تجربی": [
+
+          {
+            title: "حرکت بر خط راست",
+            subtitle: "سرعت و شتاب",
+
+            formulas: [
+              ["سرعت متوسط", "\\[v_{avg}=\\frac{\\Delta x}{\\Delta t}\\]"],
+              ["تندی متوسط", "\\[v_{avg}=\\frac{\\Delta s}{\\Delta t}\\]"],
+              ["شتاب متوسط", "\\[a_{avg}=\\frac{\\Delta v}{\\Delta t}\\]"],
+              ["حرکت یکنواخت", "\\[x=x_0+vt\\]"],
+              ["سرعت نهایی", "\\[v=v_0+at\\]"],
+              ["جابجایی", "\\[\\Delta x=v_0t+\\frac12at^2\\]"],
+              ["رابطه سرعت و جابجایی", "\\[v^2=v_0^2+2a\\Delta x\\]"]
+            ]
+          },
+
+          {
+            title: "دینامیک",
+            subtitle: "نیرو و قوانین نیوتن",
+
+            formulas: [
+              ["قانون دوم نیوتن", "\\[\\sum F=ma\\]"],
+              ["وزن", "\\[W=mg\\]"],
+              ["نیروی فنر", "\\[F_s=-kx\\]"],
+              ["اصطکاک جنبشی", "\\[f_k=\\mu_kN\\]"],
+              ["اصطکاک ایستایی", "\\[f_s\\leq\\mu_sN\\]"],
+              ["قانون گرانش", "\\[F=G\\frac{m_1m_2}{r^2}\\]"]
+            ]
+          },
+
+          {
+            title: "نوسان و موج",
+            subtitle: "نوسان ساده و موج",
+
+            formulas: [
+              ["معادله نوسان", "\\[x=A\\cos(\\omega t+\\varphi)\\]"],
+              ["بیشینه سرعت", "\\[v_{max}=A\\omega\\]"],
+              ["بیشینه شتاب", "\\[a_{max}=A\\omega^2\\]"],
+              ["دوره فنر", "\\[T=2\\pi\\sqrt{\\frac{m}{k}}\\]"],
+              ["طول موج", "\\[\\lambda=vT=\\frac{v}{f}\\]"],
+              ["سرعت موج روی سیم", "\\[v=\\sqrt{\\frac{F_T}{\\mu}}\\]"]
+            ]
+          },
+
+          {
+            title: "صوت",
+            subtitle: "شدت و تراز صوت",
+
+            formulas: [
+              ["شدت صوت", "\\[I=\\frac{P}{A}\\]"],
+              ["تراز شدت صوت", "\\[\\beta=10\\log_{10}\\left(\\frac{I}{I_0}\\right)\\]"],
+              ["اختلاف تراز صوت", "\\[\\Delta\\beta=10\\log_{10}\\left(\\frac{I_2}{I_1}\\right)\\]"]
+            ]
+          },
+
+          {
+            title: "شکست نور",
+            subtitle: "ضریب شکست و قانون اسنل",
+
+            formulas: [
+              ["قانون اسنل", "\\[n_1\\sin\\theta_1=n_2\\sin\\theta_2\\]"],
+              ["ضریب شکست", "\\[n=\\frac{c}{v}\\]"],
+              ["رابطه سرعت و ضریب شکست", "\\[\\frac{v_2}{v_1}=\\frac{n_1}{n_2}\\]"]
+            ]
+          }
+
+        ]
 
       }
-    )
-    .join("");
 
+    };
 
-  updateStats(data);
+    /* =========================================================
+       HELPERS
+    ========================================================= */
 
-}
+    function getUser() {
+      try {
+        return JSON.parse(
+          localStorage.getItem(USER_KEY)
+        );
+      } catch {
+        return null;
+      }
+    }
 
+    function getFavorites() {
+      try {
+        return JSON.parse(
+          localStorage.getItem(FAVORITES_KEY)
+        ) || [];
+      } catch {
+        return [];
+      }
+    }
 
-/* =====================================================
-   STATS
-===================================================== */
+    function saveFavorites(items) {
+      localStorage.setItem(
+        FAVORITES_KEY,
+        JSON.stringify(items)
+      );
+    }
 
-function updateStats(data) {
+    function setStatus(message, type = "") {
+      const status =
+        document.getElementById("loginStatus");
 
-  const formulaCount =
-    data.reduce(
-      (sum,chapter) =>
-        sum +
-        chapter[2].length,
-      0
-    );
+      if (!status) return;
 
+      status.textContent = message;
 
-  document
-    .getElementById(
-      "chapterCount"
-    )
-    .textContent =
-      data.length;
+      if (type === "error") {
+        status.style.color = "#ff8eaa";
+      } else if (type === "success") {
+        status.style.color = "#63e7b4";
+      } else {
+        status.style.color = "";
+      }
+    }
 
+    function showToast(message) {
+      const toast =
+        document.getElementById("toast");
 
-  document
-    .getElementById(
-      "formulaCount"
-    )
-    .textContent =
-      formulaCount;
+      toast.textContent = message;
 
+      toast.classList.add("show");
 
-  document
-    .getElementById(
-      "favoriteCount"
-    )
-    .textContent =
-      getFavorites().length;
-
-}
-
-
-/* =====================================================
-   FAVORITE
-===================================================== */
-
-function toggleFavorite(
-  event,
-  index
-) {
-
-  event.stopPropagation();
-
-
-  const user =
-    getUser();
-
-
-  if (!user) return;
-
-
-  const key =
-    favoriteKey(
-      user.grade,
-      user.major,
-      index
-    );
-
-
-  let list =
-    getFavorites();
-
-
-  if (
-    list.includes(key)
-  ) {
-
-    list =
-      list.filter(
-        item =>
-          item !== key
+      clearTimeout(
+        window.toastTimer
       );
 
-    showToast(
-      "از علاقه‌مندی‌ها حذف شد"
-    );
+      window.toastTimer =
+        setTimeout(() => {
+          toast.classList.remove("show");
+        }, 2200);
+    }
 
-  } else {
-
-    list.push(key);
-
-    showToast(
-      "⭐ به علاقه‌مندی‌ها اضافه شد"
-    );
-
-  }
-
-
-  setFavorites(list);
-
-  render();
-
-}
-
-
-/* =====================================================
-   OPEN CHAPTER
-===================================================== */
-
-function openChapter(index) {
-
-  const user =
-    getUser();
-
-
-  if (!user) return;
-
-
-  const chapter =
-    DATA[
-      user.grade
-    ][
-      user.major
-    ][index];
-
-
-  document
-    .getElementById("mt")
-    .textContent =
-      `فصل ${index + 1}: ${chapter[0]}`;
-
-
-  document
-    .getElementById("formulas")
-    .innerHTML =
-
-      chapter[2]
-        .map(
-          formula => {
-
-            const encoded =
-              encodeURIComponent(
-                formula[0] +
-                " = " +
-                formula[1]
-              );
-
-
-            return `
-
-              <div class="formula">
-
-                <div class="formula-title">
-
-                  <span>
-                    ${formula[0]}
-                  </span>
-
-
-                  <button
-                    class="copy-btn"
-                    onclick="
-                      copyFormula(
-                        '${encoded}'
-                      )
-                    "
-                  >
-                    📋 کپی
-                  </button>
-
-                </div>
-
-
-                <div class="equation">
-                  ${formula[1]}
-                </div>
-
-              </div>
-
-            `;
-
-          }
-        )
-        .join("");
-
-
-  document
-    .getElementById("modal")
-    .style.display =
-      "block";
-
-
-  if (
-    window.MathJax
-  ) {
-
-    MathJax.typesetPromise();
-
-  }
-
-}
-
-
-/* =====================================================
-   COPY
-===================================================== */
-
-async function copyFormula(
-  encoded
-) {
-
-  const text =
-    decodeURIComponent(
-      encoded
-    );
-
-
-  try {
-
-    await navigator
-      .clipboard
-      .writeText(text);
-
-    showToast(
-      "📋 کپی شد"
-    );
-
-  } catch {
-
-    showToast(
-      "کپی انجام نشد"
-    );
-
-  }
-
-}
-
-
-/* =====================================================
-   CLOSE MODAL
-===================================================== */
-
-function closeModal() {
-
-  document
-    .getElementById("modal")
-    .style.display =
-      "none";
-
-}
-
-
-document
-  .getElementById("modal")
-  .addEventListener(
-    "click",
-    event => {
+    function applyTheme(user) {
 
       if (
-        event.target.id ===
-        "modal"
+        user &&
+        user.gender === "دختر"
+      ) {
+        document.body.classList.add(
+          "girl-theme"
+        );
+      } else {
+        document.body.classList.remove(
+          "girl-theme"
+        );
+      }
+
+    }
+
+    function previewTheme() {
+
+      const selected =
+        document.querySelector(
+          'input[name="gender"]:checked'
+        );
+
+      if (!selected) return;
+
+      if (
+        selected.value === "دختر"
+      ) {
+        document.body.classList.add(
+          "girl-theme"
+        );
+      } else {
+        document.body.classList.remove(
+          "girl-theme"
+        );
+      }
+    }
+
+    /* =========================================================
+       STEP NAVIGATION
+    ========================================================= */
+
+    function goToStep2() {
+
+      const fullName =
+        document
+          .getElementById("fullName")
+          .value.trim();
+
+      const phone =
+        document
+          .getElementById("phone")
+          .value.trim();
+
+      const gender =
+        document.querySelector(
+          'input[name="gender"]:checked'
+        );
+
+      if (!fullName) {
+        showToast(
+          "لطفاً نام و نام خانوادگی را وارد کنید."
+        );
+        return;
+      }
+
+      if (
+        !/^09\d{9}$/.test(phone)
+      ) {
+        showToast(
+          "شماره موبایل باید ۱۱ رقم و با 09 شروع شود."
+        );
+        return;
+      }
+
+      if (!gender) {
+        showToast(
+          "لطفاً جنسیت را انتخاب کنید."
+        );
+        return;
+      }
+
+      previewTheme();
+
+      document
+        .getElementById("step1")
+        .classList.add("hidden");
+
+      document
+        .getElementById("step2")
+        .classList.remove("hidden");
+
+      document
+        .getElementById("stepIndicator2")
+        .classList.add("active");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+    function goToStep1() {
+
+      document
+        .getElementById("step2")
+        .classList.add("hidden");
+
+      document
+        .getElementById("step1")
+        .classList.remove("hidden");
+
+      document
+        .getElementById("stepIndicator2")
+        .classList.remove("active");
+
+    }
+
+    /* =========================================================
+       SAVE USER
+    ========================================================= */
+
+    async function saveUser() {
+
+      const fullName =
+        document
+          .getElementById("fullName")
+          .value.trim();
+
+      const phone =
+        document
+          .getElementById("phone")
+          .value.trim();
+
+      const genderElement =
+        document.querySelector(
+          'input[name="gender"]:checked'
+        );
+
+      const grade =
+        document
+          .getElementById("grade")
+          .value;
+
+      const major =
+        document
+          .getElementById("major")
+          .value;
+
+      const gender =
+        genderElement
+          ? genderElement.value
+          : "";
+
+      if (!fullName) {
+        setStatus(
+          "نام و نام خانوادگی را وارد کنید.",
+          "error"
+        );
+        return;
+      }
+
+      if (
+        !/^09\d{9}$/.test(phone)
+      ) {
+        setStatus(
+          "شماره موبایل معتبر نیست.",
+          "error"
+        );
+        return;
+      }
+
+      if (!gender) {
+        setStatus(
+          "جنسیت را انتخاب کنید.",
+          "error"
+        );
+        return;
+      }
+
+      if (!grade) {
+        setStatus(
+          "پایه تحصیلی را انتخاب کنید.",
+          "error"
+        );
+        return;
+      }
+
+      if (!major) {
+        setStatus(
+          "رشته تحصیلی را انتخاب کنید.",
+          "error"
+        );
+        return;
+      }
+
+      const user = {
+        fullName,
+        phone,
+        gender,
+        grade,
+        major
+      };
+
+      setStatus(
+        "در حال ثبت اطلاعات..."
+      );
+
+      try {
+
+        const response =
+          await fetch(
+            `${API_URL}/api/send-telegram`,
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "application/json"
+              },
+
+              body:
+                JSON.stringify(user)
+            }
+          );
+
+        const result =
+          await response.json();
+
+        if (!result.success) {
+          console.warn(
+            "Telegram/API error:",
+            result.message
+          );
+        }
+
+      } catch (error) {
+
+        console.warn(
+          "Backend unavailable:",
+          error
+        );
+
+      }
+
+      localStorage.setItem(
+        USER_KEY,
+        JSON.stringify(user)
+      );
+
+      applyTheme(user);
+
+      setStatus(
+        "ورود با موفقیت انجام شد.",
+        "success"
+      );
+
+      setTimeout(() => {
+        openApp();
+      }, 350);
+    }
+
+    /* =========================================================
+       OPEN APP
+    ========================================================= */
+
+    function openApp() {
+
+      const user =
+        getUser();
+
+      if (!user) return;
+
+      applyTheme(user);
+
+      document
+        .getElementById("loginScreen")
+        .classList.add("hidden");
+
+      document
+        .getElementById("app")
+        .classList.remove("hidden");
+
+      document
+        .getElementById("userName")
+        .textContent =
+        user.fullName;
+
+      document
+        .getElementById("statGrade")
+        .textContent =
+        user.grade;
+
+      document
+        .getElementById("statMajor")
+        .textContent =
+        user.major;
+
+      render();
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+    }
+
+    /* =========================================================
+       RENDER
+    ========================================================= */
+
+    function render() {
+
+      const user =
+        getUser();
+
+      if (!user) return;
+
+      const gradeData =
+        DATA[user.grade];
+
+      if (!gradeData) return;
+
+      const majorData =
+        gradeData[user.major];
+
+      if (!majorData) return;
+
+      const search =
+        document
+          .getElementById("searchInput")
+          .value
+          .trim()
+          .toLowerCase();
+
+      const filter =
+        document
+          .getElementById("chapterFilter")
+          .value;
+
+      const chaptersContainer =
+        document.getElementById(
+          "chapters"
+        );
+
+      const formulaGrid =
+        document.getElementById(
+          "formulaGrid"
+        );
+
+      const chapterFilter =
+        document.getElementById(
+          "chapterFilter"
+        );
+
+      /*
+        Refresh chapter filter
+      */
+
+      const currentFilter =
+        filter;
+
+      chapterFilter.innerHTML =
+        `<option value="all">همه فصل‌ها</option>`;
+
+      majorData.forEach(
+        (chapter, index) => {
+
+          const option =
+            document.createElement(
+              "option"
+            );
+
+          option.value =
+            String(index);
+
+          option.textContent =
+            `${index + 1}. ${chapter.title}`;
+
+          chapterFilter.appendChild(
+            option
+          );
+
+        }
+      );
+
+      if (
+        [...chapterFilter.options]
+          .some(
+            option =>
+              option.value ===
+              currentFilter
+          )
+      ) {
+        chapterFilter.value =
+          currentFilter;
+      }
+
+      /*
+        Filter chapters
+      */
+
+      const visibleChapters =
+        majorData.filter(
+          (chapter, chapterIndex) => {
+
+            const chapterMatches =
+              filter === "all" ||
+              Number(filter) ===
+                chapterIndex;
+
+            if (!chapterMatches)
+              return false;
+
+            if (!search)
+              return true;
+
+            const chapterText =
+              [
+                chapter.title,
+                chapter.subtitle,
+                ...chapter.formulas.flat()
+              ]
+                .join(" ")
+                .toLowerCase();
+
+            return chapterText.includes(
+              search
+            );
+          }
+        );
+
+      /*
+        Render chapters
+      */
+
+      chaptersContainer.innerHTML =
+        "";
+
+      visibleChapters.forEach(
+        (chapter) => {
+
+          const originalIndex =
+            majorData.indexOf(
+              chapter
+            );
+
+          const accents = [
+            "#25d9ff",
+            "#9d5cff",
+            "#ff4fa3",
+            "#ffc857",
+            "#35e0a1",
+            "#6685ff"
+          ];
+
+          const accent =
+            accents[
+              originalIndex %
+              accents.length
+            ];
+
+          const card =
+            document.createElement(
+              "article"
+            );
+
+          card.className =
+            "chapter-card";
+
+          card.style.setProperty(
+            "--accent",
+            accent
+          );
+
+          card.innerHTML = `
+            <div class="chapter-top">
+              <div class="chapter-num">
+                ${String(originalIndex + 1).padStart(2, "0")}
+              </div>
+
+              <div class="chapter-arrow">
+                ←
+              </div>
+            </div>
+
+            <h3>
+              ${chapter.title}
+            </h3>
+
+            <p>
+              ${chapter.subtitle}
+              · ${chapter.formulas.length} فرمول
+            </p>
+          `;
+
+          card.addEventListener(
+            "click",
+            () => {
+              openChapter(
+                originalIndex
+              );
+            }
+          );
+
+          chaptersContainer.appendChild(
+            card
+          );
+        }
+      );
+
+      /*
+        Render formulas
+      */
+
+      formulaGrid.innerHTML =
+        "";
+
+      let visibleFormulaCount =
+        0;
+
+      visibleChapters.forEach(
+        (chapter) => {
+
+          const originalChapterIndex =
+            majorData.indexOf(
+              chapter
+            );
+
+          chapter.formulas.forEach(
+            ([title, formula], formulaIndex) => {
+
+              if (
+                search &&
+                ![
+                  chapter.title,
+                  chapter.subtitle,
+                  title,
+                  formula
+                ]
+                  .join(" ")
+                  .toLowerCase()
+                  .includes(search)
+              ) {
+                return;
+              }
+
+              visibleFormulaCount++;
+
+              const accents = [
+                "#25d9ff",
+                "#9d5cff",
+                "#ff4fa3",
+                "#ffc857",
+                "#35e0a1",
+                "#6685ff"
+              ];
+
+              const accent =
+                accents[
+                  (
+                    originalChapterIndex +
+                    formulaIndex
+                  ) %
+                  accents.length
+                ];
+
+              const favoriteId =
+                `${user.grade}|${user.major}|${originalChapterIndex}|${formulaIndex}`;
+
+              const favorites =
+                getFavorites();
+
+              const isFavorite =
+                favorites.includes(
+                  favoriteId
+                );
+
+              const card =
+                document.createElement(
+                  "article"
+                );
+
+              card.className =
+                "card";
+
+              card.style.setProperty(
+                "--accent",
+                accent
+              );
+
+              card.innerHTML = `
+
+                <div class="card-head">
+
+                  <div class="formula-title">
+                    ${title}
+                  </div>
+
+                  <div class="chapter-badge">
+                    فصل ${originalChapterIndex + 1}
+                  </div>
+
+                </div>
+
+                <div class="equation">
+                  ${formula}
+                </div>
+
+                <div class="card-footer">
+
+                  <span class="formula-label">
+                    ${chapter.title}
+                  </span>
+
+                  <div class="card-actions">
+
+                    <button
+                      class="icon-btn favorite ${isFavorite ? "active" : ""}"
+                      type="button"
+                      title="علاقه‌مندی"
+                      onclick="toggleFavorite(
+                        '${escapeJs(favoriteId)}',
+                        this
+                      )"
+                    >
+                      ${isFavorite ? "♥" : "♡"}
+                    </button>
+
+                    <button
+                      class="icon-btn"
+                      type="button"
+                      title="کپی فرمول"
+                      onclick="copyFormula(
+                        '${escapeJs(formula)}'
+                      )"
+                    >
+                      ⧉
+                    </button>
+
+                  </div>
+
+                </div>
+              `;
+
+              formulaGrid.appendChild(
+                card
+              );
+
+            }
+          );
+
+        }
+      );
+
+      /*
+        Stats
+      */
+
+      const totalFormulas =
+        majorData.reduce(
+          (sum, chapter) =>
+            sum +
+            chapter.formulas.length,
+          0
+        );
+
+      document
+        .getElementById("statChapters")
+        .textContent =
+        majorData.length;
+
+      document
+        .getElementById("statFormulas")
+        .textContent =
+        totalFormulas;
+
+      document
+        .getElementById("chapterCount")
+        .textContent =
+        `${visibleChapters.length} فصل`;
+
+      document
+        .getElementById("formulaCount")
+        .textContent =
+        `${visibleFormulaCount} فرمول`;
+
+      /*
+        MathJax
+      */
+
+      if (
+        window.MathJax &&
+        window.MathJax.typesetPromise
+      ) {
+        MathJax.typesetPromise()
+          .catch(() => {});
+      }
+
+    }
+
+    /* =========================================================
+       ESCAPE
+    ========================================================= */
+
+    function escapeJs(value) {
+
+      return String(value)
+        .replace(/\\/g, "\\\\")
+        .replace(/'/g, "\\'")
+        .replace(/\n/g, "\\n")
+        .replace(/\r/g, "\\r");
+
+    }
+
+    /* =========================================================
+       FAVORITES
+    ========================================================= */
+
+    function toggleFavorite(
+      id,
+      button
+    ) {
+
+      let favorites =
+        getFavorites();
+
+      if (
+        favorites.includes(id)
       ) {
 
-        closeModal();
+        favorites =
+          favorites.filter(
+            item => item !== id
+          );
+
+        button.classList.remove(
+          "active"
+        );
+
+        button.textContent =
+          "♡";
+
+        showToast(
+          "از علاقه‌مندی‌ها حذف شد."
+        );
+
+      } else {
+
+        favorites.push(id);
+
+        button.classList.add(
+          "active"
+        );
+
+        button.textContent =
+          "♥";
+
+        showToast(
+          "به علاقه‌مندی‌ها اضافه شد. ♥"
+        );
+      }
+
+      saveFavorites(
+        favorites
+      );
+    }
+
+    /* =========================================================
+       MODAL
+    ========================================================= */
+
+    function openChapter(
+      chapterIndex
+    ) {
+
+      const user =
+        getUser();
+
+      if (!user) return;
+
+      const chapter =
+        DATA[user.grade][user.major][
+          chapterIndex
+        ];
+
+      if (!chapter) return;
+
+      document
+        .getElementById("modalTitle")
+        .textContent =
+        chapter.title;
+
+      const list =
+        document.getElementById(
+          "modalList"
+        );
+
+      list.innerHTML =
+        "";
+
+      chapter.formulas.forEach(
+        ([title, formula]) => {
+
+          const item =
+            document.createElement(
+              "div"
+            );
+
+          item.className =
+            "modal-item";
+
+          item.innerHTML = `
+            <div class="modal-item-title">
+              ${title}
+            </div>
+
+            <div class="modal-equation">
+              ${formula}
+            </div>
+          `;
+
+          list.appendChild(
+            item
+          );
+        }
+      );
+
+      document
+        .getElementById(
+          "formulaModal"
+        )
+        .classList.remove(
+          "hidden"
+        );
+
+      document.body.style.overflow =
+        "hidden";
+
+      if (
+        window.MathJax &&
+        window.MathJax.typesetPromise
+      ) {
+        MathJax.typesetPromise()
+          .catch(() => {});
+      }
+
+    }
+
+    function closeModal() {
+
+      document
+        .getElementById(
+          "formulaModal"
+        )
+        .classList.add(
+          "hidden"
+        );
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+    /* =========================================================
+       COPY
+    ========================================================= */
+
+    async function copyFormula(
+      formula
+    ) {
+
+      const clean =
+        String(formula)
+          .replace(/^\\\[/, "")
+          .replace(/\\\]$/, "")
+          .trim();
+
+      try {
+
+        await navigator.clipboard.writeText(
+          clean
+        );
+
+        showToast(
+          "فرمول کپی شد ✓"
+        );
+
+      } catch {
+
+        showToast(
+          "کپی فرمول انجام نشد."
+        );
 
       }
 
     }
-  );
 
+    /* =========================================================
+       LOGOUT
+    ========================================================= */
 
-/* =====================================================
-   LOGOUT
-===================================================== */
+    function logout() {
 
-function resetUser() {
+      localStorage.removeItem(
+        USER_KEY
+      );
 
-  if (
-    !confirm(
-      "با خروج، اطلاعات ذخیره‌شده و علاقه‌مندی‌ها پاک می‌شوند. ادامه می‌دهی؟"
-    )
-  ) return;
-
-
-  localStorage.removeItem(
-    "physicsUser"
-  );
-
-
-  localStorage.removeItem(
-    "physicsFavorites"
-  );
-
-
-  document
-    .getElementById("app")
-    .style.display =
-      "none";
-
-
-  document
-    .getElementById("onboarding")
-    .style.display =
-      "grid";
-
-
-  document
-    .getElementById("step1")
-    .classList.add("active");
-
-
-  document
-    .getElementById("step2")
-    .classList.remove("active");
-
-
-  document
-    .getElementById("stepIndicator1")
-    .classList.add("active");
-
-
-  document
-    .getElementById("stepIndicator2")
-    .classList.remove("active");
-
-
-  document
-    .getElementById("fullName")
-    .value = "";
-
-
-  document
-    .getElementById("phone")
-    .value = "";
-
-
-  document
-    .getElementById("grade")
-    .value = "";
-
-
-  document
-    .getElementById("major")
-    .value = "";
-
-
-  document
-    .querySelectorAll(
-      'input[name="gender"]'
-    )
-    .forEach(
-      radio =>
-        radio.checked = false
-    );
-
-
-  document.body.classList.remove(
-    "girl-theme"
-  );
-
-
-  setStatus(
-    "",
-    ""
-  );
-
-}
-
-
-/* =====================================================
-   LOAD
-===================================================== */
-
-window.addEventListener(
-  "DOMContentLoaded",
-  () => {
-
-    const user =
-      getUser();
-
-
-    if (!user) {
+      localStorage.removeItem(
+        FAVORITES_KEY
+      );
 
       document
-        .getElementById("onboarding")
-        .style.display =
-          "grid";
+        .getElementById("app")
+        .classList.add("hidden");
 
-      return;
+      document
+        .getElementById("loginScreen")
+        .classList.remove("hidden");
 
+      document
+        .getElementById("step2")
+        .classList.add("hidden");
+
+      document
+        .getElementById("step1")
+        .classList.remove("hidden");
+
+      document
+        .getElementById("stepIndicator2")
+        .classList.remove("active");
+
+      document
+        .getElementById("fullName")
+        .value = "";
+
+      document
+        .getElementById("phone")
+        .value = "";
+
+      document
+        .getElementById("grade")
+        .value = "";
+
+      document
+        .getElementById("major")
+        .value = "";
+
+      document
+        .querySelectorAll(
+          'input[name="gender"]'
+        )
+        .forEach(
+          input => {
+            input.checked = false;
+          }
+        );
+
+      document.body.classList.remove(
+        "girl-theme"
+      );
+
+      setStatus("");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+      showToast(
+        "با موفقیت خارج شدید."
+      );
     }
 
+    /* =========================================================
+       EVENTS
+    ========================================================= */
 
-    /*
-      اگر کاربر قبلاً ثبت‌نام کرده باشد،
-      مستقیم وارد سایت می‌شود.
-    */
+    document
+      .getElementById("searchInput")
+      .addEventListener(
+        "input",
+        render
+      );
 
-    applyTheme(
-      user.gender
+    document
+      .getElementById("chapterFilter")
+      .addEventListener(
+        "change",
+        render
+      );
+
+    document
+      .querySelectorAll(
+        'input[name="gender"]'
+      )
+      .forEach(
+        input => {
+          input.addEventListener(
+            "change",
+            previewTheme
+          );
+        }
+      );
+
+    document
+      .getElementById(
+        "formulaModal"
+      )
+      .addEventListener(
+        "click",
+        event => {
+
+          if (
+            event.target.id ===
+            "formulaModal"
+          ) {
+            closeModal();
+          }
+
+        }
+      );
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Escape"
+        ) {
+          closeModal();
+        }
+
+      }
     );
 
+    /*
+      Prevent accidental spaces in phone
+    */
 
-    openApp(user);
+    document
+      .getElementById("phone")
+      .addEventListener(
+        "input",
+        event => {
 
-  }
-);
+          event.target.value =
+            event.target.value
+              .replace(/\D/g, "")
+              .slice(0, 11);
 
+        }
+      );
 
-/* =====================================================
-   ESC
-===================================================== */
+    /* =========================================================
+       AUTO LOGIN
+    ========================================================= */
 
-document.addEventListener(
-  "keydown",
-  event => {
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
 
-    if (
-      event.key === "Escape"
-    ) {
+        const user =
+          getUser();
 
-      closeModal();
+        if (user) {
+          openApp();
+        }
 
-    }
-
-  }
-);
-
-</script>
+      }
+    );
+  </script>
 
 </body>
 </html>
