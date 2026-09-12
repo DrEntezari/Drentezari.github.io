@@ -1,106 +1,167 @@
 require("dotenv").config();
 
 const express = require("express");
+const path = require("path");
 
 const app = express();
 
-const PORT = process.env.PORT || 10000;
-const ALLOWED_ORIGIN =
-  process.env.ALLOWED_ORIGIN || "https://drenTezari.github.io";
+const PORT = process.env.PORT || 3000;
 
-app.use(express.json({ limit: "10kb" }));
+/* =====================================================
+   ENVIRONMENT VARIABLES
+===================================================== */
 
-// CORS
-app.use((req, res, next) => {
-  const origin = req.headers.origin;
+if (!process.env.TELEGRAM_BOT_TOKEN) {
+  console.error("❌ TELEGRAM_BOT_TOKEN تنظیم نشده است.");
+  process.exit(1);
+}
 
-  if (origin === ALLOWED_ORIGIN) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
-    res.setHeader("Vary", "Origin");
-  }
+if (!process.env.TELEGRAM_CHAT_ID) {
+  console.error("❌ TELEGRAM_CHAT_ID تنظیم نشده است.");
+  process.exit(1);
+}
 
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "POST, GET, OPTIONS"
-  );
 
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Content-Type"
-  );
+/* =====================================================
+   MIDDLEWARE
+===================================================== */
 
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(204);
-  }
+app.use(
+  express.json({
+    limit: "10kb"
+  })
+);
 
-  next();
-});
 
-// محدودیت ساده درخواست
-const requests = new Map();
+/*
+  فایل‌های frontend
+*/
+app.use(
+  express.static(
+    path.join(__dirname, "public")
+  )
+);
 
-const WINDOW = 60 * 1000;
+
+/* =====================================================
+   RATE LIMIT
+===================================================== */
+
+const requestLog = new Map();
+
+const RATE_LIMIT_WINDOW =
+  60 * 1000;
+
 const MAX_REQUESTS = 5;
 
-function rateLimit(req, res, next) {
+
+function rateLimit(
+  req,
+  res,
+  next
+) {
+
   const ip =
-    req.headers["x-forwarded-for"]?.split(",")[0]?.trim() ||
+    req.headers["x-forwarded-for"]
+      ?.split(",")[0]
+      ?.trim() ||
     req.socket.remoteAddress ||
     "unknown";
 
-  const now = Date.now();
-  const old = requests.get(ip);
 
-  if (!old || now - old.time > WINDOW) {
-    requests.set(ip, {
-      time: now,
-      count: 1
-    });
+  const now =
+    Date.now();
+
+
+  const previous =
+    requestLog.get(ip);
+
+
+  if (
+    !previous ||
+    now - previous.start >
+      RATE_LIMIT_WINDOW
+  ) {
+
+    requestLog.set(
+      ip,
+      {
+        start: now,
+        count: 1
+      }
+    );
 
     return next();
   }
 
-  old.count++;
 
-  if (old.count > MAX_REQUESTS) {
+  previous.count++;
+
+
+  if (
+    previous.count >
+    MAX_REQUESTS
+  ) {
+
     return res.status(429).json({
+
       success: false,
-      message: "تعداد درخواست‌ها زیاد است. کمی بعد دوباره تلاش کنید."
+
+      message:
+        "تعداد درخواست‌ها زیاد است. لطفاً کمی بعد دوباره تلاش کنید."
+
     });
+
   }
+
 
   next();
+
 }
 
-function cleanText(value, maxLength) {
-  if (typeof value !== "string") {
+
+/* =====================================================
+   TEXT VALIDATION
+===================================================== */
+
+function cleanText(
+  value,
+  maxLength
+) {
+
+  if (
+    typeof value !== "string"
+  ) {
+
     return null;
+
   }
 
-  const text = value.trim();
 
-  if (!text || text.length > maxLength) {
+  const text =
+    value.trim();
+
+
+  if (
+    !text ||
+    text.length >
+      maxLength
+  ) {
+
     return null;
+
   }
+
 
   return text;
+
 }
 
-// تست سرور
-app.get("/", (req, res) => {
-  res.json({
-    ok: true,
-    service: "Physics Formula API"
-  });
-});
 
-app.get("/health", (req, res) => {
-  res.json({
-    ok: true
-  });
-});
+/* =====================================================
+   TELEGRAM API
+===================================================== */
 
-// ارسال اطلاعات به تلگرام
 app.post(
   "/api/send-telegram",
   rateLimit,
@@ -108,47 +169,117 @@ app.post(
 
     try {
 
-      const firstName =
-        cleanText(req.body.firstName, 50);
+      /* ---------------------------------------------
+         دریافت اطلاعات
+      --------------------------------------------- */
 
       const fullName =
-        cleanText(req.body.fullName, 100);
+        cleanText(
+          req.body.fullName,
+          100
+        );
+
 
       const phone =
-        cleanText(req.body.phone, 30);
+        cleanText(
+          req.body.phone,
+          30
+        );
+
+
+      const gender =
+        cleanText(
+          req.body.gender,
+          20
+        );
+
 
       const grade =
-        cleanText(req.body.grade, 30);
+        cleanText(
+          req.body.grade,
+          30
+        );
+
 
       const major =
-        cleanText(req.body.major, 50);
+        cleanText(
+          req.body.major,
+          50
+        );
+
+
+      /* ---------------------------------------------
+         بررسی اطلاعات
+      --------------------------------------------- */
 
       if (
-        !firstName ||
         !fullName ||
         !phone ||
+        !gender ||
         !grade ||
         !major
       ) {
 
         return res.status(400).json({
+
           success: false,
-          message: "اطلاعات واردشده معتبر نیست."
+
+          message:
+            "اطلاعات واردشده معتبر نیست."
+
         });
 
       }
 
-      const message =
-`⚡ ورود جدید به فرمول‌نامه
 
-👤 نام: ${firstName}
-📝 نام و نام خانوادگی: ${fullName}
+      /* ---------------------------------------------
+         بررسی جنسیت
+      --------------------------------------------- */
+
+      const allowedGenders = [
+        "دختر",
+        "پسر"
+      ];
+
+
+      if (
+        !allowedGenders.includes(
+          gender
+        )
+      ) {
+
+        return res.status(400).json({
+
+          success: false,
+
+          message:
+            "جنسیت واردشده معتبر نیست."
+
+        });
+
+      }
+
+
+      /* ---------------------------------------------
+         ساخت پیام تلگرام
+      --------------------------------------------- */
+
+      const message = `⚡ ورود جدید به فرمول‌نامه
+
+👤 نام و نام خانوادگی: ${fullName}
 📱 موبایل: ${phone}
+⚧ جنسیت: ${gender}
 🎓 پایه: ${grade}
 📚 رشته: ${major}`;
 
+
+      /* ---------------------------------------------
+         ارسال به Telegram
+      --------------------------------------------- */
+
       const controller =
         new AbortController();
+
 
       const timeout =
         setTimeout(
@@ -156,38 +287,56 @@ app.post(
           10000
         );
 
+
       let response;
+
 
       try {
 
-        response = await fetch(
-          `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
-          {
-            method: "POST",
+        response =
+          await fetch(
+            `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
+            {
 
-            headers: {
-              "Content-Type": "application/json"
-            },
+              method: "POST",
 
-            body: JSON.stringify({
-              chat_id:
-                process.env.TELEGRAM_CHAT_ID,
+              headers: {
+                "Content-Type":
+                  "application/json"
+              },
 
-              text: message
-            }),
+              body: JSON.stringify({
 
-            signal: controller.signal
-          }
-        );
+                chat_id:
+                  process.env.TELEGRAM_CHAT_ID,
+
+                text:
+                  message
+
+              }),
+
+              signal:
+                controller.signal
+
+            }
+          );
 
       } finally {
 
-        clearTimeout(timeout);
+        clearTimeout(
+          timeout
+        );
 
       }
 
+
+      /* ---------------------------------------------
+         پاسخ Telegram
+      --------------------------------------------- */
+
       const result =
         await response.json();
+
 
       if (
         !response.ok ||
@@ -195,31 +344,74 @@ app.post(
       ) {
 
         console.error(
-          "Telegram error:",
-          result?.description || "Unknown error"
+          "Telegram API Error:",
+          result?.description ||
+          "Unknown error"
         );
 
+
         return res.status(500).json({
+
           success: false,
-          message: "ارسال پیام انجام نشد."
+
+          message:
+            "ارسال پیام انجام نشد."
+
         });
 
       }
 
-      return res.json({
-        success: true
-      });
 
-    } catch (error) {
+      /* ---------------------------------------------
+         موفق
+      --------------------------------------------- */
 
-      console.error(
-        "Server error:",
-        error.message
+      console.log(
+        `✅ Telegram message sent for ${fullName}`
       );
 
+
+      return res.json({
+
+        success: true
+
+      });
+
+    }
+
+
+    /* ---------------------------------------------
+       خطای سرور
+    --------------------------------------------- */
+
+    catch (error) {
+
+      if (
+        error.name ===
+        "AbortError"
+      ) {
+
+        console.error(
+          "❌ Telegram request timeout"
+        );
+
+      } else {
+
+        console.error(
+          "❌ Server Error:",
+          error.message
+        );
+
+      }
+
+
       return res.status(500).json({
+
         success: false,
-        message: "خطای سرور."
+
+        message:
+          "خطایی در سرور رخ داد."
+
       });
 
     }
@@ -227,9 +419,34 @@ app.post(
   }
 );
 
+
+/* =====================================================
+   HEALTH CHECK
+===================================================== */
+
+app.get(
+  "/api/health",
+  (req, res) => {
+
+    res.json({
+
+      success: true,
+
+      message:
+        "Physics Formula API is running."
+
+    });
+
+  }
+);
+
+
+/* =====================================================
+   START SERVER
+===================================================== */
+
 app.listen(
   PORT,
-  "0.0.0.0",
   () => {
 
     console.log(
