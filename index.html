@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
 
 <script>
 window.MathJax = {
@@ -22,9 +26,16 @@ window.MathJax = {
 };
 </script>
 
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 
 <style>
+
+/* =====================================================
+   THEME
+===================================================== */
 
 :root {
   --bg:#040811;
@@ -33,13 +44,58 @@ window.MathJax = {
   --border:#1b3048;
   --text:#f5f9ff;
   --muted:#8798ad;
+
   --blue:#00c8ff;
   --blue2:#007cf0;
+
   --green:#29e69a;
   --yellow:#ffd166;
   --red:#ff667d;
+
+  --pink:#ff4fa3;
+  --pink2:#ff8acb;
+  --pinkGlow:rgba(255,79,163,.18);
+
   --shadow:0 20px 60px rgba(0,0,0,.35);
 }
+
+/* =====================================================
+   GIRL THEME
+===================================================== */
+
+body.girl-theme {
+
+  --bg:#10050d;
+  --panel:#1b0b18;
+  --panel2:#241025;
+  --border:#542341;
+
+  --text:#fff5fb;
+  --muted:#c79bb6;
+
+  --blue:#ff6fba;
+  --blue2:#ff2f91;
+
+  --pink:#ff4fa3;
+  --pink2:#ff9bd4;
+
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      #55183e 0,
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      #3c1232 0,
+      transparent 28%
+    ),
+    var(--bg);
+}
+
+/* =====================================================
+   GLOBAL
+===================================================== */
 
 * {
   box-sizing:border-box;
@@ -52,12 +108,27 @@ html {
 body {
   margin:0;
   min-height:100vh;
+
   font-family:"Vazirmatn",sans-serif;
+
   color:var(--text);
+
   background:
-    radial-gradient(circle at 90% 0%,#103353 0,transparent 32%),
-    radial-gradient(circle at 0% 100%,#06353e 0,transparent 28%),
+    radial-gradient(
+      circle at 90% 0%,
+      #103353 0,
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      #06353e 0,
+      transparent 28%
+    ),
     var(--bg);
+
+  transition:
+    background .5s ease,
+    color .3s ease;
 }
 
 button,
@@ -74,153 +145,548 @@ button {
   display:none!important;
 }
 
-/* ================= LOGIN ================= */
+/* =====================================================
+   LOGIN
+===================================================== */
 
 .onboarding {
+
   position:fixed;
   inset:0;
+
   z-index:1000;
+
   display:grid;
   place-items:center;
+
   padding:18px;
+
   overflow:auto;
+
   background:
-    radial-gradient(circle at 50% 0%,#102c48 0,transparent 45%),
+    radial-gradient(
+      circle at 50% 0%,
+      #102c48 0,
+      transparent 45%
+    ),
     #02050b;
 }
 
+.girl-theme .onboarding {
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #571b40 0,
+      transparent 45%
+    ),
+    #090207;
+}
+
+/* =====================================================
+   LOGIN BOX
+===================================================== */
+
 .login-box {
+
   width:min(520px,100%);
+
   padding:30px;
+
   border:1px solid #20354d;
   border-radius:28px;
+
   background:rgba(8,17,30,.94);
+
   box-shadow:
     0 0 80px rgba(0,200,255,.08),
     var(--shadow);
+
   backdrop-filter:blur(20px);
+
+  animation:
+    loginAppear .55s ease;
 }
+
+.girl-theme .login-box {
+
+  border-color:#613052;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(31,10,27,.96),
+      rgba(16,5,14,.96)
+    );
+
+  box-shadow:
+    0 0 80px rgba(255,79,163,.13),
+    var(--shadow);
+}
+
+@keyframes loginAppear {
+
+  from {
+    opacity:0;
+    transform:translateY(20px) scale(.97);
+  }
+
+  to {
+    opacity:1;
+    transform:none;
+  }
+
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
 
 .logo {
+
   width:78px;
   height:78px;
+
   margin:0 auto 14px;
+
   display:grid;
   place-items:center;
+
   border-radius:24px;
+
   font-size:42px;
-  background:linear-gradient(135deg,#006de0,#00c8ff);
-  box-shadow:0 0 35px rgba(0,200,255,.25);
+
+  background:
+    linear-gradient(
+      135deg,
+      #006de0,
+      #00c8ff
+    );
+
+  box-shadow:
+    0 0 35px rgba(0,200,255,.25);
+
+  transition:.4s;
 }
 
+.girl-theme .logo {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff2f91,
+      #ff8acb
+    );
+
+  box-shadow:
+    0 0 35px rgba(255,79,163,.35);
+}
+
+/* =====================================================
+   LOGIN TEXT
+===================================================== */
+
 .login-title {
+
   margin:0;
+
   text-align:center;
+
   font-size:27px;
 }
 
 .login-sub {
+
   margin:8px 0 24px;
+
   text-align:center;
+
   color:var(--muted);
 }
 
+/* =====================================================
+   STEP INDICATOR
+===================================================== */
+
+.steps {
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:10px;
+
+  margin:0 0 22px;
+}
+
+.step {
+
+  width:34px;
+  height:34px;
+
+  display:grid;
+  place-items:center;
+
+  border:1px solid var(--border);
+
+  border-radius:50%;
+
+  color:var(--muted);
+
+  background:#07111f;
+
+  font-size:13px;
+
+  font-weight:800;
+
+  transition:.3s;
+}
+
+.step.active {
+
+  color:white;
+
+  border-color:var(--blue);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue2),
+      var(--blue)
+    );
+
+  box-shadow:
+    0 0 20px rgba(0,200,255,.25);
+}
+
+.girl-theme .step.active {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff2f91,
+      #ff8acb
+    );
+
+  box-shadow:
+    0 0 20px rgba(255,79,163,.3);
+}
+
+.step-line {
+
+  width:45px;
+  height:2px;
+
+  background:var(--border);
+
+  border-radius:5px;
+}
+
+/* =====================================================
+   VPN
+===================================================== */
+
 .vpn {
+
   margin-bottom:18px;
+
   padding:13px;
+
   border:1px solid #806000;
   border-radius:14px;
+
   color:#ffd66d;
+
   background:rgba(128,96,0,.12);
+
   text-align:center;
+
   font-size:13px;
 }
+
+/* =====================================================
+   FIELDS
+===================================================== */
 
 .field {
   margin:13px 0;
 }
 
 .field label {
+
   display:block;
+
   margin-bottom:7px;
+
   color:#b7c7d9;
+
   font-size:14px;
 }
 
 input,
 select {
+
   width:100%;
+
   min-height:48px;
+
   padding:12px 14px;
+
   border:1px solid #263b54;
+
   border-radius:13px;
+
   outline:none;
+
   color:white;
+
   background:#060d18;
+
   transition:.2s;
+}
+
+.girl-theme input,
+.girl-theme select {
+
+  border-color:#59304a;
+
+  background:#120710;
 }
 
 input:focus,
 select:focus {
+
   border-color:var(--blue);
-  box-shadow:0 0 0 3px rgba(0,200,255,.08);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(0,200,255,.08);
 }
 
-.main-btn {
-  width:100%;
-  min-height:50px;
-  margin-top:9px;
-  border:0;
+.girl-theme input:focus,
+.girl-theme select:focus {
+
+  box-shadow:
+    0 0 0 3px
+    rgba(255,79,163,.10);
+}
+
+/* =====================================================
+   GENDER
+===================================================== */
+
+.gender-grid {
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:10px;
+}
+
+.gender-option {
+
+  position:relative;
+}
+
+.gender-option input {
+
+  position:absolute;
+
+  opacity:0;
+
+  pointer-events:none;
+}
+
+.gender-label {
+
+  min-height:58px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:8px;
+
+  border:1px solid #263b54;
+
   border-radius:14px;
-  color:white;
-  background:linear-gradient(135deg,var(--blue2),var(--blue));
-  font-size:15px;
-  font-weight:800;
+
+  color:#aebed0;
+
+  background:#060d18;
+
   cursor:pointer;
-  box-shadow:0 8px 25px rgba(0,150,255,.18);
+
+  transition:.25s;
+
+  font-weight:700;
+}
+
+.gender-label:hover {
+
+  border-color:var(--blue);
+}
+
+.gender-option input:checked + .gender-label {
+
+  color:white;
+
+  border-color:var(--blue);
+
+  background:
+    rgba(0,200,255,.10);
+
+  box-shadow:
+    0 0 20px rgba(0,200,255,.08);
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.main-btn {
+
+  width:100%;
+
+  min-height:50px;
+
+  margin-top:9px;
+
+  border:0;
+
+  border-radius:14px;
+
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue2),
+      var(--blue)
+    );
+
+  font-size:15px;
+
+  font-weight:800;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0,150,255,.18);
+
+  transition:.25s;
+}
+
+.main-btn:hover {
+
+  transform:translateY(-2px);
 }
 
 .main-btn:disabled {
+
   opacity:.55;
+
   cursor:not-allowed;
+
+  transform:none;
+}
+
+.secondary-btn {
+
+  width:100%;
+
+  min-height:48px;
+
+  margin-top:9px;
+
+  border:1px solid var(--border);
+
+  border-radius:14px;
+
+  color:#c9d6e5;
+
+  background:#091321;
+
+  cursor:pointer;
+
+  font-weight:700;
 }
 
 .status {
+
   min-height:22px;
+
   margin-top:12px;
+
   text-align:center;
+
   font-size:13px;
 }
 
-/* ================= APP ================= */
+/* =====================================================
+   APP
+===================================================== */
 
 .app {
   display:none;
 }
 
 header {
+
   position:sticky;
+
   top:0;
+
   z-index:100;
-  border-bottom:1px solid rgba(30,48,72,.8);
-  background:rgba(4,8,17,.82);
+
+  border-bottom:
+    1px solid rgba(30,48,72,.8);
+
+  background:
+    rgba(4,8,17,.82);
+
   backdrop-filter:blur(18px);
 }
 
+.girl-theme header {
+
+  border-bottom-color:#4b213b;
+
+  background:
+    rgba(16,5,13,.84);
+}
+
 .header-inner {
+
   max-width:1150px;
+
   margin:auto;
+
   padding:13px 18px;
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
   gap:15px;
 }
 
 .brand {
+
   display:flex;
+
   align-items:center;
+
   gap:9px;
+
   font-weight:800;
 }
 
@@ -229,91 +695,187 @@ header {
 }
 
 .user-area {
+
   display:flex;
+
   align-items:center;
+
   gap:10px;
 }
 
 .user-name {
+
   color:var(--blue);
+
   font-size:13px;
 }
 
 .small-btn {
+
   border:1px solid var(--border);
+
   border-radius:10px;
+
   padding:8px 11px;
+
   color:#c9d6e5;
+
   background:#0b1524;
+
   cursor:pointer;
+
+  transition:.2s;
 }
+
+.small-btn:hover {
+
+  border-color:var(--blue);
+
+  color:white;
+}
+
+/* =====================================================
+   MAIN
+===================================================== */
 
 main {
+
   max-width:1150px;
+
   margin:auto;
-  padding:25px 18px 70px;
+
+  padding:25px 18px 40px;
 }
 
+/* =====================================================
+   HERO
+===================================================== */
+
 .hero {
+
   position:relative;
+
   overflow:hidden;
+
   padding:32px 20px;
+
   margin-bottom:20px;
+
   border:1px solid var(--border);
+
   border-radius:24px;
+
   background:
-    linear-gradient(135deg,rgba(0,124,240,.12),rgba(0,200,255,.03)),
+    linear-gradient(
+      135deg,
+      rgba(0,124,240,.12),
+      rgba(0,200,255,.03)
+    ),
+    var(--panel);
+}
+
+.girl-theme .hero {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,47,145,.13),
+      rgba(255,138,203,.03)
+    ),
     var(--panel);
 }
 
 .hero:after {
+
   content:"";
+
   position:absolute;
+
   width:180px;
   height:180px;
+
   left:-70px;
   top:-80px;
+
   border-radius:50%;
-  background:rgba(0,200,255,.08);
+
+  background:
+    rgba(0,200,255,.08);
+
   filter:blur(10px);
 }
 
+.girl-theme .hero:after {
+
+  background:
+    rgba(255,79,163,.10);
+}
+
 .hero h1 {
+
   position:relative;
+
   z-index:1;
+
   margin:0 0 8px;
-  font-size:clamp(28px,6vw,46px);
+
+  font-size:
+    clamp(28px,6vw,46px);
 }
 
 .hero p {
+
   position:relative;
+
   z-index:1;
+
   margin:0;
+
   color:var(--muted);
 }
 
 .stats {
+
   position:relative;
+
   z-index:1;
+
   display:flex;
+
   flex-wrap:wrap;
+
   gap:9px;
+
   margin-top:18px;
 }
 
 .stat {
+
   padding:8px 12px;
+
   border:1px solid var(--border);
+
   border-radius:10px;
+
   color:#cbd8e7;
+
   background:#07111f;
+
   font-size:12px;
 }
 
+/* =====================================================
+   CONTROLS
+===================================================== */
+
 .controls {
+
   display:grid;
+
   grid-template-columns:1fr 230px;
+
   gap:10px;
+
   margin-bottom:16px;
 }
 
@@ -322,200 +884,395 @@ main {
 }
 
 .search-wrap span {
+
   position:absolute;
+
   top:50%;
   right:14px;
+
   transform:translateY(-50%);
+
   pointer-events:none;
 }
 
 .search-wrap input {
+
   padding-right:43px;
 }
 
+/* =====================================================
+   GRID
+===================================================== */
+
 .grid {
+
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(250px,1fr)
+    );
+
   gap:14px;
 }
 
 .card {
+
   position:relative;
+
   overflow:hidden;
+
   min-height:185px;
+
   padding:20px;
+
   border:1px solid var(--border);
+
   border-radius:19px;
-  background:linear-gradient(145deg,#0a1524,#08111d);
+
+  background:
+    linear-gradient(
+      145deg,
+      #0a1524,
+      #08111d
+    );
+
   cursor:pointer;
+
   transition:.2s;
 }
 
+.girl-theme .card {
+
+  background:
+    linear-gradient(
+      145deg,
+      #21101e,
+      #120912
+    );
+}
+
 .card:hover {
+
   transform:translateY(-4px);
-  border-color:#008fca;
-  box-shadow:0 15px 35px rgba(0,180,255,.08);
+
+  border-color:var(--blue);
+
+  box-shadow:
+    0 15px 35px
+    rgba(0,180,255,.08);
+}
+
+.girl-theme .card:hover {
+
+  box-shadow:
+    0 15px 35px
+    rgba(255,79,163,.10);
 }
 
 .card-top {
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
 }
 
 .chapter-num {
+
   color:var(--blue);
+
   font-size:12px;
+
   font-weight:700;
 }
 
 .star {
+
   border:0;
+
   background:none;
+
   color:#516277;
+
   font-size:22px;
+
   cursor:pointer;
 }
 
 .star.active {
+
   color:var(--yellow);
 }
 
 .card h3 {
+
   margin:13px 0 7px;
+
   font-size:19px;
 }
 
 .card p {
+
   min-height:48px;
+
   margin:0;
+
   color:var(--muted);
+
   font-size:13px;
+
   line-height:1.9;
 }
 
 .card-footer {
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
   margin-top:17px;
+
   color:var(--blue);
+
   font-size:12px;
 }
 
 .empty {
+
   padding:45px 20px;
+
   border:1px dashed #29405a;
+
   border-radius:18px;
+
   color:var(--muted);
+
   text-align:center;
 }
 
-/* ================= MODAL ================= */
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.site-footer {
+
+  padding:28px 18px 35px;
+
+  text-align:center;
+
+  color:var(--muted);
+
+  font-size:13px;
+}
+
+.site-footer span {
+
+  color:var(--blue);
+
+  font-weight:700;
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
 
 .modal {
+
   position:fixed;
+
   inset:0;
+
   z-index:500;
+
   display:none;
+
   padding:18px;
+
   overflow:auto;
-  background:rgba(0,0,0,.78);
+
+  background:
+    rgba(0,0,0,.78);
+
   backdrop-filter:blur(8px);
 }
 
 .modal-box {
+
   width:min(850px,100%);
+
   margin:20px auto;
+
   padding:22px;
+
   border:1px solid #263b55;
+
   border-radius:22px;
+
   background:#08111e;
+
   box-shadow:var(--shadow);
 }
 
+.girl-theme .modal-box {
+
+  border-color:#54233f;
+
+  background:#120812;
+}
+
 .modal-head {
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
   gap:10px;
+
   margin-bottom:15px;
 }
 
 .modal-head h2 {
+
   margin:0;
+
   font-size:20px;
 }
 
 .close {
+
   width:40px;
   height:40px;
+
   border:0;
+
   border-radius:10px;
+
   color:white;
+
   background:#152235;
+
   font-size:22px;
+
   cursor:pointer;
 }
 
 .formula {
+
   margin:11px 0;
+
   padding:16px;
+
   border:1px solid #1c334d;
+
   border-radius:15px;
+
   background:#0c1827;
 }
 
+.girl-theme .formula {
+
+  border-color:#472239;
+
+  background:#1a0c18;
+}
+
 .formula-title {
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
   gap:10px;
+
   color:var(--blue);
+
   font-weight:700;
 }
 
 .copy-btn {
+
   padding:7px 10px;
+
   border:1px solid #263d57;
+
   border-radius:8px;
+
   color:#b9c8d9;
+
   background:#091321;
+
   cursor:pointer;
+
   font-size:11px;
 }
 
 .equation {
+
   padding:12px 4px 5px;
+
   direction:ltr;
+
   text-align:center;
+
   overflow-x:auto;
+
   font-size:21px;
 }
 
-/* ================= TOAST ================= */
+/* =====================================================
+   TOAST
+===================================================== */
 
 .toast {
+
   position:fixed;
+
   right:18px;
+
   bottom:18px;
+
   z-index:1000;
+
   max-width:330px;
+
   padding:12px 15px;
+
   border:1px solid #24415e;
+
   border-radius:12px;
+
   background:#0a1726;
+
   color:white;
+
   box-shadow:var(--shadow);
+
   transform:translateY(120px);
+
   opacity:0;
+
   transition:.25s;
 }
 
 .toast.show {
+
   transform:translateY(0);
+
   opacity:1;
 }
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:650px) {
 
@@ -536,7 +1293,7 @@ main {
   }
 
   main {
-    padding:18px 12px 50px;
+    padding:18px 12px 20px;
   }
 
   .hero {
@@ -546,20 +1303,46 @@ main {
   .grid {
     grid-template-columns:1fr;
   }
+
+  .gender-grid {
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+/* =====================================================
+   STEP PAGES
+===================================================== */
+
+.step-page {
+  display:none;
+}
+
+.step-page.active {
+  display:block;
 }
 
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= LOGIN ================= -->
 
-<section class="onboarding" id="onboarding">
+<!-- =====================================================
+     LOGIN
+===================================================== -->
+
+<section
+  class="onboarding"
+  id="onboarding"
+>
 
   <div class="login-box">
 
-    <div class="logo">⚡</div>
+    <div class="logo" id="loginLogo">
+      ⚡
+    </div>
 
     <h1 class="login-title">
       فرمول‌نامه فیزیک
@@ -569,89 +1352,258 @@ main {
       فرمول‌های فیزیک دبیرستان، مرتب و سریع
     </p>
 
+
+    <!-- مراحل -->
+
+    <div class="steps">
+
+      <div
+        class="step active"
+        id="stepIndicator1"
+      >
+        ۱
+      </div>
+
+      <div class="step-line"></div>
+
+      <div
+        class="step"
+        id="stepIndicator2"
+      >
+        ۲
+      </div>
+
+    </div>
+
+
+    <!-- VPN -->
+
     <div class="vpn">
       🔐 لطفاً فیلترشکن یا VPN خود را روشن کنید.
     </div>
 
-    <div class="field">
-      <label>نام</label>
-      <input
-        id="firstName"
-        type="text"
-        placeholder="مثلاً علی"
-        autocomplete="given-name"
-      >
-    </div>
 
-    <div class="field">
-      <label>نام و نام خانوادگی</label>
-      <input
-        id="fullName"
-        type="text"
-        placeholder="نام و نام خانوادگی"
-        autocomplete="name"
-      >
-    </div>
+    <!-- =================================================
+         STEP 1
+    ================================================= -->
 
-    <div class="field">
-      <label>شماره موبایل</label>
-      <input
-        id="phone"
-        type="tel"
-        inputmode="numeric"
-        placeholder="09xxxxxxxxx"
-        autocomplete="tel"
-      >
-    </div>
-
-    <div class="field">
-      <label>پایه</label>
-
-      <select id="grade">
-        <option value="">انتخاب پایه</option>
-        <option value="دهم">دهم</option>
-        <option value="یازدهم">یازدهم</option>
-        <option value="دوازدهم">دوازدهم</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label>رشته</label>
-
-      <select id="major">
-        <option value="">انتخاب رشته</option>
-        <option value="ریاضی">ریاضی</option>
-        <option value="تجربی">تجربی</option>
-      </select>
-    </div>
-
-    <button
-      class="main-btn"
-      id="enter"
-      onclick="saveUser()"
+    <div
+      class="step-page active"
+      id="step1"
     >
-      ورود به فرمول‌نامه ←
-    </button>
 
-    <div class="status" id="status"></div>
+      <div class="field">
+
+        <label>
+          نام و نام خانوادگی
+        </label>
+
+        <input
+          id="fullName"
+          type="text"
+          placeholder="مثلاً علی احمدی"
+          autocomplete="name"
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          شماره موبایل
+        </label>
+
+        <input
+          id="phone"
+          type="tel"
+          inputmode="numeric"
+          placeholder="09xxxxxxxxx"
+          autocomplete="tel"
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          جنسیت
+        </label>
+
+        <div class="gender-grid">
+
+          <div class="gender-option">
+
+            <input
+              type="radio"
+              name="gender"
+              id="genderBoy"
+              value="پسر"
+              onchange="previewTheme('پسر')"
+            >
+
+            <label
+              class="gender-label"
+              for="genderBoy"
+            >
+              💙 پسر
+            </label>
+
+          </div>
+
+
+          <div class="gender-option">
+
+            <input
+              type="radio"
+              name="gender"
+              id="genderGirl"
+              value="دختر"
+              onchange="previewTheme('دختر')"
+            >
+
+            <label
+              class="gender-label"
+              for="genderGirl"
+            >
+              💗 دختر
+            </label>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="main-btn"
+        onclick="nextStep()"
+      >
+        ادامه ←
+      </button>
+
+    </div>
+
+
+    <!-- =================================================
+         STEP 2
+    ================================================= -->
+
+    <div
+      class="step-page"
+      id="step2"
+    >
+
+      <div class="field">
+
+        <label>
+          پایه تحصیلی
+        </label>
+
+        <select id="grade">
+
+          <option value="">
+            انتخاب پایه
+          </option>
+
+          <option value="دهم">
+            دهم
+          </option>
+
+          <option value="یازدهم">
+            یازدهم
+          </option>
+
+          <option value="دوازدهم">
+            دوازدهم
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          رشته
+        </label>
+
+        <select id="major">
+
+          <option value="">
+            انتخاب رشته
+          </option>
+
+          <option value="ریاضی">
+            ریاضی
+          </option>
+
+          <option value="تجربی">
+            تجربی
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <button
+        class="main-btn"
+        id="enter"
+        onclick="saveUser()"
+      >
+        ورود به فرمول‌نامه ⚡
+      </button>
+
+
+      <button
+        class="secondary-btn"
+        onclick="previousStep()"
+      >
+        → برگشت
+      </button>
+
+    </div>
+
+
+    <div
+      class="status"
+      id="status"
+    ></div>
 
   </div>
 
 </section>
 
 
-<!-- ================= APP ================= -->
+<!-- =====================================================
+     APP
+===================================================== -->
 
-<div class="app" id="app">
+<div
+  class="app"
+  id="app"
+>
 
 <header>
 
   <div class="header-inner">
 
     <div class="brand">
-      <span class="brand-icon">⚡</span>
-      <span>فرمول‌نامه فیزیک</span>
+
+      <span class="brand-icon">
+        ⚡
+      </span>
+
+      <span>
+        فرمول‌نامه فیزیک
+      </span>
+
     </div>
+
 
     <div class="user-area">
 
@@ -678,22 +1630,31 @@ main {
 
   <section class="hero">
 
-    <h1>فرمول‌های فیزیک</h1>
+    <h1>
+      فرمول‌های فیزیک
+    </h1>
 
     <p id="info"></p>
+
 
     <div class="stats">
 
       <div class="stat">
-        📚 <span id="chapterCount">0</span> فصل
+        📚
+        <span id="chapterCount">0</span>
+        فصل
       </div>
 
       <div class="stat">
-        📐 <span id="formulaCount">0</span> فرمول
+        📐
+        <span id="formulaCount">0</span>
+        فرمول
       </div>
 
       <div class="stat">
-        ⭐ <span id="favoriteCount">0</span> علاقه‌مندی
+        ⭐
+        <span id="favoriteCount">0</span>
+        علاقه‌مندی
       </div>
 
     </div>
@@ -705,7 +1666,9 @@ main {
 
     <div class="search-wrap">
 
-      <span>🔎</span>
+      <span>
+        🔎
+      </span>
 
       <input
         id="search"
@@ -714,6 +1677,7 @@ main {
       >
 
     </div>
+
 
     <select
       id="filter"
@@ -730,10 +1694,25 @@ main {
 
 </main>
 
+
+<footer class="site-footer">
+
+  ساخته شده با ❤️ برای یادگیری بهتر فیزیک
+
+  <br>
+
+  <span>
+    Mahdi Darbandy
+  </span>
+
+</footer>
+
 </div>
 
 
-<!-- ================= MODAL ================= -->
+<!-- =====================================================
+     MODAL
+===================================================== -->
 
 <div
   class="modal"
@@ -755,6 +1734,7 @@ main {
 
     </div>
 
+
     <div id="formulas"></div>
 
   </div>
@@ -771,22 +1751,15 @@ main {
 <script>
 
 /* =====================================================
-   آدرس بک‌اند
+   BACKEND
 ===================================================== */
 
-/*
-  بعد از ساخت Render این مقدار را با آدرس Render
-  خودت عوض می‌کنیم.
-
-  مثال:
-  https://physics-formula-api.onrender.com
-*/
-
-const API_URL = "https://drentezari-github-io.onrender.com";
+const API_URL =
+  "https://drentezari-github-io.onrender.com";
 
 
 /* =====================================================
-   داده‌های فرمول
+   DATA
 ===================================================== */
 
 const DATA = {
@@ -812,10 +1785,13 @@ const DATA = {
           ["فشار","\\[P=\\frac{F}{A}\\]"],
           ["فشار هیدروستاتیک","\\[P=\\rho gh\\]"],
           ["فشار کل","\\[P=P_0+\\rho gh\\]"],
-          ["اختلاف فشار","\\[\\Delta P=\\rho gh\\]"],
-          ["شناوری","\\[F_b=\\rho_{fluid}V_{sub}g\\]"],
-          ["دبی حجمی","\\[Q_v=\\frac{V}{\\Delta t}=Av\\]"],
-          ["معادله پیوستگی","\\[A_1v_1=A_2v_2\\]"]
+          ["اختلاف فشار","\\[\\Delta P=\\rho g\\Delta h\\]"],
+          ["شناوری","\\[F_b=\\rho_{fluid}gV_{displaced}\\]"],
+          ["وزن ظاهری","\\[W_{app}=W-F_b\\]"],
+          ["دبی حجمی","\\[Q=\\frac{V}{\\Delta t}=Av\\]"],
+          ["معادله پیوستگی","\\[A_1v_1=A_2v_2\\]"],
+          ["فشار پیمانه‌ای","\\[P_g=P-P_0\\]"],
+          ["تبدیل بار","\\[1\\,bar=10^5\\,Pa\\]"]
         ]
       ],
 
@@ -829,7 +1805,8 @@ const DATA = {
           ["انرژی پتانسیل گرانشی","\\[U=mgh\\]"],
           ["انرژی مکانیکی","\\[E_m=K+U\\]"],
           ["کار گرانش","\\[W_g=-\\Delta U\\]"],
-          ["توان متوسط","\\[P=\\frac{W}{t}\\]"]
+          ["توان متوسط","\\[P=\\frac{W}{t}\\]"],
+          ["بازده","\\[\\eta=\\frac{E_{useful}}{E_{input}}\\times100\\%\\]"]
         ]
       ],
 
@@ -837,11 +1814,13 @@ const DATA = {
         "دما و گرما",
         "دما، انبساط و گرما",
         [
-          ["تبدیل سلسیوس به کلوین","\\[T(K)=\\theta(^\\circ C)+273.15\\]"],
-          ["انبساط طولی","\\[\\Delta L=\\alpha L_0\\Delta T\\]"],
-          ["انبساط سطحی","\\[\\Delta A=2\\alpha A_0\\Delta T\\]"],
-          ["انبساط حجمی","\\[\\Delta V=\\beta V_0\\Delta T\\]"],
-          ["گرمای محسوس","\\[Q=mc\\Delta T\\]"],
+          ["تبدیل سلسیوس به کلوین","\\[T=\\theta+273.15\\]"],
+          ["تبدیل سلسیوس به فارنهایت","\\[F=\\frac95\\theta+32\\]"],
+          ["تبدیل فارنهایت به سلسیوس","\\[\\theta=\\frac59(F-32)\\]"],
+          ["انبساط طولی","\\[\\Delta L=\\alpha L_0\\Delta\\theta\\]"],
+          ["انبساط سطحی","\\[\\Delta A=\\beta A_0\\Delta\\theta\\]"],
+          ["انبساط حجمی","\\[\\Delta V=\\gamma V_0\\Delta\\theta\\]"],
+          ["گرمای محسوس","\\[Q=mc\\Delta\\theta\\]"],
           ["گرمای نهان","\\[Q=mL\\]"],
           ["تعادل گرمایی","\\[\\sum Q=0\\]"],
           ["توان گرمایی","\\[P=\\frac{Q}{\\Delta t}\\]"]
@@ -854,15 +1833,65 @@ const DATA = {
         [
           ["معادله گاز کامل","\\[PV=nRT\\]"],
           ["قانون ترکیبی گازها","\\[\\frac{P_1V_1}{T_1}=\\frac{P_2V_2}{T_2}\\]"],
-          ["کار گاز","\\[W=-P\\Delta V\\]"],
-          ["قانون اول ترمودینامیک","\\[\\Delta U=Q+W\\]"],
-          ["بازده","\\[\\eta=\\frac{W}{Q_H}\\times100\\%\\]"]
+          ["قانون اول ترمودینامیک","\\[\\Delta U=Q-W\\]"],
+          ["بازده موتور گرمایی","\\[\\eta=\\frac{W}{Q_H}\\times100\\%\\]"]
         ]
       ]
 
     ],
 
-    "تجربی": []
+    "تجربی": [
+
+      [
+        "فیزیک و اندازه‌گیری",
+        "چگالی",
+        [
+          ["چگالی","\\[\\rho=\\frac{m}{V}\\]"],
+          ["جرم","\\[m=\\rho V\\]"],
+          ["حجم","\\[V=\\frac{m}{\\rho}\\]"]
+        ]
+      ],
+
+      [
+        "ویژگی‌های فیزیکی مواد",
+        "فشار و شاره‌ها",
+        [
+          ["فشار","\\[P=\\frac{F}{A}\\]"],
+          ["فشار مایع","\\[P=\\rho gh\\]"],
+          ["فشار کل","\\[P=P_0+\\rho gh\\]"],
+          ["اختلاف فشار","\\[\\Delta P=\\rho g\\Delta h\\]"],
+          ["شناوری","\\[F_b=\\rho_{fluid}gV_{displaced}\\]"],
+          ["وزن ظاهری","\\[W_{app}=W-F_b\\]"],
+          ["دبی","\\[Q=Av\\]"],
+          ["پیوستگی","\\[A_1v_1=A_2v_2\\]"]
+        ]
+      ],
+
+      [
+        "کار و انرژی",
+        "کار، انرژی و توان",
+        [
+          ["کار","\\[W=Fd\\cos\\theta\\]"],
+          ["انرژی جنبشی","\\[K=\\frac12mv^2\\]"],
+          ["انرژی پتانسیل","\\[U=mgh\\]"],
+          ["قضیه کار و انرژی","\\[W_{net}=\\Delta K\\]"],
+          ["توان","\\[P=\\frac{W}{t}\\]"]
+        ]
+      ],
+
+      [
+        "دما و گرما",
+        "گرما و تغییر دما",
+        [
+          ["گرمای محسوس","\\[Q=mc\\Delta\\theta\\]"],
+          ["گرمای نهان","\\[Q=mL\\]"],
+          ["تعادل گرمایی","\\[\\sum Q=0\\]"],
+          ["توان گرمایی","\\[P=\\frac{Q}{\\Delta t}\\]"],
+          ["کلوین","\\[T=\\theta+273.15\\]"]
+        ]
+      ]
+
+    ]
 
   },
 
@@ -877,10 +1906,14 @@ const DATA = {
         [
           ["بار الکتریکی","\\[q=\\pm ne\\]"],
           ["قانون کولن","\\[F=k\\frac{|q_1q_2|}{r^2}\\]"],
+          ["ثابت کولن","\\[k=\\frac{1}{4\\pi\\varepsilon_0}\\]"],
           ["میدان الکتریکی","\\[E=\\frac{F}{q_0}\\]"],
           ["میدان بار نقطه‌ای","\\[E=k\\frac{|q|}{r^2}\\]"],
-          ["نیروی الکتریکی","\\[F=qE\\]"],
-          ["تغییر انرژی پتانسیل","\\[\\Delta U=q\\Delta V\\]"],
+          ["نیروی الکتریکی","\\[\\vec F=q\\vec E\\]"],
+          ["کار میدان","\\[W_E=qEd\\cos\\theta\\]"],
+          ["تغییر انرژی پتانسیل","\\[\\Delta U=-W_E\\]"],
+          ["اختلاف پتانسیل","\\[\\Delta V=\\frac{\\Delta U}{q}\\]"],
+          ["میدان یکنواخت","\\[|\\Delta V|=Ed\\]"],
           ["چگالی سطحی بار","\\[\\sigma=\\frac{Q}{A}\\]"]
         ]
       ],
@@ -890,8 +1923,10 @@ const DATA = {
         "ظرفیت و انرژی خازن",
         [
           ["ظرفیت خازن","\\[C=\\frac{Q}{V}\\]"],
+          ["خازن تخت","\\[C=\\varepsilon\\frac{A}{d}\\]"],
           ["خازن با دی‌الکتریک","\\[C=\\kappa C_0\\]"],
-          ["انرژی خازن","\\[U=\\frac12QV=\\frac12CV^2\\]"]
+          ["انرژی خازن","\\[U=\\frac12QV=\\frac12CV^2=\\frac{Q^2}{2C}\\]"],
+          ["میدان خازن","\\[E=\\frac{V}{d}\\]"]
         ]
       ],
 
@@ -900,11 +1935,16 @@ const DATA = {
         "جریان، مقاومت و توان",
         [
           ["شدت جریان","\\[I=\\frac{\\Delta q}{\\Delta t}\\]"],
-          ["قانون اهم","\\[R=\\frac{V}{I}\\]"],
+          ["بار عبوری","\\[q=It\\]"],
+          ["قانون اهم","\\[V=IR\\]"],
           ["مقاومت رسانا","\\[R=\\rho\\frac{L}{A}\\]"],
           ["توان الکتریکی","\\[P=VI=I^2R=\\frac{V^2}{R}\\]"],
-          ["ولتاژ باتری","\\[V=\\mathcal{E}-Ir\\]"],
-          ["جریان مدار","\\[I=\\frac{\\mathcal{E}}{R+r}\\]"]
+          ["انرژی الکتریکی","\\[W=Pt=VIt\\]"],
+          ["ولتاژ پایانه مولد","\\[V=\\varepsilon-Ir\\]"],
+          ["جریان مدار","\\[I=\\frac{\\varepsilon}{R+r}\\]"],
+          ["توان خروجی مولد","\\[P_{out}=VI=\\varepsilon I-rI^2\\]"],
+          ["مقاومت سری","\\[R_{eq}=R_1+R_2+\\cdots\\]"],
+          ["مقاومت موازی","\\[\\frac1{R_{eq}}=\\frac1{R_1}+\\frac1{R_2}+\\cdots\\]"]
         ]
       ],
 
@@ -913,17 +1953,64 @@ const DATA = {
         "نیروی مغناطیسی، شار و القا",
         [
           ["نیروی مغناطیسی بار","\\[F=qvB\\sin\\theta\\]"],
-          ["نیروی وارد بر سیم","\\[F=ILB\\sin\\theta\\]"],
+          ["نیروی وارد بر سیم","\\[F=BIL\\sin\\theta\\]"],
+          ["میدان سیم‌پیچ","\\[B=\\frac{\\mu_0NI}{2R}\\]"],
+          ["میدان سیم‌لوله","\\[B=\\mu_0nI\\]"],
           ["شار مغناطیسی","\\[\\Phi=BA\\cos\\theta\\]"],
-          ["قانون فاراده","\\[\\mathcal{E}=-N\\frac{\\Delta\\Phi}{\\Delta t}\\]"],
+          ["قانون فاراده","\\[\\varepsilon=-N\\frac{\\Delta\\Phi}{\\Delta t}\\]"],
           ["انرژی سلف","\\[U=\\frac12LI^2\\]"],
-          ["اندوکتانس سلف","\\[L=\\mu_0\\frac{AN^2}{l}\\]"]
+          ["ترانسفورماتور ایده‌آل","\\[\\frac{V_1}{V_2}=\\frac{N_1}{N_2}\\]"]
         ]
       ]
 
     ],
 
-    "تجربی": []
+    "تجربی": [
+
+      [
+        "الکتریسیته ساکن",
+        "بار و میدان الکتریکی",
+        [
+          ["بار الکتریکی","\\[q=\\pm ne\\]"],
+          ["قانون کولن","\\[F=k\\frac{|q_1q_2|}{r^2}\\]"],
+          ["ثابت کولن","\\[k=\\frac1{4\\pi\\varepsilon_0}\\]"],
+          ["میدان الکتریکی","\\[E=\\frac{F}{q}\\]"],
+          ["میدان بار نقطه‌ای","\\[E=k\\frac{|q|}{r^2}\\]"],
+          ["نیروی الکتریکی","\\[F=qE\\]"],
+          ["اختلاف پتانسیل","\\[\\Delta V=\\frac{\\Delta U}{q}\\]"],
+          ["ظرفیت خازن","\\[C=\\frac{Q}{V}\\]"],
+          ["انرژی خازن","\\[U=\\frac12CV^2\\]"]
+        ]
+      ],
+
+      [
+        "جریان الکتریکی",
+        "مدار و مقاومت",
+        [
+          ["شدت جریان","\\[I=\\frac{\\Delta q}{\\Delta t}\\]"],
+          ["قانون اهم","\\[V=IR\\]"],
+          ["مقاومت","\\[R=\\rho\\frac{L}{A}\\]"],
+          ["توان","\\[P=VI=I^2R=\\frac{V^2}{R}\\]"],
+          ["ولتاژ مولد واقعی","\\[V=\\varepsilon-Ir\\]"],
+          ["جریان مدار","\\[I=\\frac{\\varepsilon}{R+r}\\]"],
+          ["مقاومت سری","\\[R_{eq}=R_1+R_2+\\cdots\\]"],
+          ["مقاومت موازی","\\[\\frac1{R_{eq}}=\\frac1{R_1}+\\frac1{R_2}+\\cdots\\]"]
+        ]
+      ],
+
+      [
+        "مغناطیس و القا",
+        "مغناطیس و القای الکترومغناطیسی",
+        [
+          ["نیروی مغناطیسی بار","\\[F=qvB\\sin\\theta\\]"],
+          ["نیروی مغناطیسی سیم","\\[F=BIL\\sin\\theta\\]"],
+          ["شار مغناطیسی","\\[\\Phi=BA\\cos\\theta\\]"],
+          ["قانون فاراده","\\[\\varepsilon=-N\\frac{\\Delta\\Phi}{\\Delta t}\\]"],
+          ["انرژی سلف","\\[U=\\frac12LI^2\\]"]
+        ]
+      ]
+
+    ]
 
   },
 
@@ -937,12 +2024,12 @@ const DATA = {
         "سرعت، شتاب و حرکت با شتاب ثابت",
         [
           ["سرعت متوسط","\\[v_{avg}=\\frac{\\Delta x}{\\Delta t}\\]"],
+          ["تندی متوسط","\\[v_{avg}=\\frac{\\Delta s}{\\Delta t}\\]"],
           ["شتاب متوسط","\\[a_{avg}=\\frac{\\Delta v}{\\Delta t}\\]"],
           ["حرکت یکنواخت","\\[x=x_0+vt\\]"],
           ["سرعت با شتاب ثابت","\\[v=v_0+at\\]"],
           ["جابجایی","\\[\\Delta x=v_0t+\\frac12at^2\\]"],
-          ["رابطه سرعت و جابجایی","\\[v^2-v_0^2=2a\\Delta x\\]"],
-          ["جابجایی با سرعت متوسط","\\[\\Delta x=\\frac{v+v_0}{2}t\\]"]
+          ["رابطه سرعت و جابجایی","\\[v^2=v_0^2+2a\\Delta x\\]"]
         ]
       ],
 
@@ -950,11 +2037,14 @@ const DATA = {
         "دینامیک",
         "نیرو و قوانین نیوتن",
         [
-          ["قانون دوم نیوتن","\\[\\sum F=ma\\]"],
+          ["قانون دوم نیوتن","\\[\\sum\\vec F=m\\vec a\\]"],
           ["وزن","\\[W=mg\\]"],
+          ["قانون سوم نیوتن","\\[\\vec F_{AB}=-\\vec F_{BA}\\]"],
+          ["قانون هوک","\\[F_s=-kx\\]"],
           ["اصطکاک جنبشی","\\[f_k=\\mu_kN\\]"],
-          ["اصطکاک ایستایی","\\[f_s\\leq\\mu_sN\\]"],
-          ["قانون هوک","\\[F_s=-kx\\]"]
+          ["حداکثر اصطکاک ایستایی","\\[f_{s,max}=\\mu_sN\\]"],
+          ["گرانش عمومی","\\[F=G\\frac{m_1m_2}{r^2}\\]"],
+          ["شتاب گرانشی","\\[g=\\frac{GM}{r^2}\\]"]
         ]
       ],
 
@@ -963,9 +2053,9 @@ const DATA = {
         "حرکت دورانی و مرکزگرا",
         [
           ["سرعت زاویه‌ای","\\[\\omega=\\frac{v}{r}\\]"],
-          ["دوره حرکت دایره‌ای","\\[T=\\frac{2\\pi r}{v}\\]"],
-          ["شتاب مرکزگرا","\\[a_c=\\frac{v^2}{r}=r\\omega^2\\]"],
-          ["نیروی مرکزگرا","\\[F_c=\\frac{mv^2}{r}=mr\\omega^2\\]"]
+          ["دوره حرکت","\\[T=\\frac{2\\pi r}{v}\\]"],
+          ["شتاب مرکزگرا","\\[a_c=\\frac{v^2}{r}=\\omega^2r\\]"],
+          ["نیروی مرکزگرا","\\[F_c=\\frac{mv^2}{r}=m\\omega^2r\\]"]
         ]
       ],
 
@@ -975,11 +2065,11 @@ const DATA = {
         [
           ["دوره و بسامد","\\[T=\\frac1f\\]"],
           ["فرکانس زاویه‌ای","\\[\\omega=2\\pi f=\\frac{2\\pi}{T}\\]"],
-          ["معادله نوسان","\\[x=A\\cos(\\omega t+\\phi)\\]"],
+          ["معادله نوسان","\\[x=A\\cos(\\omega t+\\varphi)\\]"],
           ["بیشینه سرعت","\\[v_{max}=A\\omega\\]"],
           ["بیشینه شتاب","\\[a_{max}=A\\omega^2\\]"],
           ["دوره فنر","\\[T=2\\pi\\sqrt{\\frac{m}{k}}\\]"],
-          ["دوره آونگ","\\[T=2\\pi\\sqrt{\\frac{L}{g}}\\]"],
+          ["دوره آونگ ساده","\\[T=2\\pi\\sqrt{\\frac{L}{g}}\\]"],
           ["انرژی نوسانگر","\\[E=\\frac12kA^2\\]"]
         ]
       ],
@@ -989,10 +2079,21 @@ const DATA = {
         "موج، صوت و شدت صدا",
         [
           ["سرعت موج","\\[v=f\\lambda\\]"],
-          ["سرعت موج در ریسمان","\\[v=\\sqrt{\\frac{F_T}{\\mu}}\\]"],
+          ["سرعت موج در طناب","\\[v=\\sqrt{\\frac{F_T}{\\mu}}\\]"],
+          ["جرم واحد طول","\\[\\mu=\\frac{m}{L}\\]"],
           ["شدت صوت","\\[I=\\frac{P}{A}\\]"],
-          ["تراز شدت صوت","\\[\\beta=10\\log\\frac{I}{I_0}\\]"],
-          ["اختلاف تراز شدت","\\[\\Delta\\beta=10\\log\\frac{I_2}{I_1}\\]"]
+          ["تراز شدت صوت","\\[\\beta=10\\log_{10}\\left(\\frac{I}{I_0}\\right)\\]"],
+          ["اختلاف تراز شدت","\\[\\Delta\\beta=10\\log_{10}\\left(\\frac{I_2}{I_1}\\right)\\]"]
+        ]
+      ],
+
+      [
+        "شکست نور",
+        "ضریب شکست و قانون اسنل",
+        [
+          ["قانون اسنل","\\[n_1\\sin\\theta_1=n_2\\sin\\theta_2\\]"],
+          ["ضریب شکست","\\[n=\\frac{c}{v}\\]"],
+          ["رابطه سرعت نور","\\[\\frac{v_2}{v_1}=\\frac{n_1}{n_2}\\]"]
         ]
       ],
 
@@ -1001,10 +2102,12 @@ const DATA = {
         "فوتون و مدل اتمی",
         [
           ["انرژی فوتون","\\[E=hf=\\frac{hc}{\\lambda}\\]"],
-          ["اثر فوتوالکتریک","\\[K_{max}=hf-W_0\\]"],
-          ["فرکانس آستانه","\\[f_0=\\frac{W_0}{h}\\]"],
+          ["اثر فوتوالکتریک","\\[hf=\\phi+K_{max}\\]"],
+          ["انرژی جنبشی بیشینه","\\[K_{max}=hf-\\phi\\]"],
+          ["فرکانس آستانه","\\[f_0=\\frac{\\phi}{h}\\]"],
+          ["رابطه دوبروی","\\[\\lambda=\\frac{h}{p}\\]"],
           ["شعاع مدار بور","\\[r_n=n^2a_0\\]"],
-          ["انرژی تراز","\\[E_n=-\\frac{E_R}{n^2}\\]"],
+          ["انرژی تراز هیدروژن","\\[E_n=-\\frac{13.6\\,eV}{n^2}\\]"],
           ["رابطه ریدبرگ","\\[\\frac1\\lambda=R\\left(\\frac1{n_f^2}-\\frac1{n_i^2}\\right)\\]"]
         ]
       ],
@@ -1016,13 +2119,77 @@ const DATA = {
           ["هم‌ارزی جرم و انرژی","\\[E=mc^2\\]"],
           ["قانون نیمه‌عمر","\\[N=N_0\\left(\\frac12\\right)^{t/T_{1/2}}\\]"],
           ["قانون واپاشی","\\[N=N_0e^{-\\lambda t}\\]"],
-          ["ثابت واپاشی","\\[\\lambda=\\frac{\\ln2}{T_{1/2}}\\]"]
+          ["ثابت واپاشی","\\[\\lambda=\\frac{\\ln2}{T_{1/2}}\\]"],
+          ["فعالیت پرتوزایی","\\[A=\\lambda N\\]"]
         ]
       ]
 
     ],
 
-    "تجربی": []
+
+    "تجربی": [
+
+      [
+        "حرکت بر خط راست",
+        "سرعت و شتاب",
+        [
+          ["سرعت متوسط","\\[v_{avg}=\\frac{\\Delta x}{\\Delta t}\\]"],
+          ["تندی متوسط","\\[v_{avg}=\\frac{\\Delta s}{\\Delta t}\\]"],
+          ["شتاب متوسط","\\[a_{avg}=\\frac{\\Delta v}{\\Delta t}\\]"],
+          ["حرکت یکنواخت","\\[x=x_0+vt\\]"],
+          ["سرعت با شتاب ثابت","\\[v=v_0+at\\]"],
+          ["جابجایی","\\[\\Delta x=v_0t+\\frac12at^2\\]"],
+          ["رابطه سرعت و مکان","\\[v^2=v_0^2+2a\\Delta x\\]"]
+        ]
+      ],
+
+      [
+        "دینامیک",
+        "نیرو و قوانین نیوتن",
+        [
+          ["قانون دوم نیوتن","\\[\\sum F=ma\\]"],
+          ["وزن","\\[W=mg\\]"],
+          ["قانون هوک","\\[F_s=-kx\\]"],
+          ["اصطکاک جنبشی","\\[f_k=\\mu_kN\\]"],
+          ["اصطکاک ایستایی","\\[f_s\\leq\\mu_sN\\]"],
+          ["گرانش عمومی","\\[F=G\\frac{m_1m_2}{r^2}\\]"]
+        ]
+      ],
+
+      [
+        "نوسان و موج",
+        "نوسان ساده و موج",
+        [
+          ["معادله نوسان","\\[x=A\\cos(\\omega t+\\varphi)\\]"],
+          ["بیشینه سرعت","\\[v_{max}=A\\omega\\]"],
+          ["بیشینه شتاب","\\[a_{max}=A\\omega^2\\]"],
+          ["دوره فنر","\\[T=2\\pi\\sqrt{\\frac{m}{k}}\\]"],
+          ["طول موج","\\[\\lambda=vT=\\frac{v}{f}\\]"],
+          ["سرعت موج در طناب","\\[v=\\sqrt{\\frac{F_T}{\\mu}}\\]"]
+        ]
+      ],
+
+      [
+        "صوت",
+        "شدت و تراز صوت",
+        [
+          ["شدت صوت","\\[I=\\frac{P}{A}\\]"],
+          ["تراز شدت صوت","\\[\\beta=10\\log_{10}\\left(\\frac{I}{I_0}\\right)\\]"],
+          ["اختلاف تراز","\\[\\Delta\\beta=10\\log_{10}\\left(\\frac{I_2}{I_1}\\right)\\]"]
+        ]
+      ],
+
+      [
+        "شکست نور",
+        "ضریب شکست و قانون اسنل",
+        [
+          ["قانون اسنل","\\[n_1\\sin\\theta_1=n_2\\sin\\theta_2\\]"],
+          ["ضریب شکست","\\[n=\\frac{c}{v}\\]"],
+          ["رابطه سرعت نور","\\[\\frac{v_2}{v_1}=\\frac{n_1}{n_2}\\]"]
+        ]
+      ]
+
+    ]
 
   }
 
@@ -1030,35 +2197,73 @@ const DATA = {
 
 
 /* =====================================================
-   رشته تجربی
-===================================================== */
-
-DATA["دهم"]["تجربی"] =
-  DATA["دهم"]["ریاضی"].slice();
-
-DATA["یازدهم"]["تجربی"] =
-  DATA["یازدهم"]["ریاضی"].slice();
-
-DATA["دوازدهم"]["تجربی"] =
-  DATA["دوازدهم"]["ریاضی"].slice();
-
-
-/* =====================================================
-   ابزارها
+   USER
 ===================================================== */
 
 function getUser() {
 
   try {
+
     return JSON.parse(
       localStorage.getItem("physicsUser")
     );
+
   } catch {
+
     return null;
+
   }
 
 }
 
+
+/* =====================================================
+   THEME
+===================================================== */
+
+function applyTheme(gender) {
+
+  document.body.classList.remove(
+    "girl-theme"
+  );
+
+  if (gender === "دختر") {
+
+    document.body.classList.add(
+      "girl-theme"
+    );
+
+  }
+
+}
+
+
+function previewTheme(gender) {
+
+  applyTheme(gender);
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function setStatus(text,color) {
+
+  const status =
+    document.getElementById("status");
+
+  status.textContent = text;
+
+  status.style.color = color;
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
 
 function showToast(message) {
 
@@ -1070,18 +2275,26 @@ function showToast(message) {
   toast.classList.add("show");
 
   setTimeout(() => {
+
     toast.classList.remove("show");
-  }, 2200);
+
+  },2200);
 
 }
 
+
+/* =====================================================
+   FAVORITES
+===================================================== */
 
 function getFavorites() {
 
   try {
 
     return JSON.parse(
-      localStorage.getItem("physicsFavorites")
+      localStorage.getItem(
+        "physicsFavorites"
+      )
     ) || [];
 
   } catch {
@@ -1103,36 +2316,212 @@ function setFavorites(list) {
 }
 
 
+function favoriteKey(
+  grade,
+  major,
+  index
+) {
+
+  return `${grade}|${major}|${index}`;
+
+}
+
+
+function isFavorite(
+  grade,
+  major,
+  index
+) {
+
+  return getFavorites().includes(
+    favoriteKey(
+      grade,
+      major,
+      index
+    )
+  );
+
+}
+
+
 /* =====================================================
-   ورود کاربر
+   STEP 1 → STEP 2
+===================================================== */
+
+function nextStep() {
+
+  const fullName =
+    document
+      .getElementById("fullName")
+      .value
+      .trim();
+
+  const phone =
+    document
+      .getElementById("phone")
+      .value
+      .trim();
+
+  const gender =
+    document.querySelector(
+      'input[name="gender"]:checked'
+    );
+
+
+  if (!fullName) {
+
+    setStatus(
+      "⚠️ نام و نام خانوادگی را وارد کن.",
+      "#ffd166"
+    );
+
+    return;
+
+  }
+
+
+  if (!phone) {
+
+    setStatus(
+      "⚠️ شماره موبایل را وارد کن.",
+      "#ffd166"
+    );
+
+    return;
+
+  }
+
+
+  if (!/^09\d{9}$/.test(phone)) {
+
+    setStatus(
+      "⚠️ شماره موبایل باید مثل 09123456789 باشد.",
+      "#ffd166"
+    );
+
+    return;
+
+  }
+
+
+  if (!gender) {
+
+    setStatus(
+      "⚠️ جنسیت را انتخاب کن.",
+      "#ffd166"
+    );
+
+    return;
+
+  }
+
+
+  setStatus(
+    "",
+    ""
+  );
+
+
+  document
+    .getElementById("step1")
+    .classList.remove("active");
+
+  document
+    .getElementById("step2")
+    .classList.add("active");
+
+
+  document
+    .getElementById("stepIndicator1")
+    .classList.remove("active");
+
+  document
+    .getElementById("stepIndicator2")
+    .classList.add("active");
+
+}
+
+
+/* =====================================================
+   STEP 2 → STEP 1
+===================================================== */
+
+function previousStep() {
+
+  document
+    .getElementById("step2")
+    .classList.remove("active");
+
+  document
+    .getElementById("step1")
+    .classList.add("active");
+
+
+  document
+    .getElementById("stepIndicator2")
+    .classList.remove("active");
+
+  document
+    .getElementById("stepIndicator1")
+    .classList.add("active");
+
+
+  setStatus(
+    "",
+    ""
+  );
+
+}
+
+
+/* =====================================================
+   SAVE USER
 ===================================================== */
 
 async function saveUser() {
 
+  const genderElement =
+    document.querySelector(
+      'input[name="gender"]:checked'
+    );
+
+
   const user = {
 
-    firstName:
-      document.getElementById("firstName").value.trim(),
-
     fullName:
-      document.getElementById("fullName").value.trim(),
+      document
+        .getElementById("fullName")
+        .value
+        .trim(),
 
     phone:
-      document.getElementById("phone").value.trim(),
+      document
+        .getElementById("phone")
+        .value
+        .trim(),
+
+    gender:
+      genderElement
+        ? genderElement.value
+        : "",
 
     grade:
-      document.getElementById("grade").value,
+      document
+        .getElementById("grade")
+        .value,
 
     major:
-      document.getElementById("major").value
+      document
+        .getElementById("major")
+        .value
 
   };
 
 
   if (
-    !user.firstName ||
     !user.fullName ||
     !user.phone ||
+    !user.gender ||
     !user.grade ||
     !user.major
   ) {
@@ -1147,48 +2536,59 @@ async function saveUser() {
   }
 
 
+  const button =
+    document.getElementById("enter");
+
+
+  button.disabled = true;
+
+  button.textContent =
+    "در حال ورود...";
+
+
+  /*
+    فعلاً اطلاعات در مرورگر ذخیره می‌شود.
+  */
+
   localStorage.setItem(
     "physicsUser",
     JSON.stringify(user)
   );
 
 
-  const button =
-    document.getElementById("enter");
-
-  button.disabled = true;
-  button.textContent = "در حال ورود...";
+  applyTheme(
+    user.gender
+  );
 
 
   try {
 
-    /*
-      بعد از ساخت Render:
-      API_URL را با آدرس واقعی عوض می‌کنیم.
-    */
-
-    if (!API_URL) {
-      throw new Error("API URL not configured");
-    }
-
-
     const response =
       await fetch(
-        API_URL + "/api/send-telegram",
+        API_URL +
+        "/api/send-telegram",
         {
+
           method:"POST",
 
           headers:{
-            "Content-Type":"application/json"
+            "Content-Type":
+              "application/json"
           },
 
-          body:JSON.stringify(user)
+          body:
+            JSON.stringify(user)
+
         }
       );
 
 
     if (!response.ok) {
-      throw new Error("Server error");
+
+      throw new Error(
+        "Server error"
+      );
+
     }
 
 
@@ -1212,34 +2612,50 @@ async function saveUser() {
 
     openApp(user);
 
-  }, 700);
+    button.disabled = false;
+
+    button.textContent =
+      "ورود به فرمول‌نامه ⚡";
+
+  },700);
 
 }
 
 
 /* =====================================================
-   باز کردن برنامه
+   OPEN APP
 ===================================================== */
 
 function openApp(user) {
 
-  document.getElementById(
-    "onboarding"
-  ).style.display = "none";
+  applyTheme(
+    user.gender
+  );
 
-  document.getElementById(
-    "app"
-  ).style.display = "block";
 
-  document.getElementById(
-    "user"
-  ).textContent =
-    "سلام " + user.firstName + " 👋";
+  document
+    .getElementById("onboarding")
+    .style.display = "none";
 
-  document.getElementById(
-    "info"
-  ).textContent =
-    `${user.grade} ${user.major}`;
+
+  document
+    .getElementById("app")
+    .style.display = "block";
+
+
+  document
+    .getElementById("user")
+    .textContent =
+      "سلام " +
+      user.fullName +
+      " 👋";
+
+
+  document
+    .getElementById("info")
+    .textContent =
+      `${user.grade} ${user.major}`;
+
 
   render();
 
@@ -1247,27 +2663,14 @@ function openApp(user) {
 
 
 /* =====================================================
-   وضعیت فرم
-===================================================== */
-
-function setStatus(text,color) {
-
-  const status =
-    document.getElementById("status");
-
-  status.textContent = text;
-  status.style.color = color;
-
-}
-
-
-/* =====================================================
-   رندر
+   RENDER
 ===================================================== */
 
 function render() {
 
-  const user = getUser();
+  const user =
+    getUser();
+
 
   if (!user) return;
 
@@ -1277,14 +2680,17 @@ function render() {
 
 
   const search =
-    document.getElementById("search")
+    document
+      .getElementById("search")
       .value
       .trim()
       .toLowerCase();
 
 
   const filter =
-    document.getElementById("filter");
+    document.getElementById(
+      "filter"
+    );
 
 
   const oldValue =
@@ -1292,42 +2698,55 @@ function render() {
 
 
   filter.innerHTML =
-    `<option value="all">همه فصل‌ها</option>`;
+    `<option value="all">
+      همه فصل‌ها
+    </option>`;
 
 
-  data.forEach((chapter,index) => {
+  data.forEach(
+    (chapter,index) => {
 
-    filter.innerHTML += `
-      <option value="${index}">
-        فصل ${index + 1}: ${chapter[0]}
-      </option>
-    `;
+      filter.innerHTML += `
+        <option value="${index}">
+          فصل ${index + 1}: ${chapter[0]}
+        </option>
+      `;
 
-  });
+    }
+  );
 
 
   if (
-    [...filter.options]
-      .some(x => x.value === oldValue)
+    [...filter.options].some(
+      option =>
+        option.value === oldValue
+    )
   ) {
 
-    filter.value = oldValue;
+    filter.value =
+      oldValue;
 
   }
 
 
   let list =
-    data.map((chapter,index) => ({
-      chapter,
-      index
-    }));
+    data.map(
+      (chapter,index) => ({
+        chapter,
+        index
+      })
+    );
 
 
-  if (filter.value !== "all") {
+  if (
+    filter.value !== "all"
+  ) {
 
     list =
       list.filter(
-        x => String(x.index) === filter.value
+        item =>
+          String(item.index) ===
+          filter.value
       );
 
   }
@@ -1336,29 +2755,43 @@ function render() {
   if (search) {
 
     list =
-      list.filter(item => {
+      list.filter(
+        item => {
 
-        const chapter =
-          item.chapter;
+          const chapter =
+            item.chapter;
 
-        const searchable =
-          [
-            chapter[0],
-            chapter[1],
-            ...chapter[2].map(x => x[0])
-          ]
-          .join(" ")
-          .toLowerCase();
 
-        return searchable.includes(search);
+          const searchable =
+            [
+              chapter[0],
+              chapter[1],
 
-      });
+              ...chapter[2]
+                .map(
+                  formula =>
+                    formula[0]
+                )
+
+            ]
+            .join(" ")
+            .toLowerCase();
+
+
+          return searchable.includes(
+            search
+          );
+
+        }
+      );
 
   }
 
 
   const container =
-    document.getElementById("chapters");
+    document.getElementById(
+      "chapters"
+    );
 
 
   if (!list.length) {
@@ -1377,66 +2810,88 @@ function render() {
 
 
   container.innerHTML =
-    list.map(item => {
+    list.map(
+      item => {
 
-      const chapter =
-        item.chapter;
+        const chapter =
+          item.chapter;
 
-      const favorite =
-        isFavorite(
-          user.grade,
-          user.major,
-          item.index
-        );
 
-      return `
+        const favorite =
+          isFavorite(
+            user.grade,
+            user.major,
+            item.index
+          );
 
-        <article
-          class="card"
-          onclick="openChapter(${item.index})"
-        >
 
-          <div class="card-top">
+        return `
 
-            <div class="chapter-num">
-              فصل ${item.index + 1}
+          <article
+            class="card"
+            onclick="openChapter(${item.index})"
+          >
+
+            <div class="card-top">
+
+              <div class="chapter-num">
+                فصل ${item.index + 1}
+              </div>
+
+
+              <button
+                class="star ${
+                  favorite
+                    ? "active"
+                    : ""
+                }"
+                onclick="
+                  toggleFavorite(
+                    event,
+                    ${item.index}
+                  )
+                "
+                aria-label="علاقه‌مندی"
+              >
+                ${
+                  favorite
+                    ? "★"
+                    : "☆"
+                }
+              </button>
+
             </div>
 
-            <button
-              class="star ${favorite ? "active" : ""}"
-              onclick="toggleFavorite(event,${item.index})"
-              aria-label="علاقه‌مندی"
-            >
-              ${favorite ? "★" : "☆"}
-            </button>
 
-          </div>
+            <h3>
+              ${chapter[0]}
+            </h3>
 
-          <h3>
-            ${chapter[0]}
-          </h3>
 
-          <p>
-            ${chapter[1]}
-          </p>
+            <p>
+              ${chapter[1]}
+            </p>
 
-          <div class="card-footer">
 
-            <span>
-              ${chapter[2].length} فرمول
-            </span>
+            <div class="card-footer">
 
-            <span>
-              مشاهده ←
-            </span>
+              <span>
+                ${chapter[2].length}
+                فرمول
+              </span>
 
-          </div>
+              <span>
+                مشاهده ←
+              </span>
 
-        </article>
+            </div>
 
-      `;
+          </article>
 
-    })
+        `;
+
+      }
+    )
     .join("");
 
 
@@ -1446,7 +2901,7 @@ function render() {
 
 
 /* =====================================================
-   آمار
+   STATS
 ===================================================== */
 
 function updateStats(data) {
@@ -1454,57 +2909,53 @@ function updateStats(data) {
   const formulaCount =
     data.reduce(
       (sum,chapter) =>
-        sum + chapter[2].length,
+        sum +
+        chapter[2].length,
       0
     );
 
 
-  document.getElementById(
-    "chapterCount"
-  ).textContent =
-    data.length;
+  document
+    .getElementById(
+      "chapterCount"
+    )
+    .textContent =
+      data.length;
 
 
-  document.getElementById(
-    "formulaCount"
-  ).textContent =
-    formulaCount;
+  document
+    .getElementById(
+      "formulaCount"
+    )
+    .textContent =
+      formulaCount;
 
 
-  document.getElementById(
-    "favoriteCount"
-  ).textContent =
-    getFavorites().length;
+  document
+    .getElementById(
+      "favoriteCount"
+    )
+    .textContent =
+      getFavorites().length;
 
 }
 
 
 /* =====================================================
-   علاقه‌مندی
+   FAVORITE
 ===================================================== */
 
-function favoriteKey(grade,major,index) {
-
-  return `${grade}|${major}|${index}`;
-
-}
-
-
-function isFavorite(grade,major,index) {
-
-  return getFavorites()
-    .includes(
-      favoriteKey(grade,major,index)
-    );
-
-}
-
-
-function toggleFavorite(event,index) {
+function toggleFavorite(
+  event,
+  index
+) {
 
   event.stopPropagation();
 
-  const user = getUser();
+
+  const user =
+    getUser();
+
 
   if (!user) return;
 
@@ -1521,18 +2972,27 @@ function toggleFavorite(event,index) {
     getFavorites();
 
 
-  if (list.includes(key)) {
+  if (
+    list.includes(key)
+  ) {
 
     list =
-      list.filter(x => x !== key);
+      list.filter(
+        item =>
+          item !== key
+      );
 
-    showToast("از علاقه‌مندی‌ها حذف شد");
+    showToast(
+      "از علاقه‌مندی‌ها حذف شد"
+    );
 
   } else {
 
     list.push(key);
 
-    showToast("⭐ به علاقه‌مندی‌ها اضافه شد");
+    showToast(
+      "⭐ به علاقه‌مندی‌ها اضافه شد"
+    );
 
   }
 
@@ -1545,75 +3005,95 @@ function toggleFavorite(event,index) {
 
 
 /* =====================================================
-   باز کردن فصل
+   OPEN CHAPTER
 ===================================================== */
 
 function openChapter(index) {
 
-  const user = getUser();
+  const user =
+    getUser();
+
 
   if (!user) return;
 
 
   const chapter =
-    DATA[user.grade][user.major][index];
+    DATA[
+      user.grade
+    ][
+      user.major
+    ][index];
 
 
-  document.getElementById(
-    "mt"
-  ).textContent =
-    `فصل ${index + 1}: ${chapter[0]}`;
+  document
+    .getElementById("mt")
+    .textContent =
+      `فصل ${index + 1}: ${chapter[0]}`;
 
 
-  document.getElementById(
-    "formulas"
-  ).innerHTML =
+  document
+    .getElementById("formulas")
+    .innerHTML =
 
-    chapter[2]
-      .map((formula,index) => {
+      chapter[2]
+        .map(
+          formula => {
 
-        const encoded =
-          encodeURIComponent(
-            formula[0] + " = " + formula[1]
-          );
-
-        return `
-
-          <div class="formula">
-
-            <div class="formula-title">
-
-              <span>
-                ${formula[0]}
-              </span>
-
-              <button
-                class="copy-btn"
-                onclick="copyFormula('${encoded}')"
-              >
-                📋 کپی
-              </button>
-
-            </div>
-
-            <div class="equation">
-              ${formula[1]}
-            </div>
-
-          </div>
-
-        `;
-
-      })
-      .join("");
+            const encoded =
+              encodeURIComponent(
+                formula[0] +
+                " = " +
+                formula[1]
+              );
 
 
-  document.getElementById(
-    "modal"
-  ).style.display = "block";
+            return `
+
+              <div class="formula">
+
+                <div class="formula-title">
+
+                  <span>
+                    ${formula[0]}
+                  </span>
 
 
-  if (window.MathJax) {
+                  <button
+                    class="copy-btn"
+                    onclick="
+                      copyFormula(
+                        '${encoded}'
+                      )
+                    "
+                  >
+                    📋 کپی
+                  </button>
+
+                </div>
+
+
+                <div class="equation">
+                  ${formula[1]}
+                </div>
+
+              </div>
+
+            `;
+
+          }
+        )
+        .join("");
+
+
+  document
+    .getElementById("modal")
+    .style.display =
+      "block";
+
+
+  if (
+    window.MathJax
+  ) {
 
     MathJax.typesetPromise();
 
@@ -1623,24 +3103,34 @@ function openChapter(index) {
 
 
 /* =====================================================
-   کپی
+   COPY
 ===================================================== */
 
-async function copyFormula(encoded) {
+async function copyFormula(
+  encoded
+) {
 
   const text =
-    decodeURIComponent(encoded);
+    decodeURIComponent(
+      encoded
+    );
 
 
   try {
 
-    await navigator.clipboard.writeText(text);
+    await navigator
+      .clipboard
+      .writeText(text);
 
-    showToast("📋 کپی شد");
+    showToast(
+      "📋 کپی شد"
+    );
 
   } catch {
 
-    showToast("کپی انجام نشد");
+    showToast(
+      "کپی انجام نشد"
+    );
 
   }
 
@@ -1648,45 +3138,47 @@ async function copyFormula(encoded) {
 
 
 /* =====================================================
-   بستن مودال
+   CLOSE MODAL
 ===================================================== */
 
 function closeModal() {
 
-  document.getElementById(
-    "modal"
-  ).style.display = "none";
+  document
+    .getElementById("modal")
+    .style.display =
+      "none";
 
 }
 
 
-document.getElementById(
-  "modal"
-).addEventListener(
-  "click",
-  event => {
+document
+  .getElementById("modal")
+  .addEventListener(
+    "click",
+    event => {
 
-    if (
-      event.target.id === "modal"
-    ) {
+      if (
+        event.target.id ===
+        "modal"
+      ) {
 
-      closeModal();
+        closeModal();
+
+      }
 
     }
-
-  }
-);
+  );
 
 
 /* =====================================================
-   خروج
+   LOGOUT
 ===================================================== */
 
 function resetUser() {
 
   if (
     !confirm(
-      "اطلاعات ذخیره‌شده حذف شود و به صفحه ورود برگردی؟"
+      "با خروج، اطلاعات ذخیره‌شده و علاقه‌مندی‌ها پاک می‌شوند. ادامه می‌دهی؟"
     )
   ) return;
 
@@ -1696,75 +3188,140 @@ function resetUser() {
   );
 
 
-  document.getElementById(
-    "app"
-  ).style.display = "none";
+  localStorage.removeItem(
+    "physicsFavorites"
+  );
 
 
-  document.getElementById(
-    "onboarding"
-  ).style.display = "grid";
+  document
+    .getElementById("app")
+    .style.display =
+      "none";
+
+
+  document
+    .getElementById("onboarding")
+    .style.display =
+      "grid";
+
+
+  document
+    .getElementById("step1")
+    .classList.add("active");
+
+
+  document
+    .getElementById("step2")
+    .classList.remove("active");
+
+
+  document
+    .getElementById("stepIndicator1")
+    .classList.add("active");
+
+
+  document
+    .getElementById("stepIndicator2")
+    .classList.remove("active");
+
+
+  document
+    .getElementById("fullName")
+    .value = "";
+
+
+  document
+    .getElementById("phone")
+    .value = "";
+
+
+  document
+    .getElementById("grade")
+    .value = "";
+
+
+  document
+    .getElementById("major")
+    .value = "";
+
+
+  document
+    .querySelectorAll(
+      'input[name="gender"]'
+    )
+    .forEach(
+      radio =>
+        radio.checked = false
+    );
+
+
+  document.body.classList.remove(
+    "girl-theme"
+  );
+
+
+  setStatus(
+    "",
+    ""
+  );
 
 }
 
 
 /* =====================================================
-   بارگذاری
+   LOAD
 ===================================================== */
 
 window.addEventListener(
   "DOMContentLoaded",
   () => {
 
-    const user = getUser();
+    const user =
+      getUser();
 
 
-    if (!user) return;
+    if (!user) {
+
+      document
+        .getElementById("onboarding")
+        .style.display =
+          "grid";
+
+      return;
+
+    }
 
 
-    document.getElementById(
-      "firstName"
-    ).value =
-      user.firstName || "";
+    /*
+      اگر کاربر قبلاً ثبت‌نام کرده باشد،
+      مستقیم وارد سایت می‌شود.
+    */
+
+    applyTheme(
+      user.gender
+    );
 
 
-    document.getElementById(
-      "fullName"
-    ).value =
-      user.fullName || "";
-
-
-    document.getElementById(
-      "phone"
-    ).value =
-      user.phone || "";
-
-
-    document.getElementById(
-      "grade"
-    ).value =
-      user.grade || "";
-
-
-    document.getElementById(
-      "major"
-    ).value =
-      user.major || "";
+    openApp(user);
 
   }
 );
 
 
 /* =====================================================
-   ESC برای بستن مودال
+   ESC
 ===================================================== */
 
 document.addEventListener(
   "keydown",
   event => {
 
-    if (event.key === "Escape") {
+    if (
+      event.key === "Escape"
+    ) {
+
       closeModal();
+
     }
 
   }
