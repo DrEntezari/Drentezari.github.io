@@ -36,11 +36,7 @@ app.use(
 /*
   فایل‌های frontend
 */
-app.use(
-  express.static(
-    path.join(__dirname, "public")
-  )
-);
+app.use(express.static(__dirname));
 
 
 /* =====================================================
